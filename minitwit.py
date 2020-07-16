@@ -31,6 +31,58 @@ app.config.from_object(__name__)
 app.config.from_envvar('MINITWIT_SETTINGS', silent=True)
 
 
+###################################################
+
+
+@app.route('/main')
+def main_page():
+    return '메인 페이지 : 코스피, 나스닥, 환율 등 정보 표시'
+
+@app.route('/korea_stock')
+def korea_stock():
+    return '국내주식 만드는 곳'
+
+@app.route('/korea_stock/<kr_stock>')
+def get_kr_stock(kr_stock):
+    return 'profile : ' + kr_stock
+
+@app.route('/us_stock')
+def us_stock():
+    return '해외주식 만드는 곳'
+
+@app.route('/us_stock/<us_stock>')
+def get_us_stock(us_stock):
+    return 'profile : ' + us_stock
+
+@app.route('/coin')
+def coin():
+    return '코인 만드는 곳'
+
+@app.route('/coin/<coin_name>')
+def get_coin(coin_name):
+    return 'profile : ' + coin_name
+
+@app.route('/daily')
+def daily():
+    return '매매일지'
+
+@app.route('/cheking')
+def cheking():
+    return '관심 종목'
+
+@app.route('/etc')
+def etc():
+    return '기타'
+
+@app.route('/add')
+def add():
+    return '종목 추가'
+
+
+
+###################################################
+
+
 def connect_db():
     """Returns a new connection to the database."""
     return sqlite3.connect(app.config['DATABASE'])
@@ -88,6 +140,7 @@ def teardown_request(exception):
     """Closes the database again at the end of the request."""
     if hasattr(g, 'db'):
         g.db.close()
+
 
 
 @app.route('/')
