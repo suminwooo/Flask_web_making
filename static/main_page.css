@@ -1,0 +1,300 @@
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none; /* 기본 밑줄 제거 */
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline; /* 마우스 커서가 올라갔을 때 밑줄을 생성*/
+}
+
+/* ######################################헤더 부분###################################### */
+
+header {
+    background: #BBDEFB;
+    margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
+    display: flex;
+    width: 90%;
+    height: 210px;
+    align-items: center; /* 하위 요소들 수직 가운데정렬 */
+    position: relative;
+    padding-bottom : 10pt;
+    padding-left : 10pt;
+    padding-right : 10pt;
+}
+fieldset {
+    border: none; /* 기본 border 없애기 */
+}
+
+.visually-hidden { /* legend 제거 */
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+/* 링크 조정 */
+
+.links { /*  */
+    position: absolute;
+    top: 0;
+
+}
+.link_text {
+    text-decoration : none;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+/* 이미지 부분 */
+
+.img_logo {
+    width: 200px;
+    height: 70px;
+}
+
+/* 검색 박스 부분 */
+
+.search_box {
+    width: 520px;
+    height: 50px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+}
+
+.search_box input {
+    flex: 8;
+    height: 46px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+}
+
+.search_box button {
+    flex: 1;
+    height: 46px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: gray;
+    color: #ffffff;
+}
+
+/* 로그인 부분 */
+.login {
+    width: 200px;
+    position: absolute;
+    top : 5%;
+    right : 3%;
+    text-align: center;
+    border : solid 1px;
+    border-color : black;
+    border-style : sold;
+    padding-bottom : 7pt;
+    padding-left : 5pt;
+    padding-right : 5pt;
+    border-radius : 20px;
+
+}
+
+.login input {
+    outline: 0;
+    background: #f2f2f2;
+    border: 0;
+    margin: 0 0 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+.login button {
+    outline: 0;
+    background: #f2f2f2;
+    padding: 10px;
+    font-size: 10px;
+    width = 50%;
+    float: left; width: 50%;
+    margin: 0;
+}
+
+p.register {
+    font-size: 8px;
+    float: left; width: 50%;
+}
+
+/* 하위 탭 부분 */
+
+header > nav {
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    bottom: 0;
+}
+
+.nav_items {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+.nav_items ul > li {
+    display: inline-block;
+    margin-left: 8px;
+    border-left:1px solid #999;
+    border-right:1px solid #999;
+    padding:0 10px;
+  }
+
+.nav_items ul > li > a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/* ######################################main 부분###################################### */
+
+main {
+    background: #f2f4f7;
+    margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
+    width: 90%;
+    height: 1000px;
+    position: relative;
+    padding-top : 5%;
+    padding-bottom : 5%;
+    padding-left : 10pt;
+    padding-right : 10pt;
+    display: fixed;
+}
+
+.main_container{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.container_main1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.container_main2{
+    grid-column-start: 4;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.container_main3{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+
+.container_main4{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+
+.container_main5{
+    grid-column-start: 5;
+    grid-column-end: 7;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+/*----- table -----*/
+
+table {
+    width: 100%;
+    border: 1px solid #444444;
+    border-collapse: collapse;
+
+}
+th, td {
+    border: 1px solid #444444;
+    padding: 10px;
+}
+
+/*----- Tabs -----*/
+
+.tabs {
+	width:100%;
+	display:inline-block;
+}
+
+/*----- Tab Links -----*/
+
+.tab-links:after {
+    display:block;
+    clear:both;
+    content:'';
+}
+
+.tab-links li {
+	margin:0px 3px;
+	float:left;
+	list-style:none;
+}
+
+.tab-links a {
+	padding:9px 15px;
+	display:inline-block;
+	border-radius:3px 3px 0px 0px;
+	background:#7FB5DA;
+	font-size:16px;
+	font-weight:600;
+	color:black;
+	transition:all linear 0.15s;
+}
+
+.tab-links a:hover {
+	background:#white;
+	text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+	background:#BBDEFB;
+	color:#4c4c4c;
+}
+
+/*----- Content of Tabs -----*/
+
+.tab-content {
+	padding:15px;
+	border-radius:3px;
+	background:#fff;
+}
+
+.tab {
+	display:none;
+}
+
+.tab.active {
+	display:block;
+}
+
+/* ######################################footer 부분###################################### */
+
+footer {
+    background: white;
+    margin : auto;
+    width: 90%;
+}
