@@ -12,8 +12,6 @@ a:hover {
     text-decoration: underline; /* 마우스 커서가 올라갔을 때 밑줄을 생성*/
 }
 
-/* ######################################헤더 부분###################################### */
-
 header {
     background: #BBDEFB;
     margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
@@ -26,6 +24,30 @@ header {
     padding-left : 10pt;
     padding-right : 10pt;
 }
+
+main {
+    background: #f2f4f7;
+    margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
+    width: 90%;
+    height: 1000px;
+    position: relative;
+    padding-top : 5%;
+    padding-bottom : 5%;
+    padding-left : 10pt;
+    padding-right : 10pt;
+    display: fixed;
+}
+
+footer {
+    background:#f2f2f2;
+    margin : auto;
+    width: 90%;
+}
+
+
+/* ######################################헤더 부분###################################### */
+
+
 fieldset {
     border: none; /* 기본 border 없애기 */
 }
@@ -58,10 +80,7 @@ fieldset {
   }
 /* 이미지 부분 */
 
-.img_logo {
-    width: 200px;
-    height: 70px;
-}
+/*에러나서 이미지만 html에 포함*/
 
 /* 검색 박스 부분 */
 
@@ -126,9 +145,9 @@ fieldset {
     background: #f2f2f2;
     padding: 10px;
     font-size: 10px;
-    width = 50%;
-    float: left; width: 50%;
-    margin: 0;
+    float: left;
+    width: 30%;
+    margin-left: 20;
 }
 
 p.register {
@@ -168,18 +187,6 @@ header > nav {
 
 /* ######################################main 부분###################################### */
 
-main {
-    background: #f2f4f7;
-    margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
-    width: 90%;
-    height: 1000px;
-    position: relative;
-    padding-top : 5%;
-    padding-bottom : 5%;
-    padding-left : 10pt;
-    padding-right : 10pt;
-    display: fixed;
-}
 
 .main_container{
     display: grid;
@@ -188,38 +195,43 @@ main {
 
 .container_main1{
     grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
 }
 
 .container_main2{
-    grid-column-start: 4;
+    grid-column-start: 5;
     grid-column-end: 7;
-    grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 4;
 }
 
 .container_main3{
     grid-column-start: 1;
     grid-column-end: 3;
-    grid-row-start: 4;
-    grid-row-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 7;
 }
 
 .container_main4{
     grid-column-start: 3;
     grid-column-end: 5;
-    grid-row-start: 4;
-    grid-row-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 7;
 }
 
 .container_main5{
     grid-column-start: 5;
     grid-column-end: 7;
-    grid-row-start: 4;
-    grid-row-end: 6;
+    grid-row-start: 5;
+    grid-row-end: 7;
 }
+
+#today_ant {
+    color: red;
+}
+
 /*----- table -----*/
 
 table {
@@ -289,12 +301,4 @@ li.active a, li.active a:hover {
 
 .tab.active {
 	display:block;
-}
-
-/* ######################################footer 부분###################################### */
-
-footer {
-    background: white;
-    margin : auto;
-    width: 90%;
 }

@@ -1,302 +1,250 @@
-<!doctype html>
-<html>
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="utf-8">
-  <title>웹 개발 테스트용</title>
-  <link rel=stylesheet type=text/css href="../static/main_page.css">
-</head>
-
-<body>
-  <header>
-    <div class = "links">
-      <a href="https://github.com/suminwooo" >개발자의 깃허브로 가기</a>
-    </div>
-    <a href="/"><img src="../resource/test.png" class="img_logo"/></a> <!-- 왜 파이썬으론 안되는 걸까??? !-->
-
-    <form>
-      <fieldset>
-        <legend class="visually-hidden"> 종목 검색란 </legend>
-        <div class="search_box" >
-          <input type="text" maxlength="225" tabindex="1" value="종목을 검색해 주세요"
-                 onclick="this.value='';"/>
-          <button type="submit" tabindex="2">
-            검색 <!--검색 누르는 버튼-->
-          </button>
-        </div>
-      </fieldset>
-    </form>
-
-  <div class="login">
-    <h3> Member Login </h3>
-    <form class="login-form">
-      <input type="text" placeholder="ID"/>
-      <input type="password" placeholder="PASSWORD"/>
-      <div class="check_register">
-        <button>로그인</button>
-        <p class="register"><a href="#">계정 관련</a></p>
-      </div>
-    </form>
-  </div>
-
-  <nav>
-    <div class="nav_items">
-      <ul>
-        <li><a href="/"> 메인 페이지</a></li>
-        <li><a href="/"> 한국 주식</a></li>
-        <li><a href="/"> 미국 주식</a></li>
-        <li><a href="/"> 코인</a></li>
-        <li><a href="/"> 매매 일지</a></li>
-        <li><a href="/"> 관심 종목 + 추가</a></li>
-        <li><a href="/"> 기타</a></li>
-        <li><a href="/"> 게시판</a></li>
-      </ul>
-    </div>
-  </nav>
-  </header>
-
-  <main>
+{% block main %}
   <div class="main_container">
 
     <div class="container_main1">
-      <h3>나라별 index</h3>
+      <h3>INDEX</h3>
       <table>
-      <thead>
-        <tr>
-          <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-        </tr>
-        <tr>
-          <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-        </tr>
-        <tr>
-          <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-        </tr>
-        <tr>
-          <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-        </tr>
-        <tr>
-          <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-        </tr>
+        <thead>
+          <tr>
+           <th>INDEX</th><th>종가</th><th>전일대비</th><th>등락률</th>
+          </tr>
+        </thead>
+        <tbody>
+      <tr>
+      <td>코스피</td><td>number</td><td>number</td><th>number</th>
+      </tr>
+      <tr>
+      <td>코스닥</td><td>number</td><td>number</td><th>number</th>
+      </tr>
+      <tr>
+      <td>나스닥100</td><td>number</td><td>number</td><th>number</th>
+      </tr>
+      <tr>
+      <td>다우산업</td><td>number</td><td>number</td><th>number</th>
+      </tr>
+      <tr>
+      <td>S&P500</td><td>number</td><td>number</td><th>number</th>
+      </tr>
       </tbody>
       </table>
-    </div>
+      </div>
 
     <div class="container_main2">
       <h3>시장 지표</h3>
       <table>
         <thead>
           <tr>
-            <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
+            <th></th><th>종가</th><th>전일대비</th><th>등락률</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-            <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-            <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-            <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-            <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-        </tbody>
+      <tr>
+      <td>달러</td><td>number</td><td>number</td><th>number</th>
+      </tr>
+      <tr>
+      <td>유로</td><td>number</td><td>number</td><th>number</th>
+      </tr>
+      <tr>
+      <td>엔화</td><td>number</td><td>number</td><th>number</th>
+      </tr>
+      <tr>
+      <td>달러인덱스</td><td>number</td><td>number</td><th>number</th>
+      </tr>
+      <tr>
+      <td>금</td><td>number</td><td>number</td><th>number</th>
+      </tr>
+      <tr>
+      <td>WTI</td><td>number</td><td>number</td><th>number</th>
+      </tr>
+      </tbody>
       </table>
     </div>
 
     <div class="container_main3">
-      <h3>보유중</h3>
-      <div class="tabs">
-      <ul class="tab-links">
-        <li class="active"><a href="#tab1">한국 주식</a></li>
-        <li><a href="#tab2">미국 주식</a></li>
-        <li><a href="#tab3">코인</a></li>
-      </ul>
+    <h3>보유중</h3>
+    <div class="tabs">
+    <ul class="tab-links">
+    <li class="active"><a href="#tab1">한국 주식</a></li>
+    <li><a href="#tab2">미국 주식</a></li>
+    <li><a href="#tab3">코인</a></li>
+    </ul>
 
-      <div class="tab-content">
-        <div id="tab1" class="tab active">
-        <table>
-          <thead>
-            <tr>
-              <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-      <div id="tab2" class="tab">
-        <table>
-          <thead>
-            <tr>
-              <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="tab3" class="tab">
-        <table>
-        <thead>
-          <tr>
-            <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-           <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-           <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-           <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-            <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-            <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-        </tbody>
-        </table>
-      </div>
+    <div class="tab-content">
+    <div id="tab1" class="tab active">
+    <table>
+    <thead>
+    <tr>
+    <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    <div id="tab2" class="tab">
+    <table>
+    <thead>
+    <tr>
+    <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    <div id="tab3" class="tab">
+    <table>
+    <thead>
+    <tr>
+    <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
 
-      </div>
+    </div>
     </div>
     </div>
 
     <div class="container_main4">
-      <h3>관심종목</h3>
-      <div class="tabs">
-      <ul class="tab-links">
-        <li class="active"><a href="#tab1">한국 주식</a></li>
-        <li><a href="#tab2">미국 주식</a></li>
-        <li><a href="#tab3">코인</a></li>
-      </ul>
+    <h3>관심종목</h3>
+    <div class="tabs">
+    <ul class="tab-links">
+    <li class="active"><a href="#tab1">한국 주식</a></li>
+    <li><a href="#tab2">미국 주식</a></li>
+    <li><a href="#tab3">코인</a></li>
+    </ul>
 
-      <div class="tab-content">
-        <div id="tab1" class="tab active">
-        <table>
-          <thead>
-            <tr>
-              <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-      <div id="tab2" class="tab">
-        <table>
-          <thead>
-            <tr>
-              <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="tab3" class="tab">
-        <table>
-        <thead>
-          <tr>
-            <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-           <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-           <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-           <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-            <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-            <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-        </tbody>
-        </table>
-      </div>
+    <div class="tab-content">
+    <div id="tab1" class="tab active">
+    <table>
+    <thead>
+    <tr>
+    <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    <div id="tab2" class="tab">
+    <table>
+    <thead>
+    <tr>
+    <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    <div id="tab3" class="tab">
+    <table>
+    <thead>
+    <tr>
+    <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    <tr>
+    <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
 
-      </div>
+    </div>
     </div>
     </div>
 
@@ -304,106 +252,98 @@
       <h3>기타</h3>
       <div class="tabs">
       <ul class="tab-links">
-        <li class="active"><a href="#tab1">배당주</a></li>
-        <li><a href="#tab2">남들이한거</a></li>
-        <li><a href="#tab3">추후 추가</a></li>
+      <li class="active"><a href="#tab1">배당주</a></li>
+      <li><a href="#tab2">남들이한거</a></li>
+      <li><a href="#tab3">추후 추가</a></li>
       </ul>
 
       <div class="tab-content">
         <div id="tab1" class="tab active">
         <table>
-          <thead>
-            <tr>
-              <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
-        </div>
-      <div id="tab2" class="tab">
-        <table>
-          <thead>
-            <tr>
-              <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div id="tab3" class="tab">
-        <table>
         <thead>
-          <tr>
-            <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-          </tr>
+        <tr>
+        <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
+        </tr>
         </thead>
         <tbody>
-          <tr>
-           <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-           <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-           <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-            <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-            <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
         </tbody>
         </table>
-      </div>
+        </div>
+        <div id="tab2" class="tab">
+        <table>
+        <thead>
+        <tr>
+        <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        <div id="tab3" class="tab">
+        <table>
+        <thead>
+        <tr>
+        <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        <tr>
+        <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
 
+        </div>
       </div>
     </div>
-    </div>
-
   </div>
 
-
-
-  </main>
-
-  <footer>
-    <h3>made by sumin.w</h3>
-    <p>contact : wsm263@gmail.com</p>
-  </footer>
-
-</body>
-
-</html>
+  <div class="today_ant">
+    <h2>test</h2>
+    <p>코스피 코스닥 증감률 / 외국인 개인 기간 투자자 현황판 </p>
+  </div>
+{% endblock %}
