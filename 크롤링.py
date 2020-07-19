@@ -92,7 +92,7 @@ market = market_index_information.find_all('div',class_='group2')
 # 4. WTI
 
 # 5. 금
-여기서 부터 다시하기
+# 여기서 부터 다시하기
 # 6. 달러인덱스
 print(market)
 # print(market.find('tr', class_="up bold"))
