@@ -1,0 +1,67 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>웹 개발 테스트용</title>
+  <link rel=stylesheet type=text/css href="../static/main_page.css">
+</head>
+<body>
+  <header>
+    <div class = "links">
+      <a href="https://github.com/suminwooo" >개발자의 깃허브로 가기</a>
+    </div>
+    <a href="{{url_for('main_page')}}"><img src="{{url_for('static', filename='image/test.png')}}" width="200"
+    height = "100" ></a>
+
+    <form>
+      <fieldset>
+        <legend class="visually-hidden"> 종목 검색란 </legend>
+        <div class="search_box" >
+          <input type="text" maxlength="225" tabindex="1" value="종목을 검색해 주세요"
+                 onclick="this.value='';"/>
+          <button type="submit" tabindex="2">
+            검색 <!--검색 누르는 버튼-->
+          </button>
+        </div>
+      </fieldset>
+    </form>
+
+  <div class="login">
+    <h3> Member Login </h3>
+    <form class="login-form">
+      <input type="text" placeholder="ID"/>
+      <input type="password" placeholder="PASSWORD"/>
+      <div class="check_register">
+        <button>로그인</button>
+        <p class="register"><a href="#">계정 관련</a></p>
+      </div>
+    </form>
+  </div>
+
+  <nav>
+    <div class="nav_items">
+      <ul>
+        <li><a href="{{ url_for('korea_stock') }}"> 한국 주식</a></li>
+        <li><a href="{{ url_for('us_stock') }}"> 미국 주식</a></li>
+        <li><a href="{{ url_for('coin') }}"> 코인</a></li>
+        <li><a href="{{ url_for('sales_log') }}"> 매매 일지</a></li>
+        <li><a href="{{ url_for('add_check') }}"> 관심 종목 + 추가</a></li>
+        <li><a href="{{ url_for('twit') }}"> 게시판</a></li>
+        <li><a href="{{ url_for('etc') }}"> 기타</a></li>
+      </ul>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+    {% block main %}
+    {% endblock %}
+  </main>
+
+  <footer>
+    <h3>made by sumin.w</h3>
+    <p>contact : wsm263@gmail.com</p>
+  </footer>
+
+</body>
+
+</html>
