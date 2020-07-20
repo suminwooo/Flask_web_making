@@ -1,8 +1,12 @@
 {% extends 'base.html' %}
 
 {% block main %}
+  <div class="today_ant">
+    <h3>코스피/코스닥 현황</h3>
+    <p>개미현황 : {{main_page_value[3]}}, 외국인 투자자 : {{main_page_value[4]}}, 기관 투자자 : {{main_page_value[5]}}</p>
+    <p>개미현황 : {{main_page_value[9]}}, 외국인 투자자 : {{main_page_value[10]}}, 기관 투자자 : {{main_page_value[11]}}</p>
+  </div>
   <div class="main_container">
-
     <div class="container_main1">
       <h3>INDEX</h3>
       <table>
@@ -13,19 +17,19 @@
         </thead>
         <tbody>
       <tr>
-      <td>코스피</td><td>number</td><td>number</td><th>number</th>
+      <td>코스피</td><td>{{main_page_value[0]}}</td><td>{{main_page_value[1]}}</td><th>{{main_page_value[2]}}</th>
       </tr>
       <tr>
-      <td>코스닥</td><td>number</td><td>number</td><th>number</th>
+      <td>코스닥</td><td>{{main_page_value[6]}}</td><td>{{main_page_value[7]}}</td><th>{{main_page_value[8]}}</th>
       </tr>
       <tr>
-      <td>나스닥100</td><td>number</td><td>number</td><th>number</th>
+      <td>나스닥100</td><td>추후 추가</td><td>추후 추가</td><th>추후 추가</th>
       </tr>
       <tr>
-      <td>다우산업</td><td>number</td><td>number</td><th>number</th>
+      <td>다우산업</td><td>추후 추가</td><td>추후 추가</td><th>추후 추가</th>
       </tr>
       <tr>
-      <td>S&P500</td><td>number</td><td>number</td><th>number</th>
+      <td>S&P500</td><td>추후 추가</td><td>추후 추가</td><th>추후 추가</th>
       </tr>
       </tbody>
       </table>
@@ -41,22 +45,22 @@
         </thead>
         <tbody>
       <tr>
-      <td>달러</td><td>number</td><td>number</td><th>number</th>
+      <td>달러</td><td>{{main_page_value[15]}}</td><td>{{main_page_value[16]}}</td><th>추후 추가</th>
       </tr>
       <tr>
-      <td>유로</td><td>number</td><td>number</td><th>number</th>
+      <td>유로</td><td>{{main_page_value[17]}}</td><td>{{main_page_value[18]}}</td><th>추후 추가</th>
       </tr>
       <tr>
-      <td>엔화</td><td>number</td><td>number</td><th>number</th>
+      <td>엔화</td><td>{{main_page_value[19]}}</td><td>{{main_page_value[20]}}</td><th>추후 추가</th>
       </tr>
       <tr>
-      <td>달러인덱스</td><td>number</td><td>number</td><th>number</th>
+      <td>달러인덱스</td><td>{{main_page_value[23]}}</td><td>{{main_page_value[23]}}</td><th>추후 추가</th>
       </tr>
       <tr>
-      <td>금</td><td>number</td><td>number</td><th>number</th>
+      <td>금</td><td>{{main_page_value[24]}}</td><td>{{main_page_value[25]}}</td><th>추후 추가</th>
       </tr>
       <tr>
-      <td>WTI</td><td>number</td><td>number</td><th>number</th>
+      <td>WTI</td><td>{{main_page_value[21]}}</td><td>{{main_page_value[22]}}</td><th>추후 추가</th>
       </tr>
       </tbody>
       </table>
@@ -340,10 +344,5 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="today_ant">
-    <h2>test</h2>
-    <p>코스피 코스닥 증감률 / 외국인 개인 기간 투자자 현황판 </p>
   </div>
 {% endblock %}

@@ -1,11 +1,11 @@
 from flask import Flask, render_template
-
+from main_data import main_page_value
 
 app = Flask(__name__)
 
 @app.route('/')
 def main_page():
-    return render_template("main_page.html")
+    return render_template("main_page.html", main_page_value = main_page_value())
 
 @app.route('/korea_stock')
 def korea_stock():

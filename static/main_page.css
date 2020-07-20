@@ -20,12 +20,13 @@ header {
     height: 210px;
     align-items: center; /* 하위 요소들 수직 가운데정렬 */
     position: relative;
-    padding-bottom : 10pt;
+    padding-top : 10pt;
+    padding-bottom : 20pt;
     padding-left : 10pt;
     padding-right : 10pt;
 }
 
-main {
+.main {
     background: #f2f4f7;
     margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
     width: 90%;
