@@ -45,6 +45,7 @@ footer {
     width: 90%;
 }
 
+/* ######################################main_layout###################################### */
 
 /* ######################################헤더 부분###################################### */
 
@@ -303,3 +304,78 @@ li.active a, li.active a:hover {
 .tab.active {
 	display:block;
 }
+
+/* ###################################### korea_stock ###################################### */
+.wrapper {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+}
+
+.item1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.item3 {
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.item4 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+/*
+.korea_container{
+    display: grid;
+    grid-template-columns: 200px 50px 100px;
+    grid-template-rows: 100px 30px;
+}
+
+.container_korea1{
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.container_korea2{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+
+.container_korea3{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.container_korea4{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.container_korea5{
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+
+.container_korea6{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 6;
+    grid-row-end: 7;
+}
+
+.container_korea7{
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 6;
+    grid-row-end: 7;
+}*/
