@@ -1,4 +1,3 @@
-
 * {
     box-sizing: border-box;
 }
@@ -12,6 +11,8 @@ a:hover {
     text-decoration: underline; /* 마우스 커서가 올라갔을 때 밑줄을 생성*/
 }
 
+/* ###################################### header ###################################### */
+
 header {
     background: #BBDEFB;
     margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
@@ -21,34 +22,9 @@ header {
     align-items: center; /* 하위 요소들 수직 가운데정렬 */
     position: relative;
     padding-top : 10pt;
-    padding-bottom : 20pt;
     padding-left : 10pt;
     padding-right : 10pt;
 }
-
-.main {
-    background: #f2f4f7;
-    margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
-    width: 90%;
-    height: 1000px;
-    position: relative;
-    padding-top : 5%;
-    padding-bottom : 5%;
-    padding-left : 10pt;
-    padding-right : 10pt;
-    display: fixed;
-}
-
-footer {
-    background:#f2f2f2;
-    margin : auto;
-    width: 90%;
-}
-
-/* ######################################main_layout###################################### */
-
-/* ######################################헤더 부분###################################### */
-
 
 fieldset {
     border: none; /* 기본 border 없애기 */
@@ -63,28 +39,21 @@ fieldset {
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
 }
-/* 링크 조정 */
+
+/* 링크 부분 */
 
 .links { /*  */
     position: absolute;
     top: 0;
 
 }
-.link_text {
-    text-decoration : none;
-    font-size: 15px;
-    margin-right: 20px;
-}
 
 .links a {
     text-decoration: none;
     cursor: pointer;
   }
-/* 이미지 부분 */
 
-/*에러나서 이미지만 html에 포함*/
-
-/* 검색 박스 부분 */
+/* 검색창 부분 */
 
 .search_box {
     width: 520px;
@@ -96,7 +65,7 @@ fieldset {
 
 .search_box input {
     flex: 8;
-    height: 46px;
+    height: 50;
     padding-left: 12px;
     padding-right: 12px;
     border: none;
@@ -116,20 +85,18 @@ fieldset {
 }
 
 /* 로그인 부분 */
+
 .login {
     width: 200px;
     position: absolute;
-    top : 5%;
-    right : 3%;
+    top: 5px;
+    right: 5px;
     text-align: center;
     border : solid 1px;
     border-color : black;
     border-style : sold;
-    padding-bottom : 7pt;
-    padding-left : 5pt;
-    padding-right : 5pt;
     border-radius : 20px;
-
+    padding-bottom : 15px;
 }
 
 .login input {
@@ -157,7 +124,7 @@ p.register {
     float: left; width: 50%;
 }
 
-/* 하위 탭 부분 */
+/* nav 부분 */
 
 header > nav {
     width: 100%;
@@ -187,75 +154,95 @@ header > nav {
     cursor: pointer;
   }
 
-/* ######################################main 부분###################################### */
+/* ###################################### header ###################################### */
 
+main {
+    background: #FFFFFF;
+    margin: auto; /* header의 양쪽 여백(margin)을 동등하게 맞춤 -> 수평가운데정렬 */
+    width: 90%;
+    height: 100%
+    position: relative;
+    padding-left : 10pt;
+    padding-right : 10pt;
+    display: fixed;
+}
 
+/* ###################################### footer ###################################### */
+
+footer {
+    background:#f2f2f2;
+    margin : auto;
+    width: 90%;
+}
+
+/* ###################################### main_page ###################################### */
 .main_container{
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
 }
 
 .container_main1{
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 4;
+	grid-column: 1 / 3;
+	grid-row: 1;
 }
 
 .container_main2{
-    grid-column-start: 5;
-    grid-column-end: 7;
-    grid-row-start: 2;
-    grid-row-end: 4;
+    grid-column: 3;
+	grid-row: 1;
 }
 
 .container_main3{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 5;
-    grid-row-end: 7;
+	grid-column: 1/ 3;
+	grid-row: 2 / 4;
 }
 
 .container_main4{
-    grid-column-start: 3;
-    grid-column-end: 5;
-    grid-row-start: 5;
-    grid-row-end: 7;
+	grid-column: 3;
+	grid-row: 2 / 4;
 }
 
 .container_main5{
-    grid-column-start: 5;
-    grid-column-end: 7;
-    grid-row-start: 5;
-    grid-row-end: 7;
+	grid-column: 1;
+	grid-row: 4/6;
 }
 
-#today_ant {
-    color: red;
+.container_main6{
+	grid-column: 2;
+	grid-row: 4/6;
 }
 
-/*----- table -----*/
+.container_main7{
+	grid-column: 2;
+	grid-row: 4/6;
+}
+
+.container_main7{
+	grid-column: 3;
+	grid-row: 4/6;
+}
+/* table 속성 */
 
 table {
-    width: 100%;
+    width: 90%;
     border: 1px solid #444444;
     border-collapse: collapse;
-
+    font-size: 8pt;
 }
-th, td {
+table th, td {
     border: 1px solid #444444;
     padding: 10px;
 }
 
-/*----- Tabs -----*/
+/* 탭 table 설정 */
 
 .tabs {
-	width:100%;
-	display:inline-block;
+	width:30%;
+	display:inline;
+	height:auto;
+	margin-right: -4px;
 }
-
-/*----- Tab Links -----*/
-
 .tab-links:after {
     display:block;
     clear:both;
@@ -266,6 +253,7 @@ th, td {
 	margin:0px 3px;
 	float:left;
 	list-style:none;
+	padding:0;
 }
 
 .tab-links a {
@@ -275,21 +263,18 @@ th, td {
 	background:#7FB5DA;
 	font-size:16px;
 	font-weight:600;
-	color:black;
 	transition:all linear 0.15s;
 }
 
 .tab-links a:hover {
-	background:#white;
+	background:#a7cce5;
 	text-decoration:none;
 }
 
 li.active a, li.active a:hover {
-	background:#BBDEFB;
+	background:#black;
 	color:#4c4c4c;
 }
-
-/*----- Content of Tabs -----*/
 
 .tab-content {
 	padding:15px;
@@ -305,77 +290,62 @@ li.active a, li.active a:hover {
 	display:block;
 }
 
+
 /* ###################################### korea_stock ###################################### */
-.wrapper {
+
+.korea_us_container{
     display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+	grid-auto-rows: minmax(100px, auto);
 }
 
-.item1 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-}
-.item3 {
-    grid-row-start: 2;
-    grid-row-end: 4;
-}
-.item4 {
-    grid-column-start: 2;
-    grid-column-end: 4;
-}
-/*
-.korea_container{
-    display: grid;
-    grid-template-columns: 200px 50px 100px;
-    grid-template-rows: 100px 30px;
+.korea_us_container1{
+	grid-column: 1 / 3;
+	grid-row: 1;
 }
 
-.container_korea1{
-    grid-column-start: 1;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 1;
+.korea_us_container2{
+	grid-column: 3;
+	grid-row: 1;
 }
 
-.container_korea2{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 5;
+.korea_us_container3{
+    grid-column: 1;
+    grid-row: 2 / 4;
 }
 
-.container_korea3{
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
+.korea_us_container4{
+    grid-column: 2;
+    grid-row: 2;
 }
 
-.container_korea4{
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 4;
-    grid-row-end: 5;
+.korea_us_container5{
+    grid-column: 2;
+    grid-row: 3;
 }
 
-.container_korea5{
-    grid-column-start: 5;
-    grid-column-end: 6;
-    grid-row-start: 2;
-    grid-row-end: 5;
+.korea_us_container6{
+    grid-column: 3;
+    grid-row: 2;
 }
 
-.container_korea6{
-    grid-column-start: 1;
-    grid-column-end: 3;
-    grid-row-start: 6;
-    grid-row-end: 7;
+.korea_us_container7{
+    grid-column: 3;
+    grid-row: 3;
 }
 
-.container_korea7{
-    grid-column-start: 4;
-    grid-column-end: 6;
-    grid-row-start: 6;
-    grid-row-end: 7;
-}*/
+.korea_us_container8{
+    grid-column: 1;
+    grid-row: 4/6;
+}
+
+.korea_us_container9{
+    grid-column: 2;
+    grid-row: 4/6;
+}
+
+.korea_us_container10{
+    grid-column: 3;
+    grid-row: 4/6;
+}
