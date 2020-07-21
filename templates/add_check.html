@@ -2,8 +2,47 @@
 
 {% block main %}
     <div class="sales_log_container">
-        <div class="sales_log_box a">A</div>
-        <div class="sales_log_box b">B</div>
-        <div class="sales_log_box c">C</div>
-    </div>
+
+        <div class="sales_log_box a">
+            <p>
+                검색 조건을 입력해 주세요.
+            </p>
+            <p>
+                종목 이름:
+                <input type="text" maxlength="225" tabindex="1" value="종목을 검색해 주세요" onclick="this.value='';"/>
+            </p>
+            <p>
+                종목:
+                <input type="checkbox" name="gender" value="Male">전체
+                <input type="checkbox" name="gender" value="Male">한국주식
+                <input type="checkbox" name="gender" value="Female">미국주식(가치)
+                <input type="checkbox" name="gender" value="Others">미국주식(배당)
+                <input type="checkbox" name="gender" value="Others">코인
+            </p>
+            <p>
+                거래유형:
+                <input type="checkbox" name="gender" value="Male">전체
+                <input type="checkbox" name="gender" value="Male">산거
+                <input type="checkbox" name="gender" value="Female">판거
+                <input type="checkbox" name="gender" value="Others">관심
+            </p>
+            <p>
+                기간:
+                <input type="date" value="2020-11-16">~<input type="date" value="2020-11-16">
+            </p>
+            <br>
+                <button type="search_button">검색</button>
+            <br>
+        </div>
+
+        <div class="sales_log_box b">
+            ▽▽거래 리스트▽▽
+            <button type="search_button">등록</button>
+            <button type="search_button">삭제</button>
+            <button type="search_button">수정</button>
+
+        </div>
+
+        <div class="sales_log_box c">거래 리스트 만들기</div>
+
 {% endblock %}
