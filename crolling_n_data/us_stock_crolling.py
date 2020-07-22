@@ -1,37 +1,28 @@
-import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+from crolling_n_data.dividend_list import dividend_list
 
-URL = "https://www.slickcharts.com/sp500"
+error_code = []
+for num,i in enumerate(dividend_list()[100:]):
+    try:
+        print(num,i)
+        URL = "https://finance.yahoo.com/quote/{}?p={}&.tsrc=fin-srch"
+        index = requests.get(URL.format(i,i))
+        html = index.text
+        soup = BeautifulSoup(html, 'html.parser')
+        basic_inf = soup.find('div', id='quote-summary').find('table', class_='W(100%)').text
+        print(basic_inf)
+        detail_inf = soup.find('div', id='quote-summary').find('table', class_="W(100%) M(0) Bdcl(c)").text
+        print(detail_inf)
+    except :
+        error_code.append(i)
 
-index1 = requests.get(URL)
-html = index1.text
-soup = BeautifulSoup(html, 'html.parser')
-test = soup.find('div', class_='table-responsive').text.split('\n')
-
-
-inc_name, inc_code, price, change, change_per = [],[],[],[],[]
-for i in range(15,4507,9):
-    inc_name.append(test[i+1])
-    inc_code.append(test[i+2])
-    price.append(test[i+4])
-    change.append(test[i+5])
-    change_per.append(test[i+6])
-
-movements = []
-for i in change:
-    if float(i)>0:
-        movements.append('상승')
-    elif float(i) == 0:
-        movements.append('보합')
-    else:
-        movements.append('하락')
-
-
-data = [inc_name, inc_code, price, change, change_per, movements]
-
-df = pd.DataFrame(data).T
-df.columns = ['inc_name', 'inc_code', 'price', 'change', 'change_per', 'movements']
-print(df)
-# df.to_csv('s&p500.csv')
-
+#
+# URL = "https://finance.yahoo.com/quote/Kroger?p=Kroger&.tsrc=fin-srch"
+# index = requests.get(URL)
+# html = index.text
+# soup = BeautifulSoup(html, 'html.parser')
+# basic_inf = soup.find('div', id='quote-summary').find('table', class_='W(100%)').text
+# print(basic_inf)
+# detail_inf = soup.find('div', id='quote-summary').find('table', class_="W(100%) M(0) Bdcl(c)").text
+# print(detail_inf)
