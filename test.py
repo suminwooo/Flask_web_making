@@ -1,14 +1,22 @@
 from flask import Flask, render_template
-from main_page_data import main_page_value
+from etc.main_page_data import main_page_value
+from etc.date import time
 
 app = Flask(__name__)
 
 @app.route('/')
 def main_page():
-    return render_template('main_page.html', main_page_value = main_page_value())
+    return render_template('main_page.html', main_page_value = main_page_value(),
+                           current_time = time())
+
+@app.route('/<test>')
+def search_engine_test(test):
+    return render_template('search_detail.html')
+
 @app.route('/korea_stock')
 def korea_stock():
-    return render_template('korea_stock.html')
+    return render_template('korea_stock.html',current_time = time())
+
 
 @app.route('/korea_stock/<kr_stock>')
 def get_kr_stock(kr_stock):
@@ -16,7 +24,7 @@ def get_kr_stock(kr_stock):
 
 @app.route('/us_stock')
 def us_stock():
-    return render_template('us_stock.html')
+    return render_template('us_stock.html',current_time = time())
 
 @app.route('/us_stock/<us_stock>')
 def get_us_stock(us_stock):

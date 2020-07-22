@@ -1,18 +1,63 @@
 {% extends 'base.html' %}
 
 {% block main %}
-    <div class="add_check_container">
-        <div class="add_check_container1">
-            <h1>contents1</h1>
+    <div class="sales_log_container">
+
+        <div class="sales_log_box1">
+            <p>
+                검색 조건을 입력해 주세요.
+            </p>
+            <p>
+                종목 이름:
+                <input type="text" maxlength="225" tabindex="1" value="종목을 검색해 주세요" onclick="this.value='';"/>
+            </p>
+            <p>
+                종목:
+                <input type="checkbox" name="gender" value="Male">전체
+                <input type="checkbox" name="gender" value="Male">한국주식
+                <input type="checkbox" name="gender" value="Female">미국주식(가치)
+                <input type="checkbox" name="gender" value="Others">미국주식(배당)
+                <input type="checkbox" name="gender" value="Others">코인
+            </p>
+            <p>
+                거래유형:
+                <input type="checkbox" name="gender" value="Male">전체
+                <input type="checkbox" name="gender" value="Male">산거
+                <input type="checkbox" name="gender" value="Female">판거
+                <input type="checkbox" name="gender" value="Others">관심
+            </p>
+            <p>
+                기간:
+                <input type="date" value="2020-11-16">~<input type="date" value="2020-11-16">
+                <button type="search_button_sales_log">검색</button>
+            </p>
         </div>
-        <div class="add_check_container2">
-            <h1>contents2</h1>
+
+        <div class="sales_log_box2">
+            ▽▽거래 리스트▽▽
+            <button type="register_button">등록</button>
+            <button type="delete_button">삭제</button>
+            <button type="edit_button">수정</button>
         </div>
-        <div class="add_check_container3">
-            <h1>contents3</h1>
+
+        <div class="sales_log_box3">
+            <h4>거래 리스트 만들기</h4>
+            <table>
+            <thead>
+                <tr><th>#</th><th>이름</th><th>생년월일</th><th>포지션</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>김영광</td><td>1983-06-28</td><td>골키퍼</td></tr>
+                <tr><td>2</td><td>김진현</td><td>1987-07-06</td><td>골키퍼</td></tr>
+                <tr><td>3</td><td>정성룡</td><td>1985-01-04</td><td>골키퍼</td></tr>
+                <tr><td>4</td><td>윤석영</td><td>1990-02-13</td><td>수비수</td></tr>
+                <tr><td>5</td><td>곽태휘</td><td>1981-07-08</td><td>수비수</td></tr>
+                <tr><td>6</td><td>오범석</td><td>1984-07-29</td><td>수비수</td></tr>
+                <tr><td>7</td><td>김기희</td><td>1989-07-13</td><td>수비수</td></tr>
+
+
+            </tbody>
+            </table>
         </div>
-        <div class="add_check_container4">
-            <h1>contents4</h1>
-        </div>
-    </div>
+
 {% endblock %}

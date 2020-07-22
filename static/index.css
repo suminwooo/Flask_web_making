@@ -409,9 +409,26 @@ width: 80px;
 
 .sales_log_container{
     display: grid;
-    height: 100vh;
     grid-gap: 10px;
-    grid-template-rows: 270px 30px 2fr;
+    grid-template-rows: 270px 60px 650px;
+}
+
+.sales_log_box1{
+    border:1px solid;
+    padding:10px;
+    margin:20pt;
+}
+
+.sales_log_box2{
+    width:auto;
+    padding-top:20px;
+    border:1px solid;
+}
+
+.sales_log_box3{
+    border:1px solid;
+    margin:20pt;
+    height:65%;
 }
 
 /* ###################################### add_check ###################################### */
@@ -446,6 +463,26 @@ width: 80px;
 
 .add_check_box {
     background-color: rgb(201, 108, 108);
+}
+#memo-list {
+  border: 2px solid black;
+  list-style-type: none;
+  padding: 0;
+}
+
+.memo-item {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+
+.memo-item.active {
+  border: 2px solid red;
+}
+
+.memo {
+  border: 1px solid black;
+  padding: 10px;
 }
 
 /* ###################################### korea_us_detail ###################################### */
@@ -486,7 +523,3 @@ width: 80px;
     grid-column: 3;
     grid-row: 3;
 }
-
-/* ###################################### search_widget ###################################### */
-
-.search_widget

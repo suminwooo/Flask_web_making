@@ -3,6 +3,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 def main_page_value():
     URL = "https://finance.naver.com/"
 
