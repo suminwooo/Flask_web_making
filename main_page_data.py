@@ -73,14 +73,13 @@ def main_page_value():
     jpy_rate = exchange.find_all('td')[5].text.split(' ')
 
     # 4. WTI
-    market_wti_gold = market_index_information.find_all('tr',class_='down bold')
-    wti = market_wti_gold[2].text.split('\n')[2:4][0]
-    wti_rate = market_wti_gold[2].text.split('\n')[2:4][1].split(' ')
+    wti = market_index_information.text.split('\n')[164]
+    wti_rate = market_index_information.text.split('\n')[165].split(' ')
 
 
     # 5. 달러인덱스
-    dollor_index = market_wti_gold[1].text.split('\n')[2:4][0]
-    dollor_index_rate = market_wti_gold[1].text.split('\n')[2:4][1].split(' ')
+    dollor_index = market_index_information.text.split('\n')[84]
+    dollor_index_rate = market_index_information.text.split('\n')[85].split(' ')
 
 
 
