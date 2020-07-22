@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from etc.main_page_data import main_page_value
 from etc.date import time
 
@@ -9,18 +9,17 @@ def main_page():
     return render_template('main_page.html', main_page_value = main_page_value(),
                            current_time = time())
 
-@app.route('/<test>')
-def search_engine_test(test):
-    return render_template('search_detail.html')
-
 @app.route('/korea_stock')
 def korea_stock():
     return render_template('korea_stock.html',current_time = time())
 
+@app.route('/search_detail',methods=['POST'])
+def get_kr_stock():
+    value = request.form['input']
+    msg = '{}'.format(value)
+    return render_template('search_detail.html', massage = msg,
+                           main_page_value = main_page_value(),)
 
-@app.route('/korea_stock/<kr_stock>')
-def get_kr_stock(kr_stock):
-    return 'profile : '+kr_stock
 
 @app.route('/us_stock')
 def us_stock():

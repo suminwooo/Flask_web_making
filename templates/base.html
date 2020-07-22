@@ -12,18 +12,16 @@
     <a href="{{url_for('main_page')}}"><img src="{{url_for('static', filename='image/test.png')}}" width="200"
     height = "100" ></a>
 
-    <form>
+
       <fieldset>
-        <legend class="visually-hidden"> 종목 검색란 </legend>
-        <div class="search_box" >
-          <input type="text" maxlength="225" tabindex="1" value="종목을 검색해 주세요"
-                 onclick="this.value='';"/>
-          <button type="submit" tabindex="2">
-            검색 <!--검색 누르는 버튼-->
-          </button>
-        </div>
+        <form action="/search_detail" method="post">
+          <legend class="visually-hidden"> 종목 검색란 </legend>
+          <div class="search_box" >
+            <input type="text" id="input" name="input" maxlength="225" value="종목을 입력해 주세요" onclick="this.value='';"/>
+            <button type="submit" value="input">검색</button>
+          </div>
+        </form>
       </fieldset>
-    </form>
 
   <div class="login">
     <h3> Member Login </h3>
