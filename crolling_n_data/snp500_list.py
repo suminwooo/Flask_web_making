@@ -33,5 +33,5 @@ data = [inc_name, inc_code, price, change, change_per, movements]
 df = pd.DataFrame(data).T
 df.columns = ['inc_name', 'inc_code', 'price', 'change', 'change_per', 'movements']
 print(df)
-df.to_csv('s&p500.csv')
+# df.to_csv('s&p500.csv')
 
