@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from crolling_n_data.dividend_list import dividend_list
 
 error_code = []
-for num,i in enumerate(dividend_list()[100:]):
+for num,i in enumerate(dividend_list()):
     try:
         print(num,i)
         URL = "https://finance.yahoo.com/quote/{}?p={}&.tsrc=fin-srch"
