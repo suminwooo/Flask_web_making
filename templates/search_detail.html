@@ -4,15 +4,31 @@
 
     <div class="search_container">
         <div class="search_container1">
-            <h4>어디갓어{{massage}}</h4>
+            <h4>검색어 : {{massage}} <- 검색창 연동 test용</h4>
             <p>코스피 => 개미현황 : {{main_page_value[3]}}, 외국인 투자자 : {{main_page_value[4]}}, 기관 투자자 : {{main_page_value[5]}}</p>
             <p>코스닥 => 개미현황 : {{main_page_value[9]}}, 외국인 투자자 : {{main_page_value[10]}}, 기관 투자자 : {{main_page_value[11]}}</p>
         </div>
-        <div class="search_container2">CONTENTS2</div>
-        <div class="search_container3">CONTENTS3</div>
-        <div class="search_container4">CONTENTS4</div>
-        <div class="search_container5">CONTENTS5</div>
-        <div class="search_container6">CONTENTS6</div>
+        <div class="search_container2">
+            <h4>Chart</h4>
+            <iframe src="https://ssltvc.forexprostools.com/?pair_ID=650&height=480&width=650&interval=300&plotStyle=candles&domain_ID=18&lang_ID=18&timezone_ID=26"></iframe>
+        </div>
+        <div class="search_container3">
+            <h4>기본 정보(가격&거래량)</h4>
+        </div>
+        <div class="search_container4">
+            <h4>회사 정보</h4>
+        </div>
+        <div class="search_container5">
+            <h4>재무 정보</h4>
+        </div>
+        <div class="search_container6">
+            <h4>메모란</h4>
+            <div class="memo">
+                <input type="text" name="memo" placeholder="메모 내용" required />
+                <button type="button">추가</button>
+                <button type="button">수정</button>
+            </div>
+        </div>
     </div>
 {% endblock %}
 

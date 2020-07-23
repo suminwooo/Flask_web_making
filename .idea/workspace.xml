@@ -19,15 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="20200722 1400">
-      <change afterPath="$PROJECT_DIR$/crolling_n_data/google_us_stock_crolling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Flask_web_making.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crolling_n_data/us_stock_crolling.py" beforeDir="false" afterPath="$PROJECT_DIR$/crolling_n_data/us_stock_crolling.py" afterDir="false" />
+    <list default="true" id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="20200723">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,12 +53,12 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making\templates" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making\templates" />
       <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making\templates" />
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
@@ -242,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595395426110</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="20200723">
+      <created>1595473920782</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1595473920782</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -264,25 +266,26 @@
     <MESSAGE value="20200721" />
     <MESSAGE value="20200722 1100" />
     <MESSAGE value="20200722 1400" />
-    <option name="LAST_COMMIT_MESSAGE" value="20200722 1400" />
+    <MESSAGE value="20200723" />
+    <option name="LAST_COMMIT_MESSAGE" value="20200723" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1256" height="348" key="GridCell.Tab.0.bottom" timestamp="1595473886803">
+    <state width="1256" height="19" key="GridCell.Tab.0.bottom" timestamp="1595476748805">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1256" height="348" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1595473886803" />
-    <state width="1256" height="348" key="GridCell.Tab.0.center" timestamp="1595473886803">
+    <state width="1256" height="19" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1595476748805" />
+    <state width="1256" height="19" key="GridCell.Tab.0.center" timestamp="1595476748805">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1256" height="348" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1595473886803" />
-    <state width="1256" height="348" key="GridCell.Tab.0.left" timestamp="1595473886803">
+    <state width="1256" height="19" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1595476748805" />
+    <state width="1256" height="19" key="GridCell.Tab.0.left" timestamp="1595476748805">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1256" height="348" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1595473886803" />
-    <state width="1256" height="348" key="GridCell.Tab.0.right" timestamp="1595473886803">
+    <state width="1256" height="19" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1595476748805" />
+    <state width="1256" height="19" key="GridCell.Tab.0.right" timestamp="1595476748805">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1256" height="348" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1595473886803" />
+    <state width="1256" height="19" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1595476748805" />
     <state width="1256" height="347" key="GridCell.Tab.1.bottom" timestamp="1595308892780">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
