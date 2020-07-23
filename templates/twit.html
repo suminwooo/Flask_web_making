@@ -1,7 +1,49 @@
 {% extends 'base.html' %}
 
 {% block main %}
-  <div class="main">
-      <p>게시판</p>
-  </div>
+    <div class="main">
+        <p>게시판</p>
+        <table class="table table-bordered">
+            <thread>
+            <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>날짜</th>
+            <th>조회수</th>
+            </tr>
+            </thread>
+                <tbody>
+                <tr>
+            <td>165</td>
+            <td>존나 할거많네</td>
+            <td>어휴 언제 다만들지</td>
+            <td>오늘 날짜?</td>
+            <td>ㅋ</td>
+            </tr>
+                <tr>
+            <td>165</td>
+            <td>존나 할거많네</td>
+            <td>어휴 언제 다만들지</td>
+            <td>오늘 날짜?</td>
+            <td>ㅋ</td>
+            </tr>
+            </tbody>
+            </thread>
+        </table>
+        <hr/>
+        <button>글쓰기</button>
+        <button>수정</button>
+        <button>삭제</button>
+        <div class="nav_items">
+            <ul class="pagination">
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+            </ul>
+        </div>
+    </div>
 {% endblock %}
