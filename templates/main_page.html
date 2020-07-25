@@ -5,8 +5,14 @@
 
     <div class="container_main1">
       <h3>코스피/코스닥 현황</h3>
-      <p>개미현황 : {{main_page_value[36]}}, 외국인 투자자 : {{main_page_value[37]}}, 기관 투자자 : {{main_page_value[38]}}</p>
-      <p>개미현황 : {{main_page_value[39]}}, 외국인 투자자 : {{main_page_value[40]}}, 기관 투자자 : {{main_page_value[41]}}</p>
+      <p>개미현황 : {{main_page_value['kospi_individual']}},
+        외국인 투자자 : {{main_page_value['kospi_foreigner']}},
+        기관 투자자 : {{main_page_value['kospi_Institutional']}}
+      </p>
+      <p>개미현황 : {{main_page_value['kosdaq_individual']}},
+        외국인 투자자 : {{main_page_value['koadaq_foreigner']}},
+        기관 투자자 : {{main_page_value['kosdaq_Institutional']}}
+      </p>
     </div>
 
     <div class="container_main2">
@@ -26,22 +32,40 @@
         </thead>
         <tbody>
           <tr>
-            <td>코스피</td><td>{{main_page_value[0]}}</td><td>{{main_page_value[1]}}</td><th>{{main_page_value[2]}}</th>
+            <td>코스피</td>
+            <td>{{main_page_value['kospi_close']}}</td>
+            <td>{{main_page_value['kospi_close_diff']}}</td>
+            <th>{{main_page_value['kospi_close_rate']}}</th>
           </tr>
           <tr>
-            <td>코스닥</td><td>{{main_page_value[3]}}</td><td>{{main_page_value[4]}}</td><th>{{main_page_value[5]}}</th>
+            <td>코스닥</td>
+            <td>{{main_page_value['kosdaq_close']}}</td>
+            <td>{{main_page_value['kosdaq_close_diff']}}</td>
+            <th>{{main_page_value['kosdaq_close_rate']}}</th>
           </tr>
           <tr>
-            <td>나스닥</td><td>{{main_page_value[6]}}</td><td>{{main_page_value[7]}}</td><th>{{main_page_value[8]}}</th>
+            <td>나스닥</td>
+            <td>{{main_page_value['nasdaq_close']}}</td>
+            <td>{{main_page_value['nasdaq_close_diff']}}</td>
+            <th>{{main_page_value['nasdaq_close_rate']}}</th>
           </tr>
           <tr>
-            <td>나스닥100</td><td>{{main_page_value[9]}}</td><td>{{main_page_value[10]}}</td><th>{{main_page_value[11]}}</th>
+            <td>나스닥100</td>
+            <td>{{main_page_value['nasdaq100_close']}}</td>
+            <td>{{main_page_value['nasdaq100_close_diff']}}</td>
+            <th>{{main_page_value['nasdaq100_close_rate']}}</th>
           </tr>
           <tr>
-            <td>다우산업</td><td>{{main_page_value[12]}}</td><td>{{main_page_value[13]}}</td><th>{{main_page_value[14]}}</th>
+            <td>다우산업</td>
+            <td>{{main_page_value['dow_close']}}</td>
+            <td>{{main_page_value['dow_close_diff']}}</td>
+            <th>{{main_page_value['dow_close_rate']}}</th>
           </tr>
           <tr>
-            <td>S&P500</td><td>{{main_page_value[15]}}</td><td>{{main_page_value[16]}}</td><th>{{main_page_value[17]}}</th>
+            <td>S&P500</td>
+            <td>{{main_page_value['snp500_close']}}</td>
+            <td>{{main_page_value['snp500_close_diff']}}</td>
+            <th>{{main_page_value['snp500_close_rate']}}</th>
           </tr>
         </tbody>
       </table>
@@ -57,22 +81,40 @@
       </thead>
       <tbody>
         <tr>
-         <td>달러</td><td>{{main_page_value[18]}}</td><td>{{main_page_value[19]}}</td><th>{{main_page_value[20]}}</th>
+         <td>달러</td>
+          <td>{{main_page_value['usd_close']}}</td>
+          <td>{{main_page_value['usd_close_diff']}}</td>
+          <th>{{main_page_value['usd_close_rate']}}</th>
         </tr>
         <tr>
-          <td>유로</td><td>{{main_page_value[21]}}</td><td>{{main_page_value[22]}}</td><th>{{main_page_value[23]}}</th>
+          <td>유로</td>
+          <td>{{main_page_value['eur_close']}}</td>
+          <td>{{main_page_value['eur_close_diff']}}</td>
+          <th>{{main_page_value['eur_close_rate']}}</th>
         </tr>
         <tr>
-         <td>엔화</td><td>{{main_page_value[24]}}</td><td>{{main_page_value[25]}}</td><th>{{main_page_value[26]}}</th>
+         <td>엔화</td>
+          <td>{{main_page_value['jpy_close']}}</td>
+          <td>{{main_page_value['jpy_close_diff']}}</td>
+          <th>{{main_page_value['jpy_close_rate']}}</th>
         </tr>
         <tr>
-          <td>달러인덱스</td><td>{{main_page_value[27]}}</td><td>{{main_page_value[28]}}</td><th>{{main_page_value[29]}}</th>
+          <td>달러인덱스</td>
+          <td>{{main_page_value['dollorindex_close']}}</td>
+          <td>{{main_page_value['dollorindex_close_diff']}}</td>
+          <th>{{main_page_value['dollorindex_close_rate']}}</th>
         </tr>
         <tr>
-          <td>금</td><td>{{main_page_value[30]}}</td><td>{{main_page_value[31]}}</td><th>{{main_page_value[32]}}</th>
+          <td>금</td>
+          <td>{{main_page_value['gold_close']}}</td>
+          <td>{{main_page_value['gold_close_diff']}}</td>
+          <th>{{main_page_value['gold_close_rate']}}</th>
         </tr>
         <tr>
-          <td>WTI</td><td>{{main_page_value[33]}}</td><td>{{main_page_value[34]}}</td><th>{{main_page_value[35]}}</th>
+          <td>WTI</td>
+          <td>{{main_page_value['wti_close']}}</td>
+          <td>{{main_page_value['wti_close_diff']}}</td>
+          <th>{{main_page_value['wti_close_rate']}}</th>
         </tr>
       </tbody>
       </table>

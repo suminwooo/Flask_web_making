@@ -1,24 +1,26 @@
 from flask import Flask, render_template, request
 from crolling_n_data.main_page_data import main_page_data
 from etc.date import time
+from DB.db_test import main_page_data, korea_code_data
+
 
 app = Flask(__name__)
 
 @app.route('/')
 def main_page():
-    return render_template('main_page.html', main_page_value = main_page_data().final_value(),
+    return render_template('main_page.html', main_page_value = main_page_data('2020-07-24'),
                            current_time = time())
 
 @app.route('/korea_stock')
 def korea_stock():
-    return render_template('korea_stock.html',current_time = time())
+    return render_template('korea_stock.html', main_page_value = main_page_data('2020-07-24'),
+                           current_time = time(), korea_code_list = korea_code_data())
 
 @app.route('/search_detail',methods=['POST'])
 def get_kr_stock():
     value = request.form['input']
     msg = '{}'.format(value)
-    return render_template('search_detail.html', massage = msg,
-                           main_page_value = main_page_data().final_value(),)
+    return render_template('search_detail.html', massage = msg)
 
 
 @app.route('/us_stock')
