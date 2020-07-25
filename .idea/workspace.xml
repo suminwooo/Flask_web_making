@@ -21,6 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="20200723 1300">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crolling_n_data/dividend_list.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crolling_n_data/dividend_list.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crolling_n_data/google_us_stock_crolling.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crolling_n_data/kospi_code.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crolling_n_data/snp500_list.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crolling_n_data/us_stock_crolling.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crolling_n_data/us_stock_dividend.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +56,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -60,27 +68,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
-    <configuration name="dividend_list (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Flask_web_making" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crolling_n_data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/dividend_list.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="google_us_stock_crolling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -171,7 +158,6 @@
         <item itemvalue="Python.main_page_data" />
         <item itemvalue="Python.google_us_stock_crolling" />
         <item itemvalue="Python.us_stock_crolling" />
-        <item itemvalue="Python.dividend_list (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -308,6 +294,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1256" height="347" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1595308892780" />
+    <state x="1421" y="344" key="SettingsEditor" timestamp="1595652754574">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1421" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1595652754574" />
     <state x="1512" y="253" key="Vcs.Push.Dialog.v2" timestamp="1595400548646">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
