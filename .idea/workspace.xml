@@ -19,12 +19,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="20200723 1300">
+    <list default="true" id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="20200723 1400">
+      <change afterPath="$PROJECT_DIR$/crolling_n_data/main_page_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crolling_n_data/us_stock.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crolling_n_data/us_stock_crolling1.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crolling_n_data/us_stock_crolling2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crolling_n_data/us_stock_div.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_page_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,15 +56,37 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making\templates" />
-      <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making\templates" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\crolling_n_data" />
+      <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making\templates" />
+      <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.korea_stock_detail">
+  <component name="RunManager" selected="Python.test">
+    <configuration name="crolling_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Flask_web_making" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="google_us_stock_crolling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -119,7 +141,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_page_data.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\wsm26\Desktop\Flask_web_making\crolling_n_data\main_page_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -149,34 +171,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="us_stock_crolling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Flask_web_making" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crolling_n_data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/us_stock_crolling.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.korea_stock_detail" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.crolling_test" />
+        <item itemvalue="Python.korea_stock_detail" />
         <item itemvalue="Python.main_page_data" />
         <item itemvalue="Python.google_us_stock_crolling" />
-        <item itemvalue="Python.us_stock_crolling" />
       </list>
     </recent_temporary>
   </component>
@@ -268,7 +269,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595652797324</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="20200723 1400">
+      <created>1595654689226</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1595654689226</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -292,29 +300,38 @@
     <MESSAGE value="20200722 1400" />
     <MESSAGE value="20200723" />
     <MESSAGE value="20200723 1300" />
-    <option name="LAST_COMMIT_MESSAGE" value="20200723 1300" />
+    <MESSAGE value="20200723 1400" />
+    <option name="LAST_COMMIT_MESSAGE" value="20200723 1400" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1256" height="408" key="GridCell.Tab.0.bottom" timestamp="1595653664918">
+    <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595661755630">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595661755630" />
+    <state width="1256" height="575" key="GridCell.Tab.0.bottom" timestamp="1595662197249">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1256" height="19" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="408" key="GridCell.Tab.0.center" timestamp="1595653664918">
+    <state width="1256" height="575" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595662197249" />
+    <state width="1256" height="575" key="GridCell.Tab.0.center" timestamp="1595662197249">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1256" height="19" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="408" key="GridCell.Tab.0.left" timestamp="1595653664918">
+    <state width="1256" height="575" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595662197249" />
+    <state width="1256" height="575" key="GridCell.Tab.0.left" timestamp="1595662197249">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1256" height="19" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="408" key="GridCell.Tab.0.right" timestamp="1595653664918">
+    <state width="1256" height="575" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595662197249" />
+    <state width="1256" height="575" key="GridCell.Tab.0.right" timestamp="1595662197249">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1256" height="19" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
+    <state width="1256" height="575" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595662197249" />
     <state width="1256" height="347" key="GridCell.Tab.1.bottom" timestamp="1595308892780">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>

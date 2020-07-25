@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request
-from etc.main_page_data import main_page_value
+from crolling_n_data.main_page_data import main_page_data
 from etc.date import time
 
 app = Flask(__name__)
 
 @app.route('/')
 def main_page():
-    return render_template('main_page.html', main_page_value = main_page_value(),
+    return render_template('main_page.html', main_page_value = main_page_data().final_value(),
                            current_time = time())
 
 @app.route('/korea_stock')
@@ -18,7 +18,7 @@ def get_kr_stock():
     value = request.form['input']
     msg = '{}'.format(value)
     return render_template('search_detail.html', massage = msg,
-                           main_page_value = main_page_value(),)
+                           main_page_value = main_page_data().final_value(),)
 
 
 @app.route('/us_stock')
