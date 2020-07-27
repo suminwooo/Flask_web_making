@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+from etc.date import date_num
 
 class main_page_data:
 
@@ -141,6 +142,6 @@ class main_page_data:
             main_value[3], main_value[4], main_value[5],
             main_value[9], main_value[10], main_value[11]]
 
-        return final_list
-
-
+        today_date = date_num()
+        data = [today_date] + final_list
+        return data

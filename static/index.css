@@ -232,17 +232,44 @@ footer {
 /* table 속성 */
 
 table {
-    width: 90%;
+    width: 80%;
     border: 1px solid #444444;
-    border-collapse: collapse;
-    font-size: 8pt;
+    font-size: 9pt;
 }
 table th, td {
     border: 1px solid #444444;
-    padding: 10px;
+    padding: 12px;
 }
 
 /* 탭 table 설정 */
+
+input {
+    display:none;
+}
+
+label {
+    display:inline-block;
+    border:1px solid transparent;
+}
+
+label:hover {
+    color:#2e9cdf;
+    cursor:pointer;
+}
+
+input:checked + label{
+    color:#555;
+    border:1px solid #ddd;
+    border-top:2px solid #2e9cdf;
+}
+
+.tab1:checked ~ #content1
+.tab2:checked ~ #content2
+.tab3:checked ~ #content3
+.tab4:checked ~ #content4{
+    display:block;
+}
+
 
 .tabs {
 	width:30%;
@@ -426,9 +453,13 @@ width: 80px;
 }
 
 .sales_log_box3{
+    display: block;
     border:1px solid;
     margin:20pt;
     height:65%;
+    border-collapse: collapse;
+        overflow: auto;
+
 }
 
 /* ###################################### add_check ###################################### */
@@ -538,4 +569,4 @@ width: 80px;
 iframe {
     height:85%;
     width:100%;
-}
+sales_log_box3}

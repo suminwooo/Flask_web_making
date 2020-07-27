@@ -5,14 +5,27 @@
 
     <div class="container_main1">
       <h3>코스피/코스닥 현황</h3>
-      <p>개미현황 : {{main_page_value['kospi_individual']}},
-        외국인 투자자 : {{main_page_value['kospi_foreigner']}},
-        기관 투자자 : {{main_page_value['kospi_Institutional']}}
-      </p>
-      <p>개미현황 : {{main_page_value['kosdaq_individual']}},
-        외국인 투자자 : {{main_page_value['koadaq_foreigner']}},
-        기관 투자자 : {{main_page_value['kosdaq_Institutional']}}
-      </p>
+      <table>
+        <thead>
+          <tr>
+            <th></th><th>개인</th><th>외국인</th><th>기관</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>코스피</td>
+            <td>{{main_page_value['kospi_individual']}}</td>
+            <td>{{main_page_value['kospi_foreigner']}}</td>
+            <th>{{main_page_value['kospi_Institutional']}}</th>
+          </tr>
+          <tr>
+            <td>코스닥</td>
+            <td>{{main_page_value['kosdaq_individual']}}</td>
+            <td>{{main_page_value['kosdaq_foreigner']}}</td>
+            <th>{{main_page_value['kosdaq_Institutional']}}</th>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="container_main2">
@@ -122,93 +135,33 @@
 
     <div class="container_main5">
     <h3>보유중</h3>
-      <div class="tabs">
-        <ul class="tab-links">
-          <li class="active"><a href="#tab1">한국 주식</a></li>
-          <li><a href="#tab2">미국 주식</a></li>
-          <li><a href="#tab3">코인</a></li>
-        </ul>
-      <div class="tab-content">
-        <div id="tab1" class="tab active">
-          <table>
-          <thead>
-            <tr>
-             <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-          </table>
-        </div>
-        <div id="tab2" class="tab">
-        <table>
-          <thead>
-            <tr>
-             <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-             <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-        <div id="tab3" class="tab">
-        <table>
-        <thead>
-          <tr>
-            <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-          </tr>
-        </thead>
-          <tbody>
-            <tr>
-             <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      </div>
-      </div>
+<input id="tab1" type="radio" name="tabs" checked>
+<label for="tab1">tab menu1</label>
+
+<input id="tab2" type="radio" name="tabs">
+<label for="tab2">tab menu2</label>
+
+<input id="tab3" type="radio" name="tabs">
+<label for="tab3">tab menu3</label>
+
+<input id="tab4" type="radio" name="tabs">
+<label for="tab4">tab menu3</label>
+
+<section id="content1">
+<p>tabl menu1의 내용</p>
+</section>
+
+<section id="content2">
+<p>tabl menu2의 내용</p>
+</section>
+
+<section id="content3">
+<p>tabl menu3의 내용</p>
+</section>
+
+<section id="content4">
+<p>tabl menu4의 내용</p>
+</section>
     </div>
 
     <div class="container_main6">

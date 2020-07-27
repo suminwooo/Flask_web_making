@@ -5,8 +5,15 @@
     <div class="search_container">
         <div class="search_container1">
             <h4>검색어 : {{massage}} <- 검색창 연동 test용</h4>
-            <p>코스피 => 개미현황 : {{main_page_value[3]}}, 외국인 투자자 : {{main_page_value[4]}}, 기관 투자자 : {{main_page_value[5]}}</p>
-            <p>코스닥 => 개미현황 : {{main_page_value[9]}}, 외국인 투자자 : {{main_page_value[10]}}, 기관 투자자 : {{main_page_value[11]}}</p>
+        <p>개미현황 : {{main_page_value['kospi_individual']}},
+        외국인 투자자 : {{main_page_value['kospi_foreigner']}},
+        기관 투자자 : {{main_page_value['kospi_Institutional']}}
+      </p>
+      <p>개미현황 : {{main_page_value['kosdaq_individual']}},
+        외국인 투자자 : {{main_page_value['koadaq_foreigner']}},
+        기관 투자자 : {{main_page_value['kosdaq_Institutional']}}
+      </p>
+
         </div>
         <div class="search_container2">
             <h4>Chart</h4>

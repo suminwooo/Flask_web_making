@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import re
 
 import pandas as pd
 data = pd.read_csv('raw_data/kospi_code.csv')
