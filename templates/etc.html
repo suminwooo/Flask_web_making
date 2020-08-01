@@ -3,5 +3,74 @@
 {% block main %}
   <div class="main">
       <p>기타</p>
+      <div class="item-list"></div>
+       <table>
+        <thead>
+          <tr>
+              <th>코드명</th>
+              <th>회사명</th>
+              <th>xxxx</th>
+              <th>yyyyy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th></th>
+          </tr>
+
+        </tbody>
+      </table>
+      <script type="rv-template" id="itemList">
+
+          <tr>
+            <td>{{[0]}}</td>
+            <td>{{code_name}}</td>
+            <td>{{ind_code}}</td>
+            <td>{{ind}}</td>
+          </tr>
+        </script>
+      <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+      <script>
+        var item = document.querySelector("#itemList").innerText;
+		var bindTemplate = Handlebars.compile(item)
+		var itemListEl = document.querySelector('.item-list');
+
+         window.addEventListener('DOMContentLoaded', (event) => {
+
+        var req = new XMLHttpRequest();
+        req.responseType = 'json';
+        req.open('GET', '/test', true);
+        req.onload  = function() {
+           var jsonResponse = req.response;
+           // do something with jsonResponse
+           var res = jsonResponse.scores;
+           //console.log(Object.keys(res))
+           //console.log(Object.values(res))
+
+           let innerHtml = "";
+     		let array = res;
+     	    for (let i = 0; i < array.length; i++) {
+     	        innerHtml += array[0]
+     	        console.log(array[0])
+
+     	    }
+     		itemListEl.insertAdjacentHTML('beforebegin', innerHtml)
+
+
+
+
+        };
+        req.send(null);
+
+
+   		})
+      </script>
+
+
+
   </div>
 {% endblock %}

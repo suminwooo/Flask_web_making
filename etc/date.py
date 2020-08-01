@@ -12,7 +12,13 @@ def date():
 
 def date_num():
     if now.month in ['10','11','12']:
-        date = "%s-%s-%s" % (now.year, now.month, now.day)
+        if len(str(now.day)) == 1:
+            date = "%s-%s-0%s" % (now.year, now.month, now.day)
+        else:
+            date = "%s-%s-%s" % (now.year, now.month, now.day)
     else:
-        date = "%s-0%s-%s" %(now.year, now.month, now.day)
+        if len(str(now.day)) == 1:
+            date = "%s-0%s-0%s" % (now.year, now.month, now.day)
+        else:
+            date = "%s-0%s-%s" %(now.year, now.month, now.day)
     return date

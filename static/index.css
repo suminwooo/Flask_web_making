@@ -241,43 +241,6 @@ table th, td {
     padding: 12px;
 }
 
-/* 탭 table 설정 */
-
-button {
-  background:none;
-  border:0;
-  outline:0;
-  cursor:pointer;
-}
-.tab_menu_container {
-  display:flex;
-}
-.tab_menu_btn {
-  width:80px;
-  height:40px;
-  transition:0.3s all;
-}
-.tab_menu_btn.on {
-  border-bottom:2px solid #df0000;
-  font-weight:700;
-  color:#df0000;
-}
-.tab_menu_btn:hover {
-  color:#df0000;
-}
-.tab_box {
-  display:none;
-  padding:20px;
-}
-.tab_box.on {
-  display:block;
-}
-
-/*
-input {
-    display:none;
-}
-*/
 label {
     display:inline-block;
     border:1px solid transparent;
@@ -293,6 +256,41 @@ input:checked + label{
     border:1px solid #ddd;
     border-top:2px solid #2e9cdf;
 }
+
+/* 탭 부분 */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+/* Style the buttons inside the tab */
+
+.tab a {
+    background-color: inherit;
+    float: left;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+/* Change background color of buttons on hover */
+
+.tab a:hover {
+    background-color: #ddd;
+}
+/* Create an active/current tablink class */
+
+.tab a.active {
+    background-color: #ccc;
+}
+/* Style the tab content */
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
 
 
 /* ###################################### korea_stock ###################################### */

@@ -2,8 +2,11 @@ from flask import Flask, render_template, request
 from crolling_n_data.main_page_data import main_page_data
 from etc.date import time
 from DB.db_test import main_page_data, korea_code_data
+from flask_restful import Resource, Api
 
 app = Flask(__name__)
+api = Api(app)
+app.config['JSON_AS_ASCII'] = False
 
 @app.route('/')
 def main_page():
@@ -30,6 +33,28 @@ def us_stock():
 def get_us_stock(us_stock):
     return 'profile : ' + us_stock
 
+###################################################################
+
+# API 페이지
+from data_api import test
+from flask import jsonify
+
+class RegisterUser(Resource):
+    def get(self):
+        test_data = test().test()
+        message = {
+            'status': 200,
+            'message': 'OK',
+            'scores': test_data
+        }
+        resp = jsonify(message)
+        resp.status_code = 200
+        print(resp)
+        return resp
+
+api.add_resource(RegisterUser, '/test')
+
+###################################################################
 @app.route('/coin')
 def coin():
     return render_template('coin.html')
