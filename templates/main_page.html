@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block main %}
+<script type=text/javascript src="{{
+  url_for('static', filename='jquery.js') }}"></script>
+
   <div class="main_container">
 
     <div class="container_main1">
@@ -164,189 +167,41 @@
 </section>
     </div>
 
-    <div class="container_main6">
-
-    <h3>보유중</h3>
-      <div class="tabs">
-        <ul class="tab-links">
-          <li class="active"><a href="#tab1">한국 주식</a></li>
-          <li><a href="#tab2">미국 주식</a></li>
-          <li><a href="#tab3">코인</a></li>
-        </ul>
-      <div class="tab-content">
-        <div id="tab1" class="tab active">
-          <table>
-          <thead>
-            <tr>
-             <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-          </table>
-        </div>
-        <div id="tab2" class="tab">
-        <table>
-          <thead>
-            <tr>
-             <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-             <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-        <div id="tab3" class="tab">
-        <table>
-        <thead>
-          <tr>
-            <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-          </tr>
-        </thead>
-          <tbody>
-            <tr>
-             <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      </div>
-      </div>
-    </div>
-
+    <div class="container_main6"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
+<<script type=text/javascript>
+        $('.tab_menu_btn').on('click',function(){
+        $('.tab_menu_btn').removeClass('on');
+        var idx = $('.tab_menu_btn').index(this);
+        $('.tab_box').hide();
+        $('.tab_box').eq(idx).show();
+        });
+      </script>
     <div class="container_main7">
 
-    <h3>보유중</h3>
-      <div class="tabs">
-        <ul class="tab-links">
-          <li class="active"><a href="#tab1">한국 주식</a></li>
-          <li><a href="#tab2">미국 주식</a></li>
-          <li><a href="#tab3">코인</a></li>
-        </ul>
-      <div class="tab-content">
-        <div id="tab1" class="tab active">
-          <table>
-          <thead>
-            <tr>
-             <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-          </table>
-        </div>
-        <div id="tab2" class="tab">
-        <table>
-          <thead>
-            <tr>
-             <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-             <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-        <div id="tab3" class="tab">
-        <table>
-        <thead>
-          <tr>
-            <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-          </tr>
-        </thead>
-          <tbody>
-            <tr>
-             <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-            <tr>
-              <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      </div>
-      </div>
-    </div>
+<div class="tab_wrap">
+  <div class="tab_menu_container">
+    <button class="tab_menu_btn on" type="button">채치수</button>
+    <button class="tab_menu_btn" type="button">강백호</button>
+    <button class="tab_menu_btn" type="button">서태웅</button>
+    <button class="tab_menu_btn" type="button">송태섭</button>
+    <button class="tab_menu_btn" type="button">정대만</button>
+    <button class="tab_menu_btn" type="button">권준호</button>
+    <button class="tab_menu_btn" type="button">양호열</button>
+  </div> <!-- tab_menu_container e -->
+
+  <div class="tab_box_container">
+    <div class="tab_box on">고릴라 주장</div>
+    <div class="tab_box">빨간 원숭이</div>
+    <div class="tab_box">농구천재</div>
+    <div class="tab_box">북산의 돌격대장</div>
+    <div class="tab_box">돌아온 풍운아</div>
+    <div class="tab_box">식스맨</div>
+    <div class="tab_box">사실 작중 제일 멋쟁이</div>
+  </div> <!-- tab_box_container e -->
+</div> <!-- tab_wrap e -->
+
 
   </div>
+     </div>
 {% endblock %}
