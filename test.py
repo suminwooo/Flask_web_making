@@ -22,16 +22,15 @@ def korea_stock():
 def search_stock():
     value = request.form['input']
     msg = '{}'.format(value)
-    return render_template('search_detail.html', main_page_value = main_page_data('2020-07-27'))
+    return render_template('search_detail.html', seaching_value = msg,
+                           main_page_value = main_page_data('2020-07-27'))
 
 
 @app.route('/us_stock')
 def us_stock():
-    return render_template('us_stock.html',current_time = time())
+    return render_template('us_stock.html',current_time = time(),
+                           main_page_value = main_page_data('2020-07-27'))
 
-@app.route('/us_stock/<us_stock>')
-def get_us_stock(us_stock):
-    return 'profile : ' + us_stock
 
 ###################################################################
 
