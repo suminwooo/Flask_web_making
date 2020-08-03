@@ -20,14 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="20200801 2300">
+      <change afterPath="$PROJECT_DIR$/crolling_n_data/raw_data/us_stock_list.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/db_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB/db_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/to_db_from_python.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB/to_db_from_python.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crolling_n_data/korea_stock_detail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crolling_n_data/main_page_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/crolling_n_data/main_page_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crolling_n_data/us_stock_detail.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crolling_n_data/us_stock_value_list.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add_check.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_check.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/korea_stock.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/korea_stock.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/search_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/us_stock.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/us_stock.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,8 +63,8 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\wsm26\Desktop\Flask_web_making\crolling_n_data\raw_data" />
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\DB" />
       <recent name="C:\Users\wsm26\Desktop\Flask_web_making\crolling_n_data" />
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\DB" />
       <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making\templates" />
       <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making" />
     </key>
@@ -71,8 +72,8 @@
       <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
-    <configuration name="data_api" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.kr_stock_daily">
+    <configuration name="korea_stock_weekly" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -80,11 +81,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crolling_n_data" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_api.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/korea_stock_weekly.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -93,7 +94,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="kr_stock_daily" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -101,11 +102,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crolling_n_data" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/kr_stock_daily.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -135,7 +136,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="us_stock_div_list" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="us_stock_daily" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -147,7 +148,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/us_stock_div_list.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/us_stock_daily.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,7 +157,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="us_stock_list" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="us_stock_weekly" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -168,7 +169,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/us_stock_list.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/us_stock_weekly.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -179,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.data_api" />
+        <item itemvalue="Python.kr_stock_daily" />
         <item itemvalue="Python.to_db_from_python" />
-        <item itemvalue="Python.us_stock_div_list" />
-        <item itemvalue="Python.us_stock_list" />
+        <item itemvalue="Python.us_stock_weekly" />
+        <item itemvalue="Python.us_stock_daily" />
+        <item itemvalue="Python.korea_stock_weekly" />
       </list>
     </recent_temporary>
   </component>
@@ -360,34 +361,38 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595661755630" />
-    <state width="1256" height="252" key="GridCell.Tab.0.bottom" timestamp="1596297401211">
+    <state width="1256" height="357" key="GridCell.Tab.0.bottom" timestamp="1596466715734">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596290288758" />
     <state width="1256" height="19" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="252" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596297401211" />
-    <state width="1256" height="252" key="GridCell.Tab.0.center" timestamp="1596297401210">
+    <state width="1256" height="357" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596466715734" />
+    <state width="1899" height="250" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1596372535382" />
+    <state width="1256" height="357" key="GridCell.Tab.0.center" timestamp="1596466715734">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="252" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596290288758" />
     <state width="1256" height="19" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="252" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596297401210" />
-    <state width="1256" height="252" key="GridCell.Tab.0.left" timestamp="1596297401210">
+    <state width="1256" height="357" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596466715734" />
+    <state width="1899" height="250" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1596372535382" />
+    <state width="1256" height="357" key="GridCell.Tab.0.left" timestamp="1596466715734">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="252" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596290288758" />
     <state width="1256" height="19" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="252" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596297401210" />
-    <state width="1256" height="252" key="GridCell.Tab.0.right" timestamp="1596297401211">
+    <state width="1256" height="357" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596466715734" />
+    <state width="1899" height="250" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1596372535381" />
+    <state width="1256" height="357" key="GridCell.Tab.0.right" timestamp="1596466715734">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="252" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596290288758" />
     <state width="1256" height="19" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="252" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596297401211" />
+    <state width="1256" height="357" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596466715734" />
+    <state width="1899" height="250" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1596372535382" />
     <state width="1899" height="347" key="GridCell.Tab.1.bottom" timestamp="1596274983348">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

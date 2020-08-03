@@ -17,7 +17,7 @@ def main_page_data(date):
             # print('DB 오픈')
 
             with connection.cursor() as cursor:
-                sql = "SELECT * FROM main_page_data WHERE date_time='{}';".format(date)
+                sql = "SELECT * FROM main_page_data WHERE date='{}';".format(date)
                 cursor.execute(sql)
                 row = cursor.fetchall()
                 # print(row)

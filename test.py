@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from crolling_n_data.main_page_data import main_page_data
-from etc.date import time
+from etc.date import time,date_num
 from DB.db_test import main_page_data, korea_code_data
 from flask_restful import Resource, Api
 
@@ -10,12 +10,12 @@ app.config['JSON_AS_ASCII'] = False
 
 @app.route('/')
 def main_page():
-    return render_template('main_page.html', main_page_value = main_page_data('2020-07-27'),
+    return render_template('main_page.html', main_page_value = main_page_data(date_num()),
                            current_time = time())
 
 @app.route('/korea_stock')
 def korea_stock():
-    return render_template('korea_stock.html', main_page_value = main_page_data('2020-07-27'),
+    return render_template('korea_stock.html', main_page_value = main_page_data(date_num()),
                            current_time = time(), korea_code_list = korea_code_data())
 
 @app.route('/search_detail',methods=['POST'])
@@ -23,13 +23,13 @@ def search_stock():
     value = request.form['input']
     msg = '{}'.format(value)
     return render_template('search_detail.html', seaching_value = msg,
-                           main_page_value = main_page_data('2020-07-27'))
+                           main_page_value = main_page_data(date_num()))
 
 
 @app.route('/us_stock')
 def us_stock():
     return render_template('us_stock.html',current_time = time(),
-                           main_page_value = main_page_data('2020-07-27'))
+                           main_page_value = main_page_data(date_num()))
 
 
 ###################################################################
@@ -38,12 +38,10 @@ def us_stock():
 from data_api import test
 from flask import jsonify
 
-class RegisterUser(Resource):
+class api_data(Resource):
     def get(self):
         test_data = test().test()
         message = {
-            'status': 200,
-            'message': 'OK',
             'scores': test_data
         }
         resp = jsonify(message)
@@ -51,7 +49,7 @@ class RegisterUser(Resource):
         print(resp)
         return resp
 
-api.add_resource(RegisterUser, '/test')
+api.add_resource(api_data, '/test')
 
 ###################################################################
 @app.route('/coin')
@@ -77,8 +75,6 @@ def twit():
 @app.route('/etc')
 def etc():
     return render_template('etc.html')
-
-
 
 if __name__ == '__main__':
     app.run()

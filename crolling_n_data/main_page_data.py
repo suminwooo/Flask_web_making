@@ -1,3 +1,5 @@
+## 완료
+
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -12,7 +14,6 @@ class main_page_data:
         html = index1.text
         soup = BeautifulSoup(html, 'html.parser')
         korea_index_information = soup.find('div', class_='section_stock_market')
-        us_index_information = soup.find('div', class_='group_aside')
         market_index_information = soup.find('div', class_='article2')
 
         ##### 1. 한국 인덱스
@@ -55,14 +56,15 @@ class main_page_data:
         jpy_rate = exchange.find_all('td')[5].text.split(' ')
 
         # 4. WTI
-        market_wti_gold = market_index_information.find_all('tr', class_='up bold')
-        wti = market_wti_gold[0].text.split('\n')[2]
-        wti_rate = market_wti_gold[0].text.split('\n')[3].split(' ')
+        market_wti_gold = market_index_information.find_all('table', class_='tbl_home')[3].text.replace('\n\n',
+                                                                                                        '').split('\n')
+        wti = market_wti_gold[9]
+        wti_rate = market_wti_gold[10].split(' ')
 
         # 5. 달러인덱스
-        dollor_index_link = market_index_information.find_all('tr', class_='down bold')[-1].text.split('\n')
-        dollor_index = dollor_index_link[2]
-        dollor_index_rate = dollor_index_link[3].split(' ')
+        dollor_index_link = market_index_information.find_all('table', class_='tbl_home')[1].text.split('\n')
+        dollor_index = dollor_index_link[-5]
+        dollor_index_rate = dollor_index_link[-4].split(' ')
 
         # 5. 금
 
