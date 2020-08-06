@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    <div class="search_container">
+        <div class="search_container1">
+
+            <h4>검색어 : {{seaching_value}} <- 검색창 연동 test용</h4>
+
+            <p>개미현황 : {{main_page_value['kospi_individual']}},
+            외국인 투자자 : {{main_page_value['kospi_foreigner']}},
+            기관 투자자 : {{main_page_value['kospi_Institutional']}}
+            </p>
+            <p>개미현황 : {{main_page_value['kosdaq_individual']}},
+            외국인 투자자 : {{main_page_value['koadaq_foreigner']}},
+            기관 투자자 : {{main_page_value['kosdaq_Institutional']}}</p>
+
+        </div>
+
+        <div class="search_container2">
+            <h4>{{main_data}}</h4>
+        </div>
+
+
+        <div class="search_container3">
+            <h4>Chart</h4>
+            <iframe src="https://ssltvc.forexprostools.com/?pair_ID=650&height=480&width=650&interval=300&plotStyle=candles&domain_ID=18&lang_ID=18&timezone_ID=26"></iframe>
+        </div>
+
+        <div class="search_container4">
+            <h4>기본 정보(가격&거래량)</h4>
+        </div>
+
+        <div class="search_container5">
+            <h4>회사 정보</h4>
+        </div>
+
+        <div class="search_container6">
+            <h4>재무 정보</h4>
+        </div>
+
+        <div class="search_container7">
+            <h4>예측 정보</h4>
+        </div>
+
+    </div>
+{% endblock %}
+

@@ -13,7 +13,7 @@ class us_stock_daily:
     def daily_data(self):
         dataframe_test = pd.DataFrame()
 
-        for code in code_list[:1]:
+        for code in code_list:
             df = fdr.DataReader(code, date_num())
             df = df.reset_index()
             df.columns = ['date', 'close', 'open', 'high', 'low', 'volume', 'close_diff']

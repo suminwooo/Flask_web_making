@@ -19,16 +19,21 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="20200801 2300">
-      <change afterPath="$PROJECT_DIR$/crolling_n_data/raw_data/us_stock_list.csv" afterDir="false" />
+    <list default="true" id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="20200803">
+      <change afterPath="$PROJECT_DIR$/DB/to_python_from_db.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/paging.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crolling_n_data/naver_news.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/us_search_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web_engine/web_engine.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/db_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB/db_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/to_db_from_python.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB/to_db_from_python.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crolling_n_data/korea_stock_detail.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crolling_n_data/main_page_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/crolling_n_data/main_page_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crolling_n_data/us_stock_detail.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crolling_n_data/us_stock_value_list.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/crolling_n_data/kr_stock_daily.py" beforeDir="false" afterPath="$PROJECT_DIR$/crolling_n_data/kr_stock_daily.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crolling_n_data/us_stock_daily.py" beforeDir="false" afterPath="$PROJECT_DIR$/crolling_n_data/us_stock_daily.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sales_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sales_log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/search_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,18 +67,19 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\web_engine" />
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\DB" />
       <recent name="C:\Users\wsm26\Desktop\Flask_web_making\crolling_n_data\raw_data" />
       <recent name="C:\Users\wsm26\Desktop\Flask_web_making\crolling_n_data" />
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\DB" />
       <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making\templates" />
-      <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\templates" />
       <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.kr_stock_daily">
-    <configuration name="korea_stock_weekly" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.test">
+    <configuration name="naver_news" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -85,7 +91,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/korea_stock_weekly.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/naver_news.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -94,7 +100,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="kr_stock_daily" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -102,11 +108,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crolling_n_data" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/kr_stock_daily.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -136,7 +142,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="us_stock_daily" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="to_python_from_db" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -144,11 +150,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crolling_n_data" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DB" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/us_stock_daily.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DB/to_python_from_db.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,7 +163,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="us_stock_weekly" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="web_engine" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -165,11 +171,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crolling_n_data" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/web_engine" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/us_stock_weekly.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/web_engine/web_engine.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -180,11 +186,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.kr_stock_daily" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.naver_news" />
         <item itemvalue="Python.to_db_from_python" />
-        <item itemvalue="Python.us_stock_weekly" />
-        <item itemvalue="Python.us_stock_daily" />
-        <item itemvalue="Python.korea_stock_weekly" />
+        <item itemvalue="Python.web_engine" />
+        <item itemvalue="Python.to_python_from_db" />
       </list>
     </recent_temporary>
   </component>
@@ -325,7 +331,21 @@
       <option name="project" value="LOCAL" />
       <updated>1596293783971</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="20200803">
+      <created>1596466863084</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1596466863084</updated>
+    </task>
+    <task id="LOCAL-00020" summary="20200803">
+      <created>1596466878609</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1596466878609</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -354,69 +374,70 @@
     <MESSAGE value="20200727 final" />
     <MESSAGE value="20200801 1300" />
     <MESSAGE value="20200801 2300" />
-    <option name="LAST_COMMIT_MESSAGE" value="20200801 2300" />
+    <MESSAGE value="20200803" />
+    <option name="LAST_COMMIT_MESSAGE" value="20200803" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595661755630">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595661755630" />
-    <state width="1256" height="357" key="GridCell.Tab.0.bottom" timestamp="1596466715734">
+    <state width="1256" height="355" key="GridCell.Tab.0.bottom" timestamp="1596724002659">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1899" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596290288758" />
+    <state width="1256" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596623327271" />
     <state width="1256" height="19" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="357" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596466715734" />
+    <state width="1256" height="355" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596724002659" />
     <state width="1899" height="250" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1596372535382" />
-    <state width="1256" height="357" key="GridCell.Tab.0.center" timestamp="1596466715734">
+    <state width="1256" height="355" key="GridCell.Tab.0.center" timestamp="1596724002659">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1899" height="252" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596290288758" />
+    <state width="1256" height="249" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596623327270" />
     <state width="1256" height="19" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="357" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596466715734" />
+    <state width="1256" height="355" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596724002659" />
     <state width="1899" height="250" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1596372535382" />
-    <state width="1256" height="357" key="GridCell.Tab.0.left" timestamp="1596466715734">
+    <state width="1256" height="355" key="GridCell.Tab.0.left" timestamp="1596724002659">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1899" height="252" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596290288758" />
+    <state width="1256" height="249" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596623327270" />
     <state width="1256" height="19" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="357" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596466715734" />
+    <state width="1256" height="355" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596724002659" />
     <state width="1899" height="250" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1596372535381" />
-    <state width="1256" height="357" key="GridCell.Tab.0.right" timestamp="1596466715734">
+    <state width="1256" height="355" key="GridCell.Tab.0.right" timestamp="1596724002659">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1899" height="252" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596290288758" />
+    <state width="1256" height="249" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596623327271" />
     <state width="1256" height="19" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="357" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596466715734" />
+    <state width="1256" height="355" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596724002659" />
     <state width="1899" height="250" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1596372535382" />
-    <state width="1899" height="347" key="GridCell.Tab.1.bottom" timestamp="1596274983348">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1256" height="487" key="GridCell.Tab.1.bottom" timestamp="1596724002647">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596274983348" />
     <state width="1256" height="347" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1595308892780" />
-    <state width="1256" height="488" key="GridCell.Tab.1.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595681896395" />
-    <state width="1899" height="347" key="GridCell.Tab.1.center" timestamp="1596274983347">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1256" height="487" key="GridCell.Tab.1.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596724002647" />
+    <state width="1256" height="487" key="GridCell.Tab.1.center" timestamp="1596724002646">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596274983347" />
     <state width="1256" height="347" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1595308892779" />
-    <state width="1256" height="488" key="GridCell.Tab.1.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595681896395" />
-    <state width="1899" height="347" key="GridCell.Tab.1.left" timestamp="1596274983347">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1256" height="487" key="GridCell.Tab.1.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596724002646" />
+    <state width="1256" height="487" key="GridCell.Tab.1.left" timestamp="1596724002646">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596274983347" />
     <state width="1256" height="347" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1595308892779" />
-    <state width="1256" height="488" key="GridCell.Tab.1.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595681896395" />
-    <state width="1899" height="347" key="GridCell.Tab.1.right" timestamp="1596274983348">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1256" height="487" key="GridCell.Tab.1.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596724002646" />
+    <state width="1256" height="487" key="GridCell.Tab.1.right" timestamp="1596724002646">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596274983348" />
     <state width="1256" height="347" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1595308892780" />
-    <state width="1256" height="488" key="GridCell.Tab.1.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595681896395" />
+    <state width="1256" height="487" key="GridCell.Tab.1.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596724002646" />
     <state x="365" y="124" key="MergeDialog" timestamp="1595861848146">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -434,11 +455,11 @@
     </state>
     <state x="394" y="160" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1596276920561" />
     <state x="1421" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1595652754574" />
-    <state x="1512" y="341" key="Vcs.Push.Dialog.v2" timestamp="1595861792255">
+    <state x="1512" y="341" key="Vcs.Push.Dialog.v2" timestamp="1596466898995">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1512" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1595400548646" />
-    <state x="1512" y="341" key="Vcs.Push.Dialog.v2/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595861792255" />
+    <state x="1512" y="341" key="Vcs.Push.Dialog.v2/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596466898995" />
     <state x="1373" y="100" width="1094" height="1200" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1595678893630">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -447,10 +468,11 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1725" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1595321590554" />
-    <state x="1610" y="307" key="git4idea.merge.GitPullDialog" timestamp="1595473756316">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="1610" y="413" key="git4idea.merge.GitPullDialog" timestamp="1596466891311">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1610" y="307" key="git4idea.merge.GitPullDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1595473756316" />
+    <state x="1610" y="413" key="git4idea.merge.GitPullDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596466891311" />
     <state x="1583" y="319" width="672" height="678" key="search.everywhere.popup" timestamp="1595679920383">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

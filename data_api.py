@@ -19,5 +19,3 @@ class test:
             new_dic[i] = j
 
         return new_dic
-
-print(test().test())

@@ -3,36 +3,15 @@ from crolling_n_data.main_page_data import main_page_data
 from etc.date import time,date_num
 from DB.db_test import main_page_data, korea_code_data
 from flask_restful import Resource, Api
+import requests
+
+##################################################################
 
 app = Flask(__name__)
 api = Api(app)
 app.config['JSON_AS_ASCII'] = False
 
-@app.route('/')
-def main_page():
-    return render_template('main_page.html', main_page_value = main_page_data(date_num()),
-                           current_time = time())
-
-@app.route('/korea_stock')
-def korea_stock():
-    return render_template('korea_stock.html', main_page_value = main_page_data(date_num()),
-                           current_time = time(), korea_code_list = korea_code_data())
-
-@app.route('/search_detail',methods=['POST'])
-def search_stock():
-    value = request.form['input']
-    msg = '{}'.format(value)
-    return render_template('search_detail.html', seaching_value = msg,
-                           main_page_value = main_page_data(date_num()))
-
-
-@app.route('/us_stock')
-def us_stock():
-    return render_template('us_stock.html',current_time = time(),
-                           main_page_value = main_page_data(date_num()))
-
-
-###################################################################
+##################################################################
 
 # API 페이지
 from data_api import test
@@ -42,7 +21,7 @@ class api_data(Resource):
     def get(self):
         test_data = test().test()
         message = {
-            'scores': test_data
+            'kr_stock_list': test_data
         }
         resp = jsonify(message)
         resp.status_code = 200
@@ -50,8 +29,47 @@ class api_data(Resource):
         return resp
 
 api.add_resource(api_data, '/test')
+date = date_num()
 
 ###################################################################
+
+from web_engine.web_engine import web_engine
+from crolling_n_data.naver_news import naver_news
+
+
+@app.route('/search_detail',methods=['POST'])
+def search_stock():
+    search_word = request.form['input']
+    data = web_engine().search('{}'.format(search_word))
+    news_data = naver_news().news_information('005930')
+    return render_template('search_detail.html',
+                           main_page_value = main_page_data(date),
+                           main_data = data,
+                           news_data = news_data)
+
+
+###################################################################
+
+
+@app.route('/')
+def main_page():
+    return render_template('main_page.html', main_page_value = main_page_data(date),
+                           current_time = time())
+
+@app.route('/korea_stock')
+def korea_stock():
+    return render_template('korea_stock.html', main_page_value = main_page_data(date),
+                           current_time = time(), korea_code_list = korea_code_data())
+
+
+
+@app.route('/us_stock')
+def us_stock():
+    return render_template('us_stock.html',current_time = time(),
+                           main_page_value = main_page_data(date))
+
+
+
 @app.route('/coin')
 def coin():
     return render_template('coin.html')
