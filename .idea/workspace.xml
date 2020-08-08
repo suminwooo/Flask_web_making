@@ -19,20 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="20200806">
+    <list default="true" id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="20200808">
+      <change afterPath="$PROJECT_DIR$/crolling_n_data/price_calculate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/db_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB/db_test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/to_db_from_python.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB/to_db_from_python.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crolling_n_data/kr_stock_weekly.py" beforeDir="false" afterPath="$PROJECT_DIR$/crolling_n_data/kr_stock_weekly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crolling_n_data/main_page_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/crolling_n_data/main_page_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crolling_n_data/naver_news.py" beforeDir="false" afterPath="$PROJECT_DIR$/crolling_n_data/naver_news.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crolling_n_data/us_stock_weekly.py" beforeDir="false" afterPath="$PROJECT_DIR$/crolling_n_data/us_stock_weekly.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/etc/date.py" beforeDir="false" afterPath="$PROJECT_DIR$/etc/date.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/data_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB/data_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/to_python_from_db.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/search_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/search_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/error_serach_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/kr_search_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/kr_search_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_engine/web_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_engine/web_engine.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +135,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="kr_stock_daily" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Flask_web_making" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/crolling_n_data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crolling_n_data/kr_stock_daily.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -161,34 +177,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="web_engine" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Flask_web_making" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/web_engine" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/web_engine/web_engine.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.kr_stock_daily" />
         <item itemvalue="Python.data_api (1)" />
         <item itemvalue="Python.db_test" />
         <item itemvalue="Python.date" />
-        <item itemvalue="Python.web_engine" />
       </list>
     </recent_temporary>
   </component>
@@ -350,7 +345,14 @@
       <option name="project" value="LOCAL" />
       <updated>1596724071361</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="20200808">
+      <created>1596867542499</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1596867542499</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -381,44 +383,45 @@
     <MESSAGE value="20200801 2300" />
     <MESSAGE value="20200803" />
     <MESSAGE value="20200806" />
-    <option name="LAST_COMMIT_MESSAGE" value="20200806" />
+    <MESSAGE value="20200808" />
+    <option name="LAST_COMMIT_MESSAGE" value="20200808" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595661755630">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595661755630" />
-    <state width="1256" height="355" key="GridCell.Tab.0.bottom" timestamp="1596867362665">
+    <state width="1256" height="355" key="GridCell.Tab.0.bottom" timestamp="1596869421476">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1256" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596623327271" />
     <state width="1256" height="19" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="355" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596867362665" />
+    <state width="1256" height="355" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596869421476" />
     <state width="1899" height="250" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1596372535382" />
-    <state width="1256" height="355" key="GridCell.Tab.0.center" timestamp="1596867362665">
+    <state width="1256" height="355" key="GridCell.Tab.0.center" timestamp="1596869421475">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1256" height="249" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596623327270" />
     <state width="1256" height="19" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="355" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596867362665" />
+    <state width="1256" height="355" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596869421475" />
     <state width="1899" height="250" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1596372535382" />
-    <state width="1256" height="355" key="GridCell.Tab.0.left" timestamp="1596867362665">
+    <state width="1256" height="355" key="GridCell.Tab.0.left" timestamp="1596869421475">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1256" height="249" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596623327270" />
     <state width="1256" height="19" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="355" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596867362665" />
+    <state width="1256" height="355" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596869421475" />
     <state width="1899" height="250" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1596372535381" />
-    <state width="1256" height="355" key="GridCell.Tab.0.right" timestamp="1596867362665">
+    <state width="1256" height="355" key="GridCell.Tab.0.right" timestamp="1596869421475">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1256" height="249" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596623327271" />
     <state width="1256" height="19" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="355" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596867362665" />
+    <state width="1256" height="355" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596869421475" />
     <state width="1899" height="250" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1596372535382" />
     <state width="1256" height="487" key="GridCell.Tab.1.bottom" timestamp="1596859042808">
       <screen x="0" y="0" width="2560" height="1400" />
@@ -470,10 +473,11 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1373" y="100" width="1094" height="1200" key="com.intellij.history.integration.ui.views.FileHistoryDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595678893630" />
-    <state x="1725" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1595321590554">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="1725" y="587" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596871094962">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1725" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1595321590554" />
+    <state x="1725" y="587" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596871094962" />
     <state x="1610" y="413" key="git4idea.merge.GitPullDialog" timestamp="1596466891311">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

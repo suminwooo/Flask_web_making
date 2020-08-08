@@ -1,8 +1,7 @@
 import pymysql
-import pandas as pd
 
-class test:
-    def test(self):
+class stock_list_api:
+    def api(self):
 
         connection = None
         row = None

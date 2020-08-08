@@ -13,12 +13,12 @@ app.config['JSON_AS_ASCII'] = False
 ##################################################################
 
 # API 페이지
-from DB.data_api import test
+from DB.data_api import stock_list_api
 from flask import jsonify
 
 class api_data(Resource):
     def get(self):
-        test_data = test().test()
+        test_data = stock_list_api().test()
         message = {
             'kr_stock_list': test_data
         }
@@ -42,22 +42,23 @@ from DB.db_test import korea_detail_information
 @app.route('/search_detail',methods=['POST'])
 def search_stock():
     search = request.form['input']
-    search_word = web_engine().search('{}'.format(search))
-
-    search_word_code = search_word[0] # db관리 개판으로 해서 숫자 길이 안맞음 아래는 0 채우면 됨
-    STOCK = test().test()[search_word_code]
-
-    search_word_code = search_word[0].zfill(6)
-    news_data = naver_news().news_information(search_word_code)
-    nonprice_info = korea_detail_information().kr_detail_data(search_word_code)
-    price_info = korea_detail_information().kr_price_data(search_word_code)
-    return render_template('search_detail.html',
-                           main_page_value = main_page_data(date),
-                           STOCK = STOCK,
-                           nonprice_data = nonprice_info,
-                           price_data = price_info,
-                           news_data = news_data)
-
+    try:
+        search_word = web_engine().search('{}'.format(search))
+        search_word_code = search_word[0] # db관리 개판으로 해서 숫자 길이 안맞음 아래는 0 채우면 됨
+        STOCK = stock_list_api().test()[search_word_code]
+        search_word_code = search_word[0].zfill(6)
+        news_data = naver_news().news_information(search_word_code)
+        nonprice_info = korea_detail_information().kr_detail_data(search_word_code)
+        price_info = korea_detail_information().kr_price_data(search_word_code)
+        return render_template('kr_search_detail.html',
+                               main_page_value = main_page_data(date),
+                               STOCK = STOCK,
+                               nonprice_data = nonprice_info,
+                               price_data = price_info,
+                               news_data = news_data,
+                               current_time = time())
+    except:
+        return render_template('error_search_detail.html')
 
 ###################################################################
 
