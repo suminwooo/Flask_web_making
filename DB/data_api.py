@@ -35,5 +35,3 @@ class stock_list_api:
                 connection.close()
                 # print(value)
         return code_dic
-
-print(test().test())

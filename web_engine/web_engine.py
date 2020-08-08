@@ -25,3 +25,4 @@ class web_engine:
         db_data = cur.fetchall()
         connection.close()
         return db_data[0]
+

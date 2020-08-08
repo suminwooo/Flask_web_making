@@ -45,36 +45,41 @@
         <div class="search_container4">
             <h4>기본 정보(가격&거래량)</h4>
             <table>
+                <thead>
+                  <tr>
+                    <th></th><th>가격</th><th>전일대비</th><th>등락률</th>
+                  </tr>
+                </thead>
                 <tbody>
                     <tr>
                         <td>종가</td>
                         <td>{{price_data['kr_stock_close']}}</td>
-                        <td>{{nonprice_data['kr_stock_close_diff']}}</td>
-                        <td>{{price_data['kr_stock_close_diff']}}</td>
+                        <td>{{price_diff[6]}}</td>
+                        <td>{{price_diff[7]}}</td>
                     </tr>
                     <tr>
                         <td>시가</td>
                         <td>{{price_data['kr_stock_open']}}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{price_diff[0]}}</td>
+                        <td>{{price_diff[1]}}</td>
                     </tr>
                     <tr>
                         <td>고가</td>
                         <td>{{price_data['kr_stock_high']}}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{price_diff[2]}}</td>
+                        <td>{{price_diff[3]}}</td>
                     </tr>
                     <tr>
                         <td>저가</td>
                         <td>{{price_data['kr_stock_low']}}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{price_diff[4]}}</td>
+                        <td>{{price_diff[5]}}</td>
                     </tr>
                     <tr>
                         <td>거래량</td>
                         <td>{{price_data['kr_stock_volume']}}</td>
-                        <td></td>
-                        <td></td>
+                        <td>{{price_diff[8]}}</td>
+                        <td>{{price_diff[9]}}</td>
                     </tr>
                     <tr>
                         <td>52주최고가</td>
@@ -130,6 +135,7 @@
 
         <div class="search_container7">
             <h4>예측 정보</h4>
+            <p>추후 추가 예정</p>ㄴ
         </div>
 
     </div>
