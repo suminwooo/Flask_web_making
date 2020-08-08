@@ -10,17 +10,18 @@ class web_engine:
         connection = pymysql.connect(host='localhost', user='root', password='0000', charset='utf8', db='web_db')
         cur = connection.cursor()
 
-        sql = "SELECT kr_stock_code, kr_stock_name " \
+        sql = "(" \
+              "SELECT kr_stock_code, kr_stock_name " \
               "FROM kr_stock_list " \
               "WHERE kr_stock_code ='{}' " \
-              "OR kr_stock_name ='{}' " \
-              "UNION " \
-              "SELECT  us_stock_code, us_stock_name " \
+              "OR kr_stock_name ='{}' ) " \
+              "UNION ALL ( " \
+              "SELECT us_stock_code, us_stock_name " \
               "FROM us_stock_list " \
-              "WHERE us_stock_code = '{}' " \
-              "OR us_stock_name LIKE '%{}%'; ;".format(word, word, word, word)
+              "WHERE us_stock_code ='{}'" \
+              "OR us_stock_name ='{}' );".format(word, word, word, word)
 
         cur.execute(sql)
         db_data = cur.fetchall()
         connection.close()
-        return db_data
+        return db_data[0]

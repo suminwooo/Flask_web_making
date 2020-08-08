@@ -10,7 +10,7 @@ class us_stock_weekly:
     def weekly_data(self):
 
         final_list = []
-        for code in stock_name[:2]:
+        for code in stock_name:
             test = yf.Ticker(code)
             value_list= []
             value_list.append(code)

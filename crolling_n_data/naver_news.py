@@ -18,6 +18,7 @@ class naver_news:
             link_list.append(link)
             news_list.append(i.text.split('\n')[1])
 
-        return link_list, news_list
-
-
+        news_dic ={}
+        for i in range(len(link_list)):
+            news_dic[link_list[i]] = news_list[i]
+        return news_dic

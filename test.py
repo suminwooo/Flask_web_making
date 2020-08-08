@@ -1,9 +1,8 @@
 from flask import Flask, render_template, request
 from crolling_n_data.main_page_data import main_page_data
-from etc.date import time,date_num
+from etc.date import time
 from DB.db_test import main_page_data, korea_code_data
 from flask_restful import Resource, Api
-import requests
 
 ##################################################################
 
@@ -14,7 +13,7 @@ app.config['JSON_AS_ASCII'] = False
 ##################################################################
 
 # API 페이지
-from data_api import test
+from DB.data_api import test
 from flask import jsonify
 
 class api_data(Resource):
@@ -29,22 +28,34 @@ class api_data(Resource):
         return resp
 
 api.add_resource(api_data, '/test')
-date = date_num()
+
+###################################################################
+
+date = '2020-08-07'
 
 ###################################################################
 
 from web_engine.web_engine import web_engine
 from crolling_n_data.naver_news import naver_news
-
+from DB.db_test import korea_detail_information
 
 @app.route('/search_detail',methods=['POST'])
 def search_stock():
-    search_word = request.form['input']
-    data = web_engine().search('{}'.format(search_word))
-    news_data = naver_news().news_information('005930')
+    search = request.form['input']
+    search_word = web_engine().search('{}'.format(search))
+
+    search_word_code = search_word[0] # db관리 개판으로 해서 숫자 길이 안맞음 아래는 0 채우면 됨
+    STOCK = test().test()[search_word_code]
+
+    search_word_code = search_word[0].zfill(6)
+    news_data = naver_news().news_information(search_word_code)
+    nonprice_info = korea_detail_information().kr_detail_data(search_word_code)
+    price_info = korea_detail_information().kr_price_data(search_word_code)
     return render_template('search_detail.html',
                            main_page_value = main_page_data(date),
-                           main_data = data,
+                           STOCK = STOCK,
+                           nonprice_data = nonprice_info,
+                           price_data = price_info,
                            news_data = news_data)
 
 
@@ -60,7 +71,6 @@ def main_page():
 def korea_stock():
     return render_template('korea_stock.html', main_page_value = main_page_data(date),
                            current_time = time(), korea_code_list = korea_code_data())
-
 
 
 @app.route('/us_stock')

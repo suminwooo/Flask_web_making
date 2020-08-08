@@ -78,6 +78,8 @@ class main_page_data:
             if each_value[0] == "상승":
                 change_value = float(each_value[1])
                 change_value_list.append(change_value)
+            elif each_value[0] == '보합':
+                change_value_list.append(0)
             else:
                 change_value = -1 * float(each_value[1])
                 change_value_list.append(change_value)

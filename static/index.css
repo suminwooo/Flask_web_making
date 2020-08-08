@@ -491,7 +491,7 @@ width: 80px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 	grid-gap: 10px;
-    grid-template-rows: 150pt 150pt 150pt 200pt;
+    grid-template-rows: 130pt 150pt 150pt 300pt;
     padding:10px;
     margin : 10px;
     margin-bottom : 30px;

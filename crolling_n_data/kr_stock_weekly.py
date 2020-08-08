@@ -29,6 +29,7 @@ class kr_stock_weekly:
 
         final_set = []
         for code in code_list:
+            print(code)
             # 시가총액, 코스피 랭킹
             try:
                 URL = "https://finance.naver.com/item/main.nhn?code={}"
@@ -143,3 +144,5 @@ class kr_stock_weekly:
                                               'NAN', 'NAN', 'NAN', 'NAN', 'NAN']
 
         return data
+
+print(kr_stock_weekly().weekly_data())

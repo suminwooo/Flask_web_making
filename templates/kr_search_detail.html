@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+    <div class="search_container">
+        <div class="search_container1">
+            <h1>{{STOCK['kr_stock_name']}} / {{STOCK['kr_stock_code']}} / {{STOCK['kr_ind_name']}}</h1>
+            <table>
+                <tr>
+                    <td>코스피</td>
+                    <td>{{main_page_value['kospi_individual']}}</td>
+                    <td>{{main_page_value['kospi_foreigner']}}</td>
+                    <th>{{main_page_value['kospi_Institutional']}}</th>
+                </tr>
+                <tr>
+                    <td>코스닥</td>
+                    <td>{{main_page_value['kosdaq_individual']}}</td>
+                    <td>{{main_page_value['kosdaq_foreigner']}}</td>
+                    <th>{{main_page_value['kosdaq_Institutional']}}</th>
+                </tr>
+            </table>
+        </div>
+
+        <div class="search_container2">
+            <h4>한국주식, 미국주식(가치), 미국주식(배당) 표시 부분</h4>
+            <p> 시계 표시 </p>
+        </div>
+
+
+        <div class="search_container3">
+            <h4>Chart</h4>
+            <iframe src="https://ssltvc.forexprostools.com/?pair_ID=650&height=480&width=650&interval=300&plotStyle=candles&domain_ID=18&lang_ID=18&timezone_ID=26"></iframe>
+        </div>
+
+        <div class="search_container4">
+            <h4>기본 정보(가격&거래량)</h4>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>종가</td>
+                        <td>{{price_data['kr_stock_close']}}</td>
+                        <td>{{nonprice_data['kr_stock_close_diff']}}</td>
+                        <td>{{price_data['kr_stock_close_diff']}}</td>
+                    </tr>
+                    <tr>
+                        <td>시가</td>
+                        <td>{{price_data['kr_stock_open']}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>고가</td>
+                        <td>{{price_data['kr_stock_high']}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>저가</td>
+                        <td>{{price_data['kr_stock_low']}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>거래량</td>
+                        <td>{{price_data['kr_stock_volume']}}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>52주최고가</td>
+                        <td>{{nonprice_data['kr_stock_high_52week']}}</td>
+                        <td>52주최저가</td>
+                        <td>{{nonprice_data['kr_stock_low_52week']}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="search_container5">
+            <h4>네이버 뉴스</h4>
+            <ul>
+                {% for name  in news_data %}
+                <a href="{{name}}">
+                <li> {{news_data[name]}} </li></a>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="search_container6">
+            <h4>재무 정보</h4>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>시가총액</td><td>{{nonprice_data['kr_stock_market_value']}}</td>
+                        <td>코스피 순위</td><td>{{nonprice_data['kr_stock_kospi_rank']}}</td>
+                    </tr>
+                    <tr>
+                        <td>PER</td><td>{{nonprice_data['kr_stock_PER']}}</td>
+                        <td>EPS</td><td>{{nonprice_data['kr_stock_EPS']}}</td>
+                    </tr>
+                    <tr>
+                        <td>추정 PER</td><td>{{nonprice_data['kr_stock_est_PER']}}</td>
+                        <td>추정 EPS</td><td>{{nonprice_data['kr_stock_est_EPS']}}</td>
+                    </tr>
+                    <tr>
+                        <td>PBR</td><td>{{nonprice_data['kr_stock_PBR']}}</td>
+                        <td>BPS</td><td>{{nonprice_data['kr_stock_BPS']}}</td>
+                    </tr>
+                    <tr>
+                        <td>배당율</td><td>{{nonprice_data['kr_stock_DIV']}}</td>
+                        <td>코멘트</td><td>{{nonprice_data['kr_stock_comment']}}</td>
+                    </tr>
+                    <tr>
+                        <td>동일업종 PER</td><td>{{nonprice_data['kr_stock_same_ind_per']}}</td>
+                        <td>PER비율</td><td>{{nonprice_data['kr_stock_same_ind_per_percentage']}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="search_container7">
+            <h4>예측 정보</h4>
+        </div>
+
+    </div>
+{% endblock %}
+

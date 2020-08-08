@@ -22,3 +22,6 @@ def date_num():
         else:
             date = "%s-0%s-%s" %(now.year, now.month, now.day)
     return date
+
+
+
