@@ -320,38 +320,29 @@ input:checked + label{
 
 .korea_us_container4{
     grid-column: 2;
-    grid-row: 2;
+    grid-row: 2/4;
 }
 
 .korea_us_container5{
-    grid-column: 2;
-    grid-row: 3;
+    grid-column: 3;
+    grid-row: 2/4;
 }
 
 .korea_us_container6{
-    grid-column: 3;
-    grid-row: 2;
+    grid-column: 1;
+    grid-row: 4;
 }
 
 .korea_us_container7{
-    grid-column: 3;
-    grid-row: 3;
+    grid-column: 2;
+    grid-row: 4;
 }
 
 .korea_us_container8{
-    grid-column: 1;
-    grid-row: 4/6;
-}
-
-.korea_us_container9{
-    grid-column: 2;
-    grid-row: 4/6;
-}
-
-.korea_us_container10{
     grid-column: 3;
-    grid-row: 4/6;
+    grid-row: 4;
 }
+
 
 /* ###################################### scroll_box ###################################### */
 

@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
-from crolling_n_data.main_page_data import main_page_data
+from data.main_page_data import main_page_data
 from etc.date import time
-from DB.db_test import main_page_data, korea_code_data
+from db.db_test import main_page_data, korea_code_data
 from flask_restful import Resource, Api
 
 ##################################################################
@@ -13,7 +13,7 @@ app.config['JSON_AS_ASCII'] = False
 ##################################################################
 
 # API 페이지
-from DB.data_api import stock_list_api
+from db.data_api import stock_list_api
 from flask import jsonify
 
 class api_data(Resource):
@@ -36,9 +36,9 @@ date = '2020-08-07'
 ###################################################################
 
 from web_engine.web_engine import web_engine
-from crolling_n_data.naver_news import naver_news
-from DB.db_test import korea_detail_information
-from crolling_n_data.price_calculate import price_diff_calculate
+from data.naver_news import naver_news
+from db.db_test import korea_detail_information
+from data.price_calculate import price_diff_calculate
 @app.route('/search_detail',methods=['POST'])
 def search_stock():
     search = request.form['input']
@@ -78,13 +78,10 @@ def korea_stock():
     return render_template('korea_stock.html', main_page_value = main_page_data(date),
                            current_time = time(), korea_code_list = korea_code_data())
 
-
 @app.route('/us_stock')
 def us_stock():
     return render_template('us_stock.html',current_time = time(),
                            main_page_value = main_page_data(date))
-
-
 
 @app.route('/coin')
 def coin():
