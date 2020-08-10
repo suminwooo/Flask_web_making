@@ -2,7 +2,7 @@ from etc.date import date_num
 import pandas as pd
 import FinanceDataReader as fdr
 
-data = pd.read_csv('C:/Users/wsm26/Desktop/Flask_web_making/crolling_n_data/raw_data/kospi_code.csv')
+data = pd.read_csv('C:/Users/wsm26/Desktop/Flask_web_making/data/raw_data/kospi_code.csv')
 
 code_list = []
 for i in data['code']:

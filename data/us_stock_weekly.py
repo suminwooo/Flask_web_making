@@ -2,7 +2,7 @@ from etc.date import date_num
 import yfinance as yf
 import pandas as pd
 
-data = pd.read_csv('C:/Users/wsm26/Desktop/Flask_web_making/crolling_n_data/raw_data/us_stock_list.csv')
+data = pd.read_csv('C:/Users/wsm26/Desktop/Flask_web_making/data/raw_data/us_stock_list.csv')
 stock_name = list(data['us_stock_code'])
 
 

@@ -162,5 +162,3 @@ class korea_detail_information:
                 connection.close()
                 # print(value)
         return data[0]
-
-print(korea_detail_information().kr_detail_data('005930'))

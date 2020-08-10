@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-data = pd.read_csv('C:/Users/wsm26/Desktop/Flask_web_making/crolling_n_data/raw_data/kospi_code.csv')
+data = pd.read_csv('C:/Users/wsm26/Desktop/Flask_web_making/data/raw_data/kospi_code.csv')
 
 code_list = []
 for i in data['code']:

@@ -38,7 +38,8 @@ date = '2020-08-07'
 from web_engine.web_engine import web_engine
 from data.naver_news import naver_news
 from db.db_test import korea_detail_information
-from data.price_calculate import price_diff_calculate
+from data.kr_page_data import kr_page_data
+
 @app.route('/search_detail',methods=['POST'])
 def search_stock():
     search = request.form['input']
@@ -46,7 +47,7 @@ def search_stock():
     search_word = web_engine().search('{}'.format(search))
     search_word_code = search_word[0] # db관리 개판으로 해서 숫자 길이 안맞음 아래는 0 채우면 됨
     STOCK = stock_list_api().api()[search_word_code]
-    price_diff_info = price_diff_calculate().calculate()[int(search_word_code)]
+    price_diff_info = kr_page_data().change_rate_calculate()[int(search_word_code)]
 
     search_word_code = search_word[0].zfill(6)
 
@@ -73,10 +74,19 @@ def main_page():
     return render_template('main_page.html', main_page_value = main_page_data(date),
                            current_time = time())
 
+
 @app.route('/korea_stock')
 def korea_stock():
-    return render_template('korea_stock.html', main_page_value = main_page_data(date),
-                           current_time = time(), korea_code_list = korea_code_data())
+    rank_data = kr_page_data().rank()
+    change_data = kr_page_data().volatilty()
+    volume_data = kr_page_data().volume()
+    return render_template('korea_stock.html',
+                           main_page_value = main_page_data(date),
+                           current_time = time(),
+                           change_data = change_data,
+                           volume_data = volume_data,
+                           rank_data = rank_data,
+                           korea_code_list = korea_code_data())
 
 @app.route('/us_stock')
 def us_stock():

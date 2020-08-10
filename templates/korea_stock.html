@@ -39,84 +39,93 @@
 
       <div id="volatily_total" class="tabcontent">
         <table>
-      <thead>
-      <tr>
-      <th>NO.</th><th>코드</th><th>현재가</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      </tbody>
-      </table>
+          <tr>
+            <th>종목 코드</th>
+            <th>종명 명</th>
+            <th>거래량</th>
+          </tr>
+          {% for detail in change_data[0].values() %}
+          <tr>
+            <td>{{ detail['code'] }}</td>
+            <td>{{ detail['name'] }}</td>
+            <td>{{ detail['rate'] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
       </div>
 
       <div id="volatily_up" class="tabcontent">
         <h3>상승 비율 순위</h3>
-        <p>내용</p>
+        <table>
+          <tr>
+            <th>종목 코드</th>
+            <th>종명 명</th>
+            <th>거래량</th>
+          </tr>
+          {% for detail in change_data[1].values() %}
+          <tr>
+            <td>{{ detail['code'] }}</td>
+            <td>{{ detail['name'] }}</td>
+            <td>{{ detail['rate'] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
       </div>
 
       <div id="volatily_down" class="tabcontent">
         <h3>하락 비율 순위</h3>
-        <p>내용</p>
-      </div>
+        <table>
+          <tr>
+            <th>종목 코드</th>
+            <th>종명 명</th>
+            <th>거래량</th>
+          </tr>
+          {% for detail in change_data[2].values() %}
+          <tr>
+            <td>{{ detail['code'] }}</td>
+            <td>{{ detail['name'] }}</td>
+            <td>{{ detail['rate'] }}</td>
+          </tr>
+          {% endfor %}
+        </table>      </div>
 
       <div id="volume" class="tabcontent">
         <h3>거래량 순위</h3>
-        <p>내용</p>
+        <table>
+          <tr>
+            <th>종목 코드</th>
+            <th>종명 명</th>
+            <th>거래량</th>
+          </tr>
+          {% for detail in volume_data.values() %}
+          <tr>
+            <td>{{ detail['code'] }}</td>
+            <td>{{ detail['name'] }}</td>
+            <td>{{ detail['volume'] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
       </div>
     </div>
 
     <div class="korea_us_container4">
       <h3>시가 총액</h3>
+      <p>우선주는 표시 되지 않음</p>
       <table>
-        <thead>
+        <tr>
+          <th>코스피 랭킹</th>
+          <th>종목 코드</th>
+          <th>종명 명</th>
+          <th>시가 총액</th>
+        </tr>
+          {% for detail in rank_data.values() %}
           <tr>
-           <th>NO.</th><th>코드</th><th>현재가</th>
+            <td>{{ detail['rank'] }}</td>
+            <td>{{ detail['code'] }}</td>
+            <td>{{ detail['name'] }}</td>
+            <td>{{ detail['capital'] }}</td>
           </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>-</td><td>-</td><td>-</td>
-          </tr>
-          <tr>
-            <td>-</td><td>-</td><td>-</td>
-          </tr>
-          <tr>
-            <td>-</td><td>-</td><td>-</td>
-          </tr>
-          <tr>
-            <td>-</td><td>-</td><td>-</td>
-          </tr>
-          <tr>
-            <td>-</td><td>-</td><td>-</td>
-          </tr>
-          <tr>
-            <td>-</td><td>-</td><td>-</td>
-          </tr>
-          <tr>
-            <td>-</td><td>-</td><td>-</td>
-          </tr>
-          <tr>
-            <td>-</td><td>-</td><td>-</td>
-          </tr>
-        </tbody>
+          {% endfor %}
       </table>
     </div>
 
