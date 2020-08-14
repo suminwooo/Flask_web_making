@@ -277,8 +277,8 @@ class kr_page_data:
                         name = final_data['name']
                         top = final_data['rate']
                         top_dic = {}
-                        for name, value in zip(['code', 'name', 'top'], [code, name, top]):
-                            top_dic[name] = top
+                        for name, value in zip(['code', 'name', 'rate'], [code, name, top]):
+                            top_dic[name] = value
                         top_final_dic[i] = top_dic
 
 
@@ -292,8 +292,8 @@ class kr_page_data:
                         name = final_data['name']
                         down = final_data['rate']
                         down_dic = {}
-                        for name, value in zip(['code', 'name', 'down'], [code, name, down]):
-                            down_dic[name] = down
+                        for name, value in zip(['code', 'name', 'rate'], [code, name, down]):
+                            down_dic[name] = value
                         down_final_dic[i] = down_dic
 
                     # 전체 절대값 순위
@@ -314,8 +314,8 @@ class kr_page_data:
                         name = final_data['name']
                         abs_ = final_data['rate']
                         abs_dic = {}
-                        for name, value in zip(['code', 'name', 'abs'], [code, name, abs_]):
-                            abs_dic[name] = abs_
+                        for name, value in zip(['code', 'name', 'rate'], [code, name, abs_]):
+                            abs_dic[name] = value
                         abs_final_dic[i] = abs_dic
 
         except Exception as e:
@@ -383,4 +383,58 @@ class kr_page_data:
         return vol_final_dic
 
 
-print(kr_page_data().volatilty())
+def low_value_stock():
+    connection = None
+    try:
+        connection = pymysql.connect(host='localhost',
+                                     user='root',
+                                     password='0000',
+                                     db='web_db',
+                                     port=3306,
+                                     charset='utf8',
+                                     cursorclass=pymysql.cursors.DictCursor)
+        if connection:
+            # print('DB 오픈')
+
+            with connection.cursor() as cursor:
+
+                recently_data_sql = "SELECT kr_stock_code, kr_stock_volume " \
+                                    "FROM kr_stock_daily " \
+                                    "WHERE DATE = '{}';".format(kr_page_data().date()[0])
+                cursor.execute(recently_data_sql)
+                recently_data = cursor.fetchall()
+
+                code_list = []
+                volume_list = []
+                for i in range(len(recently_data)):
+                    code_list.append(int(recently_data[i]['kr_stock_code']))
+                    volume_list.append(recently_data[i]['kr_stock_volume'])
+
+                code_name_dic = kr_page_data().code_name()
+
+                volume_df = pd.DataFrame([code_list, volume_list]).T
+                volume_df.columns = ['code', 'volume']
+                volume_df = volume_df.sort_values(by='volume', ascending=False)
+                volume_df = volume_df.reset_index().loc[:10]
+                name_volume_list = []
+                for i in volume_df['code']:
+                    name_volume_list.append(code_name_dic[i])
+                volume_df['name'] = name_volume_list
+                volume_df = volume_df[['code', 'name', 'volume']]
+                vol_final_dic = {}
+                for i in range(len(volume_df)):
+                    final_data = volume_df.loc[i]
+                    code = final_data['code']
+                    name = final_data['name']
+                    volume = final_data['volume']
+                    value_dic = {}
+                    for name, value in zip(['code', 'name', 'volume'], [code, name, volume]):
+                        value_dic[name] = value
+                    vol_final_dic[i] = value_dic
+    except Exception as e:
+        print('->', e)
+
+    finally:
+        if connection:
+            connection.close()
+    return vol_final_dic

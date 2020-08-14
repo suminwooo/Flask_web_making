@@ -111,7 +111,9 @@ def add_check():
 
 @app.route('/twit') # 게시판 : 추후 타임라인처럼 해보기
 def twit():
-    return render_template('twit.html')
+    rank_data = kr_page_data().rank()
+
+    return render_template('twit.html',rank_data=rank_data)
 
 @app.route('/etc')
 def etc():

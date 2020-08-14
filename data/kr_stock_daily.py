@@ -30,7 +30,7 @@ class kr_stock_daily:
         for code in code_list:
             df = fdr.DataReader(code, date_num())
             df = df.reset_index()
-            df.columns = ['date', 'close', 'open', 'high', 'low', 'volume', 'close_diff']
+            df.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'close_diff']
             df['code'] = code
             df = df[['code', 'date', 'close', 'close_diff', 'open', 'high', 'low', 'volume']]
             dataframe_test = pd.concat([dataframe_test, df], axis=0)
@@ -41,8 +41,7 @@ class kr_stock_daily:
                               'kr_stock_high', 'kr_stock_low', 'kr_stock_volume']
 
         final_data['date'] = date_num()
-        final_data = final_data[
-            ['kr_stock_code', 'date', 'kr_stock_close', 'kr_stock_close_diff', 'kr_stock_open', 'kr_stock_high',
-             'kr_stock_low', 'kr_stock_volume']]
+        final_data = final_data[['kr_stock_code', 'date', 'kr_stock_open', 'kr_stock_close_diff','kr_stock_high', 'kr_stock_low', 'kr_stock_close',
+             'kr_stock_volume']]
 
         return final_data

@@ -38,17 +38,20 @@
       </div>
 
       <div id="volatily_total" class="tabcontent">
+        <h3>전체 비율 순위</h3>
         <table>
           <tr>
+            <th>순위</th>
             <th>종목 코드</th>
             <th>종명 명</th>
-            <th>거래량</th>
+            <th>변동률</th>
           </tr>
-          {% for detail in change_data[0].values() %}
+          {% for num,detail in change_data[2].items() %}
           <tr>
-            <td>{{ detail['code'] }}</td>
-            <td>{{ detail['name'] }}</td>
-            <td>{{ detail['rate'] }}</td>
+            <td>{{ num+1}}</td>
+            <td>{{ detail['code']}}</td>
+            <td>{{ detail['name']}}</td>
+            <td>{{ detail['rate']}}%</td>
           </tr>
           {% endfor %}
         </table>
@@ -58,15 +61,17 @@
         <h3>상승 비율 순위</h3>
         <table>
           <tr>
+            <th>순위</th>
             <th>종목 코드</th>
             <th>종명 명</th>
-            <th>거래량</th>
+            <th>상승률</th>
           </tr>
-          {% for detail in change_data[1].values() %}
+          {% for num,detail in change_data[1].items() %}
           <tr>
+            <td>{{ num+1}}</td>
             <td>{{ detail['code'] }}</td>
             <td>{{ detail['name'] }}</td>
-            <td>{{ detail['rate'] }}</td>
+            <td>{{ detail['rate'] }}%</td>
           </tr>
           {% endfor %}
         </table>
@@ -76,15 +81,17 @@
         <h3>하락 비율 순위</h3>
         <table>
           <tr>
+            <th>순위</th>
             <th>종목 코드</th>
             <th>종명 명</th>
-            <th>거래량</th>
+            <th>하락률</th>
           </tr>
-          {% for detail in change_data[2].values() %}
+          {% for num,detail in change_data[0].items() %}
           <tr>
-            <td>{{ detail['code'] }}</td>
-            <td>{{ detail['name'] }}</td>
-            <td>{{ detail['rate'] }}</td>
+            <td>{{ num+1}}</td>
+            <td>{{ detail['code']}}</td>
+            <td>{{ detail['name']}}</td>
+            <td>{{ detail['rate']}}%</td>
           </tr>
           {% endfor %}
         </table>      </div>
@@ -93,12 +100,14 @@
         <h3>거래량 순위</h3>
         <table>
           <tr>
+            <th>순위</th>
             <th>종목 코드</th>
             <th>종명 명</th>
             <th>거래량</th>
           </tr>
-          {% for detail in volume_data.values() %}
+          {% for num,detail in volume_data.items() %}
           <tr>
+            <td>{{ num+1}}</td>
             <td>{{ detail['code'] }}</td>
             <td>{{ detail['name'] }}</td>
             <td>{{ detail['volume'] }}</td>
