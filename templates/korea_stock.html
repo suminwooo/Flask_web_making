@@ -140,32 +140,20 @@
 
     <div class="korea_us_container5">
     <h3>저평가 목록</h3>
-        <table>
-      <thead>
-      <tr>
-      <th>NO.</th><th>코드</th><th>현재가</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      </tbody>
+      <p>재무재표로 판단 / 순서 X </p>
+      <table>
+        <tr>
+<!--          <th>NO.</th>-->
+          <th>종목 코드</th>
+          <th>종명 명</th>
+        </tr>
+          {% for code,name in low_value_data.items() %}
+          <tr>
+            <td>{{ code }}</td>
+            <td>{{ name['kr_stock_name'] }}</td>
+
+          </tr>
+          {% endfor %}
       </table>
     </div>
 
@@ -254,6 +242,7 @@
         $('.tab1 a:first').trigger('click');
 
     </script>
+
   </div>
 {% endblock %}
 

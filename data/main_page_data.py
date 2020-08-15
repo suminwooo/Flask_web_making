@@ -97,15 +97,13 @@ class main_page_data:
                                float(main_values[i].replace(',', '')) - 1) * 100, 2)) + '%'
             market_index_per.append(value)
 
+
         main_values_final = [kospi_close, kospi_change, kospi_change_rate, kospi_ant, kospi_foreigner, kospi_ins,
                              kosdaq_close, kosdaq_change, kosdaq_change_rate, kosdaq_ant, kosdaq_foreigner, kosdaq_ins,
                              kospi200_close, kospi200_change, kospi200_change_rate, usd, change_value_list[0],
-                             market_index_per[0],
-                             eur, change_value_list[1], market_index_per[1], jpy, change_value_list[2],
-                             market_index_per[2],
-                             wti, change_value_list[3], market_index_per[3], dollor_index, change_value_list[4],
-                             market_index_per[4],
-                             gold, change_value_list[5], market_index_per[5]]
+                             market_index_per[0], eur, change_value_list[1], market_index_per[1], jpy, change_value_list[2],
+                             market_index_per[2], wti, change_value_list[3], market_index_per[3], dollor_index, change_value_list[4],
+                             market_index_per[4], gold, change_value_list[5], market_index_per[5]]
 
         return main_values_final
 

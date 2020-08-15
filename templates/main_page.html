@@ -11,7 +11,7 @@
       <table>
         <thead>
           <tr>
-            <th></th><th>개인</th><th>외국인</th><th>기관</th>
+            <th></th><th>개인</th><th>외국인</th><th>기관</th><th>총합</th>
           </tr>
         </thead>
         <tbody>
@@ -19,13 +19,15 @@
             <td>코스피</td>
             <td>{{main_page_value['kospi_individual']}}</td>
             <td>{{main_page_value['kospi_foreigner']}}</td>
-            <th>{{main_page_value['kospi_Institutional']}}</th>
+            <td>{{main_page_value['kospi_Institutional']}}</td>
+            <th>{{kospi_kosdaq_sum[0]}}</th>
           </tr>
           <tr>
             <td>코스닥</td>
             <td>{{main_page_value['kosdaq_individual']}}</td>
             <td>{{main_page_value['kosdaq_foreigner']}}</td>
-            <th>{{main_page_value['kosdaq_Institutional']}}</th>
+            <td>{{main_page_value['kosdaq_Institutional']}}</td>
+            <th>{{kospi_kosdaq_sum[1]}}</th>
           </tr>
         </tbody>
       </table>
@@ -137,66 +139,40 @@
     </div>
 
     <div class="container_main5">
-      <h3>보유중</h3>
+      <h3> 최근 TOP 변동률 </h3>
       <div class="tab tab1">
         <a href="#kr_stock_1" class="tablinks">한국주식</a>
         <a href="#us_stock_value_1" class="tablinks">미국(가치)</a>
         <a href="#us_stock_div_1" class="tablinks">미국(배당)</a>
-        <a href="#coin_1" class="tablinks">코인</a>
+<!--        <a href="#coin_1" class="tablinks">코인</a>-->
     </div>
 
     <div id="kr_stock_1" class="tabcontent">
-      <table>
-        <thead>
+               <table>
           <tr>
-           <th>NO.</th><th>코드</th><th>현재가</th>
+            <th>순위</th>
+            <th>종목 코드</th>
+            <th>종명 명</th>
+            <th>변동률</th>
           </tr>
-        </thead>
-        <tbody>
+          {% for num,detail in change_data[2].items() %}
           <tr>
-            <td>한국주식</td><td>-</td><td>-</td>
+            <td>{{ num+1}}</td>
+            <td>{{ detail['code']}}</td>
+            <td>{{ detail['name']}}</td>
+            <td>{{ detail['rate']}}%</td>
           </tr>
-          <tr>
-            <td>-</td><td>-</td><td>-</td>
-          </tr>
-        </tbody>
-      </table>
+          {% endfor %}
+        </table>
     </div>
 
     <div id="us_stock_value_1" class="tabcontent">
-      <table>
-        <thead>
-          <tr>
-           <th>NO.</th><th>코드</th><th>현재가</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>미국 가치주</td><td>-</td><td>-</td>
-          </tr>
-          <tr>
-            <td>-</td><td>-</td><td>-</td>
-          </tr>
-        </tbody>
-      </table>
+      <p>준비중</p>
     </div>
 
     <div id="us_stock_div_1" class="tabcontent">
-      <table>
-        <thead>
-          <tr>
-           <th>NO.</th><th>코드</th><th>현재가</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>미국 배당주</td><td>-</td><td>-</td>
-          </tr>
-          <tr>
-            <td>-</td><td>-</td><td>-</td>
-          </tr>
-        </tbody>
-      </table>
+        <p>준비중</p>
+
     </div>
 
     <div id="coin_1" class="tabcontent">
@@ -221,12 +197,12 @@
     </div>
 
     <div class="container_main6">
-      <h3>관심 종목</h3>
+      <h3>저평가 주식</h3>
       <div class="tab tab2">
         <a href="#kr_stock_2" class="tablinks">한국주식</a>
         <a href="#us_stock_value_2" class="tablinks">미국(가치)</a>
         <a href="#us_stock_div_2" class="tablinks">미국(배당)</a>
-        <a href="#coin_2" class="tablinks">코인</a>
+<!--        <a href="#coin_2" class="tablinks">코인</a>-->
       </div>
 
     <div id="kr_stock_2" class="tabcontent">
@@ -257,28 +233,23 @@
         <a href="#kr_stock_3" class="tablinks">한국주식</a>
         <a href="#us_stock_value_3" class="tablinks">미국(가치)</a>
         <a href="#us_stock_div_3" class="tablinks">미국(배당)</a>
-        <a href="#coin_3" class="tablinks">코인</a>
       </div>
 
     <div id="kr_stock_3" class="tabcontent">
         <h3>한국주식내용</h3>
-        <p>ㅎㅎㅎㅎ</p>
+
     </div>
 
     <div id="us_stock_value_3" class="tabcontent">
         <h3>미국 가치주 내용</h3>
-        <p>ㄱㄱㄱㄱㄱ</p>
+        <p>준비중</p>
     </div>
 
     <div id="us_stock_div_3" class="tabcontent">
         <h3>미국 배당주 내용</h3>
-        <p>ㅂㅂㅂㅂㅂ</p>
+        <p>중비중</p>
     </div>
 
-    <div id="coin_3" class="tabcontent">
-        <h3>코인 내용</h3>
-        <p>GAMBLING</p>
-    </div>
 
     </div>
 

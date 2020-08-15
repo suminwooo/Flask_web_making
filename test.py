@@ -67,25 +67,42 @@ def search_stock():
     #     return render_template('error_search_detail.html')
 
 ###################################################################
-
+import re
 
 @app.route('/')
 def main_page():
-    return render_template('main_page.html', main_page_value = main_page_data(date),
+
+    kospi_sum = int(re.sub('[^0-9]', '',main_page_data(date)['kospi_individual']))\
+                +int(re.sub('[^0-9]', '',main_page_data(date)['kospi_foreigner']))\
+                +int(re.sub('[^0-9]', '',main_page_data(date)['kospi_Institutional']))
+    kosdaq_sum = int(re.sub('[^0-9]', '',main_page_data(date)['kosdaq_individual']))\
+                 +int(re.sub('[^0-9]', '',main_page_data(date)['kosdaq_foreigner']))\
+                 +int(re.sub('[^0-9]', '',main_page_data(date)['kosdaq_Institutional']))
+    kospi_kosdaq_sum = [kospi_sum,kosdaq_sum]
+
+    change_data = kr_page_data().volatilty()
+
+    return render_template('main_page.html',
+                           main_page_value = main_page_data(date),
+                           kospi_kosdaq_sum = kospi_kosdaq_sum,
+                           change_data=change_data,
                            current_time = time())
 
+from data.kr_page_data2 import low_value_stock
 
 @app.route('/korea_stock')
 def korea_stock():
     rank_data = kr_page_data().rank()
     change_data = kr_page_data().volatilty()
     volume_data = kr_page_data().volume()
+    low_value_data = low_value_stock().final_data_to_df()
     return render_template('korea_stock.html',
                            main_page_value = main_page_data(date),
                            current_time = time(),
                            change_data = change_data,
                            volume_data = volume_data,
                            rank_data = rank_data,
+                           low_value_data = low_value_data,
                            korea_code_list = korea_code_data())
 
 @app.route('/us_stock')
@@ -93,13 +110,13 @@ def us_stock():
     return render_template('us_stock.html',current_time = time(),
                            main_page_value = main_page_data(date))
 
-@app.route('/coin')
-def coin():
-    return render_template('coin.html')
+# @app.route('/coin')
+# def coin():
+#     return render_template('coin.html')
 
-@app.route('/coin/<coin_name>')
-def get_coin(coin_name):
-    return 'profile : ' + coin_name
+# @app.route('/coin/<coin_name>')
+# def get_coin(coin_name):
+#     return 'profile : ' + coin_name
 
 @app.route('/sales_log')
 def sales_log():

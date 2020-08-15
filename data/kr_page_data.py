@@ -1,6 +1,9 @@
 import pymysql
 import pandas as pd
-
+import numpy as np
+import re
+import warnings
+warnings.filterwarnings('ignore')
 
 class kr_page_data:
 
@@ -304,7 +307,7 @@ class kr_page_data:
                     for i in rate_df_edit['code']:
                         name_rate_list.append(code_name_dic[i])
                     rate_df_edit['name'] = name_rate_list
-                    rate_df_edit = rate_df_edit.reset_index().loc[:10]
+                    rate_df_edit = rate_df_edit.reset_index().loc[:9]
                     rate_df_edit = rate_df_edit[['code', 'name','rate']]
 
                     abs_final_dic = {}
