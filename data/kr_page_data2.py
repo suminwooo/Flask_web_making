@@ -256,8 +256,8 @@ class low_value_stock():
                     data = pd.read_sql_query(sql, connection)[['kr_stock_code',
                                                                'kr_stock_name']].set_index('kr_stock_code')
                     col = low_value_stock().value()
-                    data = data.loc[col]
-                    data_dic = data.to_dict('kr_stock_name')
+                    data = data.loc[col].reset_index()
+                    data_dic = data.to_dict('index')
 
         except Exception as e:
             print('->', e)
@@ -268,4 +268,36 @@ class low_value_stock():
                 # print(value)
         return data_dic
 
-print(low_value_stock().final_data_to_df())
+    # 일부만 표시
+    def final_data_to_df_sample(self):
+        connection = None
+        row = None
+        try:
+            connection = pymysql.connect(host='localhost',
+                                         user='root',
+                                         password='0000',
+                                         db='web_db',
+                                         port=3306,
+                                         charset='utf8',
+                                         cursorclass=pymysql.cursors.DictCursor)
+            if connection:
+                # print('DB 오픈')
+
+                with connection.cursor() as cursor:
+                    sql = "SELECT * FROM kr_stock_list;"
+                    cursor.execute(sql)
+                    data = cursor.fetchall()
+                    data = pd.read_sql_query(sql, connection)[['kr_stock_code',
+                                                               'kr_stock_name']].set_index('kr_stock_code')
+                    col = low_value_stock().value()
+                    data = data.loc[col].reset_index()
+                    data_dic = data[:10].to_dict('index')
+
+        except Exception as e:
+            print('->', e)
+
+        finally:
+            if connection:
+                connection.close()
+                # print(value)
+        return data_dic

@@ -1,8 +1,7 @@
 {% extends 'base.html' %}
 
 {% block main %}
-<script type=text/javascript src="{{
-  url_for('static', filename='jquery.js') }}"></script>
+  <script type=text/javascript src="{{url_for('static', filename='jquery.js') }}"></script>
 
   <div class="main_container">
 
@@ -144,56 +143,34 @@
         <a href="#kr_stock_1" class="tablinks">한국주식</a>
         <a href="#us_stock_value_1" class="tablinks">미국(가치)</a>
         <a href="#us_stock_div_1" class="tablinks">미국(배당)</a>
-<!--        <a href="#coin_1" class="tablinks">코인</a>-->
-    </div>
+      </div>
 
-    <div id="kr_stock_1" class="tabcontent">
-               <table>
+      <div id="kr_stock_1" class="tabcontent">
+        <table>
           <tr>
             <th>순위</th>
             <th>종목 코드</th>
             <th>종명 명</th>
             <th>변동률</th>
           </tr>
-          {% for num,detail in change_data[2].items() %}
+            {% for num,detail in change_data[2].items() %}
           <tr>
-            <td>{{ num+1}}</td>
-            <td>{{ detail['code']}}</td>
-            <td>{{ detail['name']}}</td>
-            <td>{{ detail['rate']}}%</td>
+            <td>{{num+1}}</td>
+            <td>{{detail['code']}}</td>
+            <td>{{detail['name']}}</td>
+            <td>{{detail['rate']}}%</td>
           </tr>
           {% endfor %}
         </table>
-    </div>
+      </div>
 
-    <div id="us_stock_value_1" class="tabcontent">
-      <p>준비중</p>
-    </div>
-
-    <div id="us_stock_div_1" class="tabcontent">
+      <div id="us_stock_value_1" class="tabcontent">
         <p>준비중</p>
+      </div>
 
-    </div>
-
-    <div id="coin_1" class="tabcontent">
-      <table>
-        <thead>
-          <tr>
-           <th>코인</th><th>코드</th><th>현재가</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>-</td><td>-</td><td>-</td>
-          </tr>
-          <tr>
-            <td>-</td><td>-</td><td>-</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-
+      <div id="us_stock_div_1" class="tabcontent">
+        <p>준비중</p>
+      </div>
     </div>
 
     <div class="container_main6">
@@ -202,33 +179,37 @@
         <a href="#kr_stock_2" class="tablinks">한국주식</a>
         <a href="#us_stock_value_2" class="tablinks">미국(가치)</a>
         <a href="#us_stock_div_2" class="tablinks">미국(배당)</a>
-<!--        <a href="#coin_2" class="tablinks">코인</a>-->
       </div>
 
-    <div id="kr_stock_2" class="tabcontent">
-        <h3>한국주식내용</h3>
-        <p>ㅎㅎㅎㅎ</p>
-    </div>
+      <div id="kr_stock_2" class="tabcontent">
+        <table>
+          <tr>
+            <th>NO.</th>
+            <th>종목 코드</th>
+            <th>종명 명</th>
+          </tr>
+          {% for num,value in low_value_data.items() %}
+          <tr>
+            <td>{{ num+1 }}</td>
+            <td>{{ value['kr_stock_code'] }}</td>
+            <td>{{ value['kr_stock_name'] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
 
-    <div id="us_stock_value_2" class="tabcontent">
-        <h3>미국 가치주 내용</h3>
-        <p>ㄱㄱㄱㄱㄱ</p>
-    </div>
+      <div id="us_stock_value_2" class="tabcontent">
+        <p>준비중</p>
+      </div>
 
-    <div id="us_stock_div_2" class="tabcontent">
-        <h3>미국 배당주 내용</h3>
-        <p>ㅂㅂㅂㅂㅂ</p>
-    </div>
-
-    <div id="coin_2" class="tabcontent">
-        <h3>코인 내용</h3>
-        <p>GAMBLING</p>
-    </div>
+      <div id="us_stock_div_2" class="tabcontent">
+        <p>준비중</p>
+      </div>
 
     </div>
 
     <div class="container_main7">
-      <h3>추천 종목</h3>
+      <h3>주가 예측</h3>
       <div class="tab tab3">
         <a href="#kr_stock_3" class="tablinks">한국주식</a>
         <a href="#us_stock_value_3" class="tablinks">미국(가치)</a>
@@ -236,20 +217,16 @@
       </div>
 
     <div id="kr_stock_3" class="tabcontent">
-        <h3>한국주식내용</h3>
-
+      <p>준비중</p>
     </div>
 
     <div id="us_stock_value_3" class="tabcontent">
-        <h3>미국 가치주 내용</h3>
-        <p>준비중</p>
+      <p>준비중</p>
     </div>
 
     <div id="us_stock_div_3" class="tabcontent">
-        <h3>미국 배당주 내용</h3>
-        <p>중비중</p>
+      <p>중비중</p>
     </div>
-
 
     </div>
 
@@ -267,13 +244,10 @@
         $('.tab2 a').on('click', tabContent);
         $('.tab3 a').on('click', tabContent);
 
-
         $('.tab1 a:first').trigger('click');
         $('.tab2 a:first').trigger('click');
         $('.tab3 a:first').trigger('click');
-
     </script>
-
 
   </div>
 {% endblock %}

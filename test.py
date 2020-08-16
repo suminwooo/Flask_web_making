@@ -39,8 +39,9 @@ from web_engine.web_engine import web_engine
 from data.naver_news import naver_news
 from db.db_test import korea_detail_information
 from data.kr_page_data import kr_page_data
+from data.kr_page_data3 import stock_all_info
 
-@app.route('/search_detail',methods=['POST'])
+@app.route('/search_detail', methods=['POST'])
 def search_stock():
     search = request.form['input']
     # try:
@@ -54,6 +55,8 @@ def search_stock():
     news_data = naver_news().news_information(search_word_code)
     nonprice_info = korea_detail_information().kr_detail_data(search_word_code)
     price_info = korea_detail_information().kr_price_data(search_word_code)
+    all_price_data = stock_all_info().price()
+
 
     return render_template('kr_search_detail.html',
                            main_page_value = main_page_data(date),
@@ -62,6 +65,7 @@ def search_stock():
                            price_data = price_info,
                            news_data = news_data,
                            price_diff = price_diff_info,
+                           all_price_data = all_price_data,
                            current_time = time())
     # except:
     #     return render_template('error_search_detail.html')
@@ -81,15 +85,16 @@ def main_page():
     kospi_kosdaq_sum = [kospi_sum,kosdaq_sum]
 
     change_data = kr_page_data().volatilty()
+    low_value_data_sample = low_value_stock().final_data_to_df_sample()
 
     return render_template('main_page.html',
                            main_page_value = main_page_data(date),
                            kospi_kosdaq_sum = kospi_kosdaq_sum,
                            change_data=change_data,
+                           low_value_data = low_value_data_sample,
                            current_time = time())
 
 from data.kr_page_data2 import low_value_stock
-
 @app.route('/korea_stock')
 def korea_stock():
     rank_data = kr_page_data().rank()

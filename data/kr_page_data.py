@@ -261,8 +261,8 @@ class kr_page_data:
                     rate_df.columns = ['code','rate']
 
                     # top, down 순위
-                    top_rate_df = rate_df.sort_values(by='rate').reset_index().loc[:10][['code','rate']]
-                    down_rate_df = rate_df.sort_values(by='rate', ascending=False).reset_index().loc[:10][['code','rate']]
+                    top_rate_df = rate_df.sort_values(by='rate').reset_index().loc[:9][['code','rate']]
+                    down_rate_df = rate_df.sort_values(by='rate', ascending=False).reset_index().loc[:9][['code','rate']]
 
                     top_rate_list = []
                     down_rate_list = []
@@ -361,7 +361,7 @@ class kr_page_data:
                     volume_df = pd.DataFrame([code_list,volume_list]).T
                     volume_df.columns = ['code','volume']
                     volume_df = volume_df.sort_values(by='volume', ascending=False)
-                    volume_df = volume_df.reset_index().loc[:10]
+                    volume_df = volume_df.reset_index().loc[:9]
                     name_volume_list = []
                     for i in volume_df['code']:
                         name_volume_list.append(code_name_dic[i])

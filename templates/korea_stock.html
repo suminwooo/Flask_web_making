@@ -7,25 +7,59 @@
     <div class="korea_us_container1">
       <h3> 시장 정보 </h3>
       <div class="basic_box">
-        <p>
-          코스피 : {{main_page_value['kospi_close']}},
-          코스닥 : {{main_page_value['kosdaq_close']}},
-          나스닥100 : {{main_page_value['nasdaq100_close']}},
-          나스닥 : {{main_page_value['nasdaq_close']}}
-        </p>
-        <p>
-          개미현황 : {{main_page_value['kospi_individual']}},
-          외국인 투자자 : {{main_page_value['kospi_foreigner']}},
-          기관 투자자 : {{main_page_value['kospi_Institutional']}}
-        </p>
+        개인 : {{main_page_value['kospi_individual']}},
+        외국인 : {{main_page_value['kospi_foreigner']}},
+        기관 : {{main_page_value['kospi_Institutional']}}
       </div>
+      <table>
+        <thead>
+          <tr>
+          <th>코드</th><th>현재가</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>코스피</td><td>{{main_page_value['kospi_close']}}</td>
+          </tr>
+          <tr>
+            <td>코스닥</td><td>{{main_page_value['kosdaq_close']}}</td>
+          </tr>
+          <tr>
+            <td>나스닥100</td><td>{{main_page_value['nasdaq100_close']}}</td>
+          </tr>
+          <tr>
+            <td>나스닥</td><td>{{main_page_value['nasdaq_close']}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="korea_us_container2">
-      <h3>날짜 시간 설정</h3>
-      <div class="basic_box">
-        {{current_time}}
+      <h3>코스피 그래프</h3>
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container">
+      <div id="tradingview_85626"></div>
+      <div class="tradingview-widget-copyright">TradingView 제공 <a href="https://kr.tradingview.com/symbols/KRX-KOSPI200/" rel="noopener" target="_blank"><span class="blue-text">KOSPI200 차트</span></a></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+      <script type="text/javascript">
+        new TradingView.widget(
+        {
+        "autosize": true,
+        "symbol": "KRX:KOSPI200",
+        "interval": "D",
+        "timezone": "Asia/Seoul",
+        "theme": "light",
+        "style": "1",
+        "locale": "kr",
+        "toolbar_bg": "#f1f3f6",
+        "enable_publishing": false,
+        "allow_symbol_change": true,
+        "container_id": "tradingview_85626"
+        }
+        );
+      </script>
       </div>
+      <!-- TradingView Widget END -->
     </div>
 
     <div class="korea_us_container3">
@@ -118,6 +152,10 @@
     </div>
 
     <div class="korea_us_container4">
+      <h3>외국인. 기관 거래 현황</h3>
+    </div>
+
+    <div class="korea_us_container5">
       <h3>시가 총액</h3>
       <p>우선주는 표시 되지 않음</p>
       <table>
@@ -138,92 +176,32 @@
       </table>
     </div>
 
-    <div class="korea_us_container5">
+    <div class="korea_us_container6">
     <h3>저평가 목록</h3>
       <p>재무재표로 판단 / 순서 X </p>
       <table>
         <tr>
-<!--          <th>NO.</th>-->
+          <th>NO.</th>
           <th>종목 코드</th>
           <th>종명 명</th>
         </tr>
-          {% for code,name in low_value_data.items() %}
+          {% for num,value in low_value_data.items() %}
           <tr>
-            <td>{{ code }}</td>
-            <td>{{ name['kr_stock_name'] }}</td>
+            <td>{{ num+1 }}</td>
+            <td>{{ value['kr_stock_code'] }}</td>
+            <td>{{ value['kr_stock_name'] }}</td>
 
           </tr>
           {% endfor %}
       </table>
     </div>
 
-    <div class="korea_us_container6">
-      <h3>추천 목록</h3>
-        <table>
-      <thead>
-      <tr>
-      <th>NO.</th><th>코드</th><th>현재가</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      <tr>
-      <td>-</td><td>-</td><td>-</td>
-      </tr>
-      </tbody>
-      </table>
-    </div>
-
     <div class="korea_us_container7">
-      <h3>보유중</h3>
-      <table>
-        <thead>
-          <tr>
-           <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-           <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-           <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-        </tbody>
-      </table>
+      <h3>주가 예측</h3>
     </div>
 
     <div class="korea_us_container8">
-      <h3>관심종목</h3>
-      <table>
-        <thead>
-          <tr>
-           <th>Lorem</th><th>Ipsum</th><th>Dolor</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-           <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-          <tr>
-           <td>Lorem</td><td>Ipsum</td><td>Dolor</td>
-          </tr>
-        </tbody>
-      </table>
+      <h3>모델 설명</h3>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>

@@ -19,14 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="20200814">
-      <change afterPath="$PROJECT_DIR$/data/kr_page_data2.py" afterDir="false" />
+    <list default="true" id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="20200815">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/to_db_from_python.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB/to_db_from_python.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/kr_page_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/kr_page_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/main_page_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/main_page_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/kr_page_data2.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/kr_page_data2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/korea_stock.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/korea_stock.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/kr_search_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/kr_search_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
@@ -62,20 +61,20 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data" />
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data\raw_data" />
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\DB" />
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\web_engine" />
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\crolling_n_data\raw_data" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data" />
       <recent name="C:\Users\wsm26\Desktop\Flask_web_making\templates" />
       <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making\templates" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data" />
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making" />
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data\raw_data" />
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\DB" />
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\web_engine" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.kr_page_data2">
+  <component name="RunManager" selected="Python.test">
     <configuration name="kr_page_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,6 +109,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/kr_page_data2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="kr_page_data3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Flask_web_making" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/kr_page_data3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,34 +180,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Flask_web_making" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/raw_data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/raw_data/test_data.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.kr_page_data2" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.kr_page_data3" />
+        <item itemvalue="Python.kr_page_data2" />
         <item itemvalue="Python.kr_page_data" />
         <item itemvalue="Python.main_page_data" />
-        <item itemvalue="Python.test_data" />
       </list>
     </recent_temporary>
   </component>
@@ -391,7 +390,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597408510946</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="20200815">
+      <created>1597483645096</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1597483645096</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -427,69 +433,70 @@
     <MESSAGE value="20200809" />
     <MESSAGE value="20200810" />
     <MESSAGE value="20200814" />
-    <option name="LAST_COMMIT_MESSAGE" value="20200814" />
+    <MESSAGE value="20200815" />
+    <option name="LAST_COMMIT_MESSAGE" value="20200815" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1595661755630">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595661755630" />
-    <state width="1252" height="524" key="GridCell.Tab.0.bottom" timestamp="1597483460973">
+    <state width="1252" height="386" key="GridCell.Tab.0.bottom" timestamp="1597557750409">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1256" height="249" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596623327271" />
     <state width="1256" height="19" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1252" height="524" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597483460973" />
+    <state width="1252" height="386" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597557750409" />
     <state width="1899" height="516" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1597408526790" />
-    <state width="1252" height="524" key="GridCell.Tab.0.center" timestamp="1597483460973">
+    <state width="1252" height="386" key="GridCell.Tab.0.center" timestamp="1597557750409">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1256" height="249" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596623327270" />
     <state width="1256" height="19" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1252" height="524" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597483460973" />
+    <state width="1252" height="386" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597557750409" />
     <state width="1899" height="516" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1597408526790" />
-    <state width="1252" height="524" key="GridCell.Tab.0.left" timestamp="1597483460973">
+    <state width="1252" height="386" key="GridCell.Tab.0.left" timestamp="1597557750408">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1256" height="249" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596623327270" />
     <state width="1256" height="19" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1252" height="524" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597483460973" />
+    <state width="1252" height="386" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597557750408" />
     <state width="1899" height="516" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1597408526790" />
-    <state width="1252" height="524" key="GridCell.Tab.0.right" timestamp="1597483460973">
+    <state width="1252" height="386" key="GridCell.Tab.0.right" timestamp="1597557750409">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1256" height="249" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596623327271" />
     <state width="1256" height="19" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
     <state width="1256" height="408" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1252" height="524" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597483460973" />
+    <state width="1252" height="386" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597557750409" />
     <state width="1899" height="516" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1597408526790" />
-    <state width="2539" height="490" key="GridCell.Tab.1.bottom" timestamp="1597466262844">
+    <state width="2539" height="490" key="GridCell.Tab.1.bottom" timestamp="1597483648034">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596274983348" />
     <state width="1256" height="347" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1595308892780" />
-    <state width="2539" height="490" key="GridCell.Tab.1.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597466262844" />
-    <state width="2539" height="490" key="GridCell.Tab.1.center" timestamp="1597466262844">
+    <state width="2539" height="490" key="GridCell.Tab.1.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597483648034" />
+    <state width="2539" height="490" key="GridCell.Tab.1.center" timestamp="1597483648034">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596274983347" />
     <state width="1256" height="347" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1595308892779" />
-    <state width="2539" height="490" key="GridCell.Tab.1.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597466262843" />
-    <state width="2539" height="490" key="GridCell.Tab.1.left" timestamp="1597466262843">
+    <state width="2539" height="490" key="GridCell.Tab.1.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597483648034" />
+    <state width="2539" height="490" key="GridCell.Tab.1.left" timestamp="1597483648034">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596274983347" />
     <state width="1256" height="347" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1595308892779" />
-    <state width="2539" height="490" key="GridCell.Tab.1.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597466262843" />
-    <state width="2539" height="490" key="GridCell.Tab.1.right" timestamp="1597466262844">
+    <state width="2539" height="490" key="GridCell.Tab.1.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597483648034" />
+    <state width="2539" height="490" key="GridCell.Tab.1.right" timestamp="1597483648034">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1899" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596274983348" />
     <state width="1256" height="347" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1595308892780" />
-    <state width="2539" height="490" key="GridCell.Tab.1.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597466262844" />
+    <state width="2539" height="490" key="GridCell.Tab.1.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597483648034" />
     <state x="365" y="124" key="MergeDialog" timestamp="1595861848146">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

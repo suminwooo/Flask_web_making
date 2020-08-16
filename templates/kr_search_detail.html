@@ -3,17 +3,18 @@
 {% block main %}
 
     <div class="search_container">
+
         <div class="search_container1">
             <h1>{{STOCK['kr_stock_name']}} / {{STOCK['kr_stock_code']}} / {{STOCK['kr_ind_name']}}</h1>
             <table>
                 <tr>
-                    <td>코스피</td>
+                <td>코스피</td>
                     <td>{{main_page_value['kospi_individual']}}</td>
                     <td>{{main_page_value['kospi_foreigner']}}</td>
                     <th>{{main_page_value['kospi_Institutional']}}</th>
                 </tr>
                 <tr>
-                    <td>코스닥</td>
+                <td>코스닥</td>
                     <td>{{main_page_value['kosdaq_individual']}}</td>
                     <td>{{main_page_value['kosdaq_foreigner']}}</td>
                     <th>{{main_page_value['kosdaq_Institutional']}}</th>
@@ -22,24 +23,34 @@
         </div>
 
         <div class="search_container2">
-            <div class="time">
-                {{current_time}}
-            </div>
-            <div class="kind_stock1">
-                한국주식
-            </div>
-            <div class="kind_stock2">
-                미국주식(가치)
-            </div>
-            <div class="kind_stock3">
-                미국주식(배당)
-            </div>
+            <h2>예측 정보 + 기관/외국인 현황</h2>
         </div>
 
-
         <div class="search_container3">
-            <h4>Chart</h4>
-            <iframe src="https://ssltvc.forexprostools.com/?pair_ID=650&height=480&width=650&interval=300&plotStyle=candles&domain_ID=18&lang_ID=18&timezone_ID=26"></iframe>
+            <!-- TradingView Widget BEGIN -->
+            <div class="tradingview-widget-container">
+            <div id="tradingview_9d8b8"></div>
+            <div class="tradingview-widget-copyright">TradingView 제공 <a href="https://kr.tradingview.com/symbols/KRX-005930/" rel="noopener" target="_blank"><span class="blue-text">005930 차트</span></a></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+                new TradingView.widget(
+                {
+                "autosize": true,
+                "symbol": "KRX:005930",
+                "interval": "D",
+                "timezone": "Asia/Seoul",
+                "theme": "light",
+                "style": "1",
+                "locale": "kr",
+                "toolbar_bg": "#f1f3f6",
+                "enable_publishing": false,
+                "allow_symbol_change": true,
+                "container_id": "tradingview_9d8b8"
+                }
+                );
+            </script>
+            </div>
+            <!-- TradingView Widget END -->
         </div>
 
         <div class="search_container4">
@@ -134,8 +145,25 @@
         </div>
 
         <div class="search_container7">
-            <h4>예측 정보</h4>
-            <p>추후 추가 예정</p>ㄴ
+            <h4>과거 OHLC</h4>
+            <table>
+                <tr>
+                    <th>날짜</th>
+                    <th>시가</th>
+                    <th>고가</th>
+                    <th>저가</th>
+                    <th>종가</th>
+                </tr>
+                {% for detail in all_price_data.values() %}
+                <tr>
+                    <td>{{ detail['DATE'] }}</td>
+                    <td>{{ detail['kr_stock_open'] }}</td>
+                    <td>{{ detail['kr_stock_high'] }}</td>
+                    <td>{{ detail['kr_stock_low'] }}</td>
+                    <td>{{ detail['kr_stock_close'] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
         </div>
 
     </div>
