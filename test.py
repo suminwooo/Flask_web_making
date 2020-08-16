@@ -19,8 +19,14 @@ from flask import jsonify
 class api_data(Resource):
     def get(self):
         test_data = stock_list_api().api()
+        rank_data = kr_page_data().rank()
+        low_value_data = low_value_stock().final_data_to_df()
+
         message = {
-            'kr_stock_list': test_data
+            'kr_stock_list': test_data,
+            'rank_data' : rank_data,
+            'low_value_data' : low_value_data
+
         }
         resp = jsonify(message)
         resp.status_code = 200
@@ -44,31 +50,31 @@ from data.kr_page_data3 import stock_all_info
 @app.route('/search_detail', methods=['POST'])
 def search_stock():
     search = request.form['input']
-    # try:
-    search_word = web_engine().search('{}'.format(search))
-    search_word_code = search_word[0] # db관리 개판으로 해서 숫자 길이 안맞음 아래는 0 채우면 됨
-    STOCK = stock_list_api().api()[search_word_code]
-    price_diff_info = kr_page_data().change_rate_calculate()[int(search_word_code)]
+    try:
+        search_word = web_engine().search('{}'.format(search))
+        search_word_code = search_word[0] # db관리 개판으로 해서 숫자 길이 안맞음 아래는 0 채우면 됨
+        STOCK = stock_list_api().api()[search_word_code]
+        price_diff_info = kr_page_data().change_rate_calculate()[int(search_word_code)]
 
-    search_word_code = search_word[0].zfill(6)
+        search_word_code = search_word[0].zfill(6)
 
-    news_data = naver_news().news_information(search_word_code)
-    nonprice_info = korea_detail_information().kr_detail_data(search_word_code)
-    price_info = korea_detail_information().kr_price_data(search_word_code)
-    all_price_data = stock_all_info().price()
+        news_data = naver_news().news_information(search_word_code)
+        nonprice_info = korea_detail_information().kr_detail_data(search_word_code)
+        price_info = korea_detail_information().kr_price_data(search_word_code)
+        all_price_data = stock_all_info().price()
 
 
-    return render_template('kr_search_detail.html',
-                           main_page_value = main_page_data(date),
-                           STOCK = STOCK,
-                           nonprice_data = nonprice_info,
-                           price_data = price_info,
-                           news_data = news_data,
-                           price_diff = price_diff_info,
-                           all_price_data = all_price_data,
-                           current_time = time())
-    # except:
-    #     return render_template('error_search_detail.html')
+        return render_template('kr_search_detail.html',
+                               main_page_value = main_page_data(date),
+                               STOCK = STOCK,
+                               nonprice_data = nonprice_info,
+                               price_data = price_info,
+                               news_data = news_data,
+                               price_diff = price_diff_info,
+                               all_price_data = all_price_data,
+                               current_time = time())
+    except:
+        return render_template('error_search_detail.html')
 
 ###################################################################
 import re
@@ -97,17 +103,13 @@ def main_page():
 from data.kr_page_data2 import low_value_stock
 @app.route('/korea_stock')
 def korea_stock():
-    rank_data = kr_page_data().rank()
     change_data = kr_page_data().volatilty()
     volume_data = kr_page_data().volume()
-    low_value_data = low_value_stock().final_data_to_df()
     return render_template('korea_stock.html',
                            main_page_value = main_page_data(date),
                            current_time = time(),
                            change_data = change_data,
                            volume_data = volume_data,
-                           rank_data = rank_data,
-                           low_value_data = low_value_data,
                            korea_code_list = korea_code_data())
 
 @app.route('/us_stock')
