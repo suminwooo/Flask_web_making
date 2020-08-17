@@ -15,17 +15,20 @@ app.config['JSON_AS_ASCII'] = False
 # API 페이지
 from db.data_api import stock_list_api
 from flask import jsonify
+from data.kr_seach_page import stock_all_info
 
 class api_data(Resource):
     def get(self):
         test_data = stock_list_api().api()
         rank_data = kr_page_data().rank()
         low_value_data = low_value_stock().final_data_to_df()
+        all_price_data = stock_all_info().price()
 
         message = {
             'kr_stock_list': test_data,
             'rank_data' : rank_data,
-            'low_value_data' : low_value_data
+            'low_value_data' : low_value_data,
+            'all_price_data' : all_price_data
 
         }
         resp = jsonify(message)
@@ -45,7 +48,6 @@ from web_engine.web_engine import web_engine
 from data.naver_news import naver_news
 from db.db_test import korea_detail_information
 from data.kr_page_data import kr_page_data
-from data.kr_page_data3 import stock_all_info
 
 @app.route('/search_detail', methods=['POST'])
 def search_stock():
@@ -61,9 +63,8 @@ def search_stock():
         news_data = naver_news().news_information(search_word_code)
         nonprice_info = korea_detail_information().kr_detail_data(search_word_code)
         price_info = korea_detail_information().kr_price_data(search_word_code)
-        all_price_data = stock_all_info().price()
-
-
+        financial_data = korea_detail_information().kr_financial_data(search_word_code)
+        institution_foriegner = korea_detail_information().kr_institution_foriegner_data(search_word_code)
         return render_template('kr_search_detail.html',
                                main_page_value = main_page_data(date),
                                STOCK = STOCK,
@@ -71,7 +72,8 @@ def search_stock():
                                price_data = price_info,
                                news_data = news_data,
                                price_diff = price_diff_info,
-                               all_price_data = all_price_data,
+                               financial_data = financial_data,
+                               institution_foriegner = institution_foriegner,
                                current_time = time())
     except:
         return render_template('error_search_detail.html')
@@ -100,9 +102,11 @@ def main_page():
                            low_value_data = low_value_data_sample,
                            current_time = time())
 
-from data.kr_page_data2 import low_value_stock
+from data.kr_page_data2 import low_value_stock,foreigener_institution_info
+
 @app.route('/korea_stock')
 def korea_stock():
+    foreigener_institution_data = foreigener_institution_info().foreigener_institution_data()
     change_data = kr_page_data().volatilty()
     volume_data = kr_page_data().volume()
     return render_template('korea_stock.html',
@@ -110,6 +114,7 @@ def korea_stock():
                            current_time = time(),
                            change_data = change_data,
                            volume_data = volume_data,
+                           foreigener_institution_data = foreigener_institution_data,
                            korea_code_list = korea_code_data())
 
 @app.route('/us_stock')

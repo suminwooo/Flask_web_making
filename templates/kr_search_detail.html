@@ -5,25 +5,33 @@
     <div class="search_container">
 
         <div class="search_container1">
-            <h1>{{STOCK['kr_stock_name']}} / {{STOCK['kr_stock_code']}} / {{STOCK['kr_ind_name']}}</h1>
-            <table>
-                <tr>
-                <td>코스피</td>
-                    <td>{{main_page_value['kospi_individual']}}</td>
-                    <td>{{main_page_value['kospi_foreigner']}}</td>
-                    <th>{{main_page_value['kospi_Institutional']}}</th>
-                </tr>
-                <tr>
-                <td>코스닥</td>
-                    <td>{{main_page_value['kosdaq_individual']}}</td>
-                    <td>{{main_page_value['kosdaq_foreigner']}}</td>
-                    <th>{{main_page_value['kosdaq_Institutional']}}</th>
-                </tr>
-            </table>
+            <h2>{{STOCK['kr_stock_name']}} / {{STOCK['kr_stock_code']}} / {{STOCK['kr_ind_name']}}</h2>
+            <h3>{{price_data['kr_stock_close']}}({{price_diff[6]}}/{{price_diff[7]}})</h3>
         </div>
 
         <div class="search_container2">
-            <h2>예측 정보 + 기관/외국인 현황</h2>
+            <h3>외국인 투자 및 코스피, 코스닥 현황</h3>
+            <table>
+                <thead>
+                  <tr>
+                    <th></th><th>개인</th><th>기관</th><th>외국인</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>코스피</td>
+                        <td>{{main_page_value['kospi_individual']}}</td>
+                        <td>{{main_page_value['kospi_foreigner']}}</td>
+                        <td>{{main_page_value['kospi_Institutional']}}</td>
+                    </tr>
+                    <tr>
+                    <td>코스닥</td>
+                        <td>{{main_page_value['kosdaq_individual']}}</td>
+                        <td>{{main_page_value['kosdaq_foreigner']}}</td>
+                        <td>{{main_page_value['kosdaq_Institutional']}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="search_container3">
@@ -54,7 +62,24 @@
         </div>
 
         <div class="search_container4">
-            <h4>기본 정보(가격&거래량)</h4>
+            <table>
+                <thead>
+                  <tr>
+                    <th></th><th>전체</th><th>기관</th><th>외국인</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>거래량</td>
+                        <td>{{price_data['kr_stock_volume']}}</td>
+                        <td>{{institution_foriegner['institution']}}</td>
+                        <td>{{institution_foriegner['foreigner']}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>(외국인 비율 : {{institution_foriegner['foreigner_percent']}})</p>
+
+            <h3>기본 정보(가격&거래량)</h3>
             <table>
                 <thead>
                   <tr>
@@ -103,17 +128,55 @@
         </div>
 
         <div class="search_container5">
-            <h4>네이버 뉴스</h4>
+            <h3>네이버 뉴스</h3>
             <ul>
                 {% for name  in news_data %}
                 <a href="{{name}}">
                 <li> {{news_data[name]}} </li></a>
                 {% endfor %}
             </ul>
+            <br><br><br><br>
+            <h3>연간 재무 정보</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>매출액</td><td>수정할 부분</td>
+                        <td>영업이익</td><td>수정할 부분</td>
+                    </tr>
+                    <tr>
+                        <td>당기순이익</td><td>{{financial_data[3]}}</td>
+                        <td>영업이익률</td><td>{{financial_data[4]}}</td>
+                    </tr>
+                    <tr>
+                        <td>순이익률</td><td>{{financial_data[5]}}</td>
+                        <td>ROE</td><td>{{financial_data[6]}}</td>
+                    </tr>
+                    <tr>
+                        <td>부채비율</td><td>{{financial_data[7]}}</td>
+                        <td>당좌비율</td><td>{{financial_data[8]}}</td>
+                    </tr>
+                    <tr>
+                        <td>유보비율</td><td>{{financial_data[9]}}</td>
+                        <td>EPS</td><td>{{financial_data[10]}}</td>
+                    </tr>
+                    <tr>
+                        <td>PER</td><td>{{financial_data[11]}}</td>
+                        <td>BPS</td><td>{{financial_data[12]}}</td>
+                    </tr>
+                    <tr>
+                        <td>PBR</td><td>{{financial_data[13]}}</td>
+                        <td>주당배당금</td><td>{{financial_data[14]}}</td>
+                    </tr>
+                    <tr>
+                        <td>배당수익률</td><td>{{financial_data[15]}}</td>
+                        <td>배당 페이아웃 비율</td><td>{{financial_data[16]}}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="search_container6">
-            <h4>재무 정보</h4>
+            <h3>재무 정보</h3>
             <table>
                 <tbody>
                     <tr>
@@ -134,38 +197,99 @@
                     </tr>
                     <tr>
                         <td>배당율</td><td>{{nonprice_data['kr_stock_DIV']}}</td>
-                        <td>코멘트</td><td>{{nonprice_data['kr_stock_comment']}}</td>
+                        <td></td><td></td>
                     </tr>
                     <tr>
-                        <td>동일업종 PER</td><td>{{nonprice_data['kr_stock_same_ind_per']}}</td>
+                        <td>업종PER</td><td>{{nonprice_data['kr_stock_same_ind_per']}}</td>
                         <td>PER비율</td><td>{{nonprice_data['kr_stock_same_ind_per_percentage']}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
+            <h3>분기별 재무 정보</h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>매출액</td><td>수정할 부분</td>
+                        <td>영업이익</td><td>수정할 부분</td>
+                    </tr>
+                    <tr>
+                        <td>당기순이익</td><td>{{financial_data[-14]}}</td>
+                        <td>영업이익률</td><td>{{financial_data[-13]}}</td>
+                    </tr>
+                    <tr>
+                        <td>순이익률</td><td>{{financial_data[-12]}}</td>
+                        <td>ROE</td><td>{{financial_data[-11]}}</td>
+                    </tr>
+                    <tr>
+                        <td>부채비율</td><td>{{financial_data[-10]}}</td>
+                        <td>당좌비율</td><td>{{financial_data[-9]}}</td>
+                    </tr>
+                    <tr>
+                        <td>유보비율</td><td>{{financial_data[-8]}}</td>
+                        <td>EPS</td><td>{{financial_data[-7]}}</td>
+                    </tr>
+                    <tr>
+                        <td>PER</td><td>{{financial_data[-6]}}</td>
+                        <td>BPS</td><td>{{financial_data[-5]}}</td>
+                    </tr>
+                    <tr>
+                        <td>PBR</td><td>{{financial_data[-4]}}</td>
+                        <td>주당배당금</td><td>{{financial_data[-3]}}</td>
+                    </tr>
+                    <tr>
+                        <td>배당수익률</td><td>{{financial_data[-2]}}</td>
+                        <td>배당 페이아웃 비율</td><td>{{financial_data[-1]}}</td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
         <div class="search_container7">
-            <h4>과거 OHLC</h4>
-            <table>
-                <tr>
-                    <th>날짜</th>
-                    <th>시가</th>
-                    <th>고가</th>
-                    <th>저가</th>
-                    <th>종가</th>
-                </tr>
-                {% for detail in all_price_data.values() %}
-                <tr>
-                    <td>{{ detail['DATE'] }}</td>
-                    <td>{{ detail['kr_stock_open'] }}</td>
-                    <td>{{ detail['kr_stock_high'] }}</td>
-                    <td>{{ detail['kr_stock_low'] }}</td>
-                    <td>{{ detail['kr_stock_close'] }}</td>
-                </tr>
-                {% endfor %}
-            </table>
+            <h3>과거 OHLC</h3>
+            <table id="all_price">
+            <thead>
+              <tr>
+                <th>날짜</th>
+                <th>시가</th>
+                <th>고가</th>
+                <th>저가</th>
+                <th>종가</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <div class="pagenumbers"></div>
         </div>
 
     </div>
+    <script>
+        //과거 정보
+        const el1 = document.querySelector('.search_container7');
+        const tableEl1 = el1.querySelector('table > tbody');
+        const paginationEl1 = el1.querySelector('.pagenumbers');
+        let state1 = {
+            'querySet': null,
+            'page': 1,
+            'rows': 10,
+            'window': 5,
+            'pages': 0
+        }
+        request({
+                url: "/test"
+            })
+            .then(result => {
+                console.log(result);
+                state1.querySet = result.all_price_data
+                console.log('result',state1.querySet)
+
+                buildTable(state1, tableEl1)
+                setPaginationButton(paginationEl1, state1, tableEl1)
+            })
+            .catch(err => console.log('then error : ', err))
+
+    </script>
 {% endblock %}
 

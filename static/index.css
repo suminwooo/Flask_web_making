@@ -232,7 +232,7 @@ footer {
 /* table 속성 */
 
 table {
-    width: 80%;
+    width: 90%;
     border: 1px solid #444444;
     font-size: 9pt;
 }
@@ -316,16 +316,20 @@ input:checked + label{
     width:90%;
     grid-column: 1;
     grid-row: 3/5;
+    margin-bottom:20px;
 }
 
 .korea_us_container4{
     grid-column: 2;
     grid-row: 3/5;
+    margin-bottom:20px;
 }
 
 .korea_us_container5{
     grid-column: 3;
     grid-row: 3/5;
+    margin-bottom:20px;
+
 }
 
 .korea_us_container6{
@@ -486,7 +490,7 @@ width: 80px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 	grid-gap: 10px;
-    grid-template-rows: 200pt 200pt 200pt 250pt;
+    grid-template-rows: 150pt 200pt 200pt 600pt;
     padding:10px;
     margin : 10px;
     margin-bottom : 30px;

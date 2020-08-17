@@ -1,7 +1,14 @@
 from etc.date import date_num
-import pandas as pd
 import FinanceDataReader as fdr
+import urllib
+import time
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+import pandas as pd
+import pymysql
 
+import warnings
+warnings.filterwarnings('ignore')
 data = pd.read_csv('C:/Users/wsm26/Desktop/Flask_web_making/data/raw_data/kospi_code.csv')
 
 code_list = []
@@ -24,7 +31,7 @@ for i in data['code']:
 
 class kr_stock_daily:
 
-    def daily_data(self):
+    def daily_data(self): # 기본 가격
         dataframe_test = pd.DataFrame()
 
         for code in code_list:
@@ -45,3 +52,25 @@ class kr_stock_daily:
              'kr_stock_volume']]
 
         return final_data
+
+    def daily_data2(self): # 기관,외국인 투자자자
+        final_df = pd.DataFrame(index=range(len(code_list)),
+                                columns=['kr_stock_code', 'date', 'institution', 'foreigner', 'foreigner_owned',
+                                         'foreigner_percent'])
+        for num, code in enumerate(code_list):
+            url = 'http://finance.naver.com/item/frgn.nhn?code=' + code + '&page=1'
+            html = urlopen(url)
+            source = BeautifulSoup(html.read(), "html.parser")
+            dataSection = source.find("table", summary="외국인 기관 순매매 거래량에 관한표이며 날짜별로 정보를 제공합니다.")
+            dayDataList = dataSection.find_all("tr")
+
+            date = dayDataList[3].find_all("td", class_="tc")[0].text.replace('.', '-')
+            institution = dayDataList[3].find_all("td", class_="num")[4].text
+            foreigner = dayDataList[3].find_all("td", class_="num")[5].text
+            foreigner_owned = dayDataList[3].find_all("td", class_="num")[6].text
+            foreigner_percent = dayDataList[3].find_all("td", class_="num")[7].text
+
+            value = [int(code), date, institution, foreigner, foreigner_owned, foreigner_percent]
+            final_df.loc[num] = value
+        return final_df
+

@@ -193,7 +193,7 @@ class kr_page_data:
                         except:
                             rank_list.append(999)
                     rank_index = []
-                    for j in range(1,21,1):
+                    for j in range(1,51,1):
                         try:
                             rank_index.append(rank_list.index(j))
                         except:
@@ -206,7 +206,7 @@ class kr_page_data:
                         rank = final_data['kr_stock_kospi_rank'][final_data['kr_stock_kospi_rank'].find('피 ')+2:]
                         capital = final_data['kr_stock_market_value']
                         value_dic = {}
-                        for name,value in zip(['code','name','rank','capital'],[code, name, rank, capital]):
+                        for name,value in zip(['1rank','2code','3name','4capital'],[rank, code, name, capital]):
                             value_dic[name] = value
                         rank_final_dic[num] = value_dic
 

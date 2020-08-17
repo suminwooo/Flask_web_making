@@ -6,11 +6,28 @@
 
     <div class="korea_us_container1">
       <h3> 시장 정보 </h3>
-      <div class="basic_box">
-        개인 : {{main_page_value['kospi_individual']}},
-        외국인 : {{main_page_value['kospi_foreigner']}},
-        기관 : {{main_page_value['kospi_Institutional']}}
-      </div>
+      <table>
+          <thead>
+            <tr>
+              <th></th><th>개인</th><th>기관</th><th>외국인</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+              <td>코스피</td>
+                  <td>{{main_page_value['kospi_individual']}}</td>
+                  <td>{{main_page_value['kospi_foreigner']}}</td>
+                  <td>{{main_page_value['kospi_Institutional']}}</td>
+              </tr>
+              <tr>
+              <td>코스닥</td>
+                  <td>{{main_page_value['kosdaq_individual']}}</td>
+                  <td>{{main_page_value['kosdaq_foreigner']}}</td>
+                  <td>{{main_page_value['kosdaq_Institutional']}}</td>
+              </tr>
+          </tbody>
+      </table>
+      <br>
       <table>
         <thead>
           <tr>
@@ -35,7 +52,6 @@
     </div>
 
     <div class="korea_us_container2">
-      <h3>코스피 그래프</h3>
       <!-- TradingView Widget BEGIN -->
       <div class="tradingview-widget-container">
       <div id="tradingview_85626"></div>
@@ -63,7 +79,7 @@
     </div>
 
     <div class="korea_us_container3">
-    <h3>TOP 변동성</h3>
+      <h3>당일 종가 및 거래량 변화</h3>
       <div class="tab tab1">
         <a href="#volatily_total" class="tablinks">변동성 순위</a>
         <a href="#volatily_up" class="tablinks">상승 순위</a>
@@ -72,12 +88,11 @@
       </div>
 
       <div id="volatily_total" class="tabcontent">
-        <h3>전체 비율 순위</h3>
         <table>
           <tr>
             <th>순위</th>
-            <th>종목 코드</th>
-            <th>종명 명</th>
+            <th>코드</th>
+            <th>종목명</th>
             <th>변동률</th>
           </tr>
           {% for num,detail in change_data[2].items() %}
@@ -92,12 +107,11 @@
       </div>
 
       <div id="volatily_up" class="tabcontent">
-        <h3>상승 비율 순위</h3>
         <table>
           <tr>
             <th>순위</th>
-            <th>종목 코드</th>
-            <th>종명 명</th>
+            <th>코드</th>
+            <th>종목명</th>
             <th>상승률</th>
           </tr>
           {% for num,detail in change_data[1].items() %}
@@ -112,12 +126,11 @@
       </div>
 
       <div id="volatily_down" class="tabcontent">
-        <h3>하락 비율 순위</h3>
         <table>
           <tr>
             <th>순위</th>
-            <th>종목 코드</th>
-            <th>종명 명</th>
+            <th>코드</th>
+            <th>종목명</th>
             <th>하락률</th>
           </tr>
           {% for num,detail in change_data[0].items() %}
@@ -131,12 +144,11 @@
         </table>      </div>
 
       <div id="volume" class="tabcontent">
-        <h3>거래량 순위</h3>
         <table>
           <tr>
             <th>순위</th>
-            <th>종목 코드</th>
-            <th>종명 명</th>
+            <th>코드</th>
+            <th>종목명</th>
             <th>거래량</th>
           </tr>
           {% for num,detail in volume_data.items() %}
@@ -152,7 +164,89 @@
     </div>
 
     <div class="korea_us_container4">
-      <h3>외국인. 기관 거래 현황</h3>
+      <h3>외국인, 기관 거래 현황</h3>
+      <div class="tab tab2">
+        <a href="#institution_buy" class="tablinks">기관 매수</a>
+        <a href="#institution_sell" class="tablinks">기관 매도</a>
+        <a href="#foreigner_buy" class="tablinks">외국인 매수</a>
+        <a href="#foreigner_sell" class="tablinks">외국인 매도</a>
+      </div>
+
+      <div id="institution_buy" class="tabcontent">
+        <table>
+          <tr>
+            <th>순위</th>
+            <th>코드</th>
+            <th>종목명</th>
+            <th>거래량</th>
+          </tr>
+          {% for num,detail in foreigener_institution_data[1].items() %}
+          <tr>
+            <td>{{ num+1}}</td>
+            <td>{{ detail['kr_stock_code']}}</td>
+            <td>{{ detail['kr_stock_name']}}</td>
+            <td>{{ detail['institution']}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div id="institution_sell" class="tabcontent">
+        <table>
+          <tr>
+            <th>순위</th>
+            <th>코드</th>
+            <th>종목명</th>
+            <th>거래량</th>
+          </tr>
+          {% for num,detail in foreigener_institution_data[0].items() %}
+          <tr>
+            <td>{{ num+1}}</td>
+            <td>{{ detail['kr_stock_code']}}</td>
+            <td>{{ detail['kr_stock_name']}}</td>
+            <td>{{ detail['institution']}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div id="foreigner_buy" class="tabcontent">
+        <table>
+          <tr>
+            <th>순위</th>
+            <th>코드</th>
+            <th>종목명</th>
+            <th>거래량</th>
+          </tr>
+          {% for num,detail in foreigener_institution_data[3].items() %}
+          <tr>
+            <td>{{ num+1}}</td>
+            <td>{{ detail['kr_stock_code']}}</td>
+            <td>{{ detail['kr_stock_name']}}</td>
+            <td>{{ detail['foreigner']}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div id="foreigner_sell" class="tabcontent">
+        <table>
+          <tr>
+            <th>순위</th>
+            <th>코드</th>
+            <th>종목명</th>
+            <th>거래량</th>
+          </tr>
+          {% for num,detail in foreigener_institution_data[2].items() %}
+          <tr>
+            <td>{{ num+1}}</td>
+            <td>{{ detail['kr_stock_code']}}</td>
+            <td>{{ detail['kr_stock_name']}}</td>
+            <td>{{ detail['foreigner']}}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
     </div>
 
     <div class="korea_us_container5">
@@ -161,10 +255,10 @@
       <table id="koreanStockList">
         <thead>
           <tr>
-              <th>코드</th>
-              <th>코드명</th>
-              <th>xxxx</th>
-              <th>yyyy</th>
+            <th>순위</th>
+            <th>코드</th>
+            <th>종목명</th>
+            <th>시가총액</th>
           </tr>
         </thead>
         <tbody>
@@ -179,6 +273,7 @@
       <table id="lowValueList">
         <thead>
           <tr>
+            <th>No.</th>
             <th>종목 코드</th>
             <th>종명 명</th>
           </tr>
@@ -191,10 +286,13 @@
 
     <div class="korea_us_container7">
       <h3>주가 예측</h3>
+      <p>추후 추가 예정</p>
     </div>
 
     <div class="korea_us_container8">
       <h3>모델 설명</h3>
+      <p>저평가 => 재무제표 활용</p>
+      <p>주가예측 모델 => 머신러닝, 딥러닝 활용</p>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
@@ -208,11 +306,13 @@
         }
 
         $('.tab1 a').on('click', tabContent);
+        $('.tab2 a').on('click', tabContent);
 
 
         $('.tab1 a:first').trigger('click');
+        $('.tab2 a:first').trigger('click');
 
-        //한국주식
+        //시가총액
         const el1 = document.querySelector('.korea_us_container5');
         const tableEl1 = el1.querySelector('table > tbody');
         const paginationEl1 = el1.querySelector('.pagenumbers');
@@ -231,7 +331,7 @@
             'querySet': null,
             'page': 1,
             'rows': 10,
-            'window': 5,
+            'window': 6,
             'pages': 0
         }
         request({
@@ -239,7 +339,7 @@
             })
             .then(result => {
                 console.log(result);
-                state1.querySet = result.kr_stock_list
+                state1.querySet = result.rank_data
                 state2.querySet = result.low_value_data
                 console.log('result',state1.querySet)
                 console.log('result',state2.querySet)
@@ -250,9 +350,6 @@
                 setPaginationButton(paginationEl2, state2, tableEl2)
             })
             .catch(err => console.log('then error : ', err))
-
-
-
 
     </script>
 
