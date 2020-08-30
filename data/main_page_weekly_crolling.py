@@ -1,9 +1,12 @@
+# 메인 페이지 데이터 내용
+# 일주일에 한번 크롤링 하는 데이터
+
 from etc.date import date_num
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-data = pd.read_csv('C:/Users/wsm26/Desktop/Flask_web_making/data/raw_data/kospi_code.csv')
+data = pd.read_csv('/data/code_data/kospi_code.csv')
 
 code_list = []
 for i in data['code']:
@@ -39,15 +42,12 @@ class kr_stock_weekly:
 
                 price_info = list(
                     filter(('').__ne__, soup.find('div', class_='rate_info').text.replace('\t', '').split('\n')))
-                info1 = soup.find('div', class_='aside_invest_info').find('div', class_='first').text.replace('\t',
-                                                                                                              '').replace(
-                    '\n', '')
+                info1 = soup.find('div', class_='aside_invest_info').find('div', class_='first').text.replace('\t','').replace('\n', '')
                 info2 = soup.find('div', class_='aside_invest_info').find('table', class_='rwidth').text.split('\n')
                 info3 = soup.find('div', class_='aside_invest_info').find('table', class_='per_table')
                 info4 = soup.find('div', class_='aside_invest_info').find('table', summary="동일업종 PER 정보")
 
                 # OHLCV 정보
-                name = price_info[0]
                 today_close = price_info[1][5:-3].strip()
                 today_close_diff = [price_info[2][-2:], price_info[2][:price_info[2].find('포인트')].strip()]
                 today_close_percent = [price_info[3][price_info[3].find('%') + 1:].strip(),
@@ -71,7 +71,6 @@ class kr_stock_weekly:
                     basic_info.append(info1[x:y])
                 market_value = basic_info[0]
                 kospi_rank = basic_info[1]
-                total_stock_num = basic_info[2]
 
                 # 투자의견 (info2)
                 comment = info2[4]

@@ -19,16 +19,28 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="20200816">
+    <list default="true" id="54409ac8-a49b-458a-ad13-0e87083a4d36" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data/code_data/code_rename.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/kr_page_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/kr_page_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/kr_page_data2.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/kr_page_data2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/kr_page_data3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/kr_stock_daily.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/kr_stock_daily.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/korea_stock.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/korea_stock.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/db_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB/db_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/to_db_from_python.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB/to_db_from_python.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/colling_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/kr_page_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/kr_page_data2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/kr_stock_daily.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/kr_stock_weekly.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/main_page_data.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/naver_news.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/raw_data/kospi_code.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/code_data/kospi_code.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/raw_data/us_stock_list.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/us_stock_daily.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/us_stock_weekly.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/coin.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/kr_search_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/kr_search_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/twit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/twit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/us_search_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/us_stock.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +51,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
@@ -47,37 +58,27 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1eyWPvfctqm1MW4jlKqHbt4DV5k" />
+  <component name="ProjectId" id="1go0R8OoIfn2dFebOgID2WgBxvi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/data" />
-    <property name="restartRequiresConfirmation" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\db" />
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data" />
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making" />
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data\raw_data" />
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\DB" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data" />
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\templates" />
-      <recent name="C:\Users\sumin\PycharmProjects\Flask_web_making\templates" />
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data\raw_data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
-    <configuration name="ㅁㄴㅇ" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.code_rename">
+    <configuration name="code_rename" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -85,32 +86,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/code_data" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db/ㅁㄴㅇ.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="db_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Flask_web_making" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/db" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/db/db_test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/code_data/code_rename.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,7 +120,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="kr_seach_page" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main_data_crolling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -148,11 +128,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/raw_data" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/kr_seach_page.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/raw_data/main_data_crolling.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -184,11 +164,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.code_rename" />
+        <item itemvalue="Python.main_data_crolling" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.db_test" />
-        <item itemvalue="Python.kr_seach_page" />
         <item itemvalue="Python.kr_page_data2" />
-        <item itemvalue="Python.ㅁㄴㅇ" />
       </list>
     </recent_temporary>
   </component>
@@ -197,227 +176,13 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7f0a28af-8619-4034-9700-762f4496f08e" name="Default Changelist" comment="" />
-      <created>1595294292173</created>
+      <changelist id="54409ac8-a49b-458a-ad13-0e87083a4d36" name="Default Changelist" comment="" />
+      <created>1598765627392</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1595294292173</updated>
+      <updated>1598765627392</updated>
     </task>
-    <task id="LOCAL-00001" summary="20200721">
-      <created>1595309601139</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1595309601139</updated>
-    </task>
-    <task id="LOCAL-00002" summary="20200721">
-      <created>1595314767284</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1595314767284</updated>
-    </task>
-    <task id="LOCAL-00003" summary="20200721">
-      <created>1595314770564</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1595314770564</updated>
-    </task>
-    <task id="LOCAL-00004" summary="20200721">
-      <created>1595321596939</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1595321596939</updated>
-    </task>
-    <task id="LOCAL-00005" summary="20200721">
-      <created>1595325210290</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1595325210290</updated>
-    </task>
-    <task id="LOCAL-00006" summary="20200722 1100">
-      <created>1595383254496</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1595383254496</updated>
-    </task>
-    <task id="LOCAL-00007" summary="20200722 1400">
-      <created>1595395426110</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1595395426110</updated>
-    </task>
-    <task id="LOCAL-00008" summary="20200723">
-      <created>1595473920782</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1595473920782</updated>
-    </task>
-    <task id="LOCAL-00009" summary="20200723 1300">
-      <created>1595476847218</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1595476847218</updated>
-    </task>
-    <task id="LOCAL-00010" summary="20200723 1300">
-      <created>1595652790436</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1595652790436</updated>
-    </task>
-    <task id="LOCAL-00011" summary="20200723 1300">
-      <created>1595652797324</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1595652797324</updated>
-    </task>
-    <task id="LOCAL-00012" summary="20200723 1400">
-      <created>1595654689226</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1595654689226</updated>
-    </task>
-    <task id="LOCAL-00013" summary="20200723">
-      <created>1595662540755</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1595662540755</updated>
-    </task>
-    <task id="LOCAL-00014" summary="20200723 2200">
-      <created>1595681894878</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1595681894878</updated>
-    </task>
-    <task id="LOCAL-00015" summary="202007">
-      <created>1595861676492</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1595861676492</updated>
-    </task>
-    <task id="LOCAL-00016" summary="20200727 final">
-      <created>1595861790326</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1595861790326</updated>
-    </task>
-    <task id="LOCAL-00017" summary="20200801 1300">
-      <created>1596254118045</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1596254118045</updated>
-    </task>
-    <task id="LOCAL-00018" summary="20200801 2300">
-      <created>1596293783970</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1596293783971</updated>
-    </task>
-    <task id="LOCAL-00019" summary="20200803">
-      <created>1596466863084</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1596466863084</updated>
-    </task>
-    <task id="LOCAL-00020" summary="20200803">
-      <created>1596466878609</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1596466878609</updated>
-    </task>
-    <task id="LOCAL-00021" summary="20200806">
-      <created>1596724071361</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1596724071361</updated>
-    </task>
-    <task id="LOCAL-00022" summary="20200808">
-      <created>1596867542499</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1596867542499</updated>
-    </task>
-    <task id="LOCAL-00023" summary="20200808 1600">
-      <created>1596871292672</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1596871292672</updated>
-    </task>
-    <task id="LOCAL-00024" summary="20200809">
-      <created>1596950429348</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1596950429349</updated>
-    </task>
-    <task id="LOCAL-00025" summary="20200809">
-      <created>1596950438783</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1596950438783</updated>
-    </task>
-    <task id="LOCAL-00026" summary="20200810">
-      <created>1597070189789</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1597070189789</updated>
-    </task>
-    <task id="LOCAL-00027" summary="20200814">
-      <created>1597408510946</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1597408510946</updated>
-    </task>
-    <task id="LOCAL-00028" summary="20200815">
-      <created>1597483645096</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1597483645096</updated>
-    </task>
-    <task id="LOCAL-00029" summary="20200816">
-      <created>1597557932842</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1597557932842</updated>
-    </task>
-    <task id="LOCAL-00030" summary="20200816">
-      <created>1597557940046</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1597557940046</updated>
-    </task>
-    <option name="localTasksCounter" value="31" />
     <servers />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -429,130 +194,31 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="20200721" />
-    <MESSAGE value="20200722 1100" />
-    <MESSAGE value="20200722 1400" />
-    <MESSAGE value="20200723" />
-    <MESSAGE value="20200723 1300" />
-    <MESSAGE value="20200723 1400" />
-    <MESSAGE value="20200723 2200" />
-    <MESSAGE value="20200727 final" />
-    <MESSAGE value="20200801 1300" />
-    <MESSAGE value="20200801 2300" />
-    <MESSAGE value="20200803" />
-    <MESSAGE value="20200806" />
-    <MESSAGE value="20200808" />
-    <MESSAGE value="20200808 1600" />
-    <MESSAGE value="20200809" />
-    <MESSAGE value="20200810" />
-    <MESSAGE value="20200814" />
-    <MESSAGE value="20200815" />
-    <MESSAGE value="20200816" />
-    <option name="LAST_COMMIT_MESSAGE" value="20200816" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597635979264">
+    <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598768111042">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597635979264" />
-    <state width="1256" height="385" key="GridCell.Tab.0.bottom" timestamp="1597662829178">
+    <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598768111042" />
+    <state width="1256" height="253" key="GridCell.Tab.0.bottom" timestamp="1598768928021">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1899" height="273" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597578170889" />
-    <state width="1256" height="19" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
-    <state width="1256" height="408" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="385" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597662829178" />
-    <state width="1899" height="516" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1597408526790" />
-    <state width="1256" height="385" key="GridCell.Tab.0.center" timestamp="1597662829178">
+    <state width="1256" height="253" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598768928021" />
+    <state width="1256" height="253" key="GridCell.Tab.0.center" timestamp="1598768928020">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1899" height="273" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597578170889" />
-    <state width="1256" height="19" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
-    <state width="1256" height="408" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="385" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597662829178" />
-    <state width="1899" height="516" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1597408526790" />
-    <state width="1256" height="385" key="GridCell.Tab.0.left" timestamp="1597662829178">
+    <state width="1256" height="253" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598768928020" />
+    <state width="1256" height="253" key="GridCell.Tab.0.left" timestamp="1598768928020">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1899" height="273" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597578170889" />
-    <state width="1256" height="19" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
-    <state width="1256" height="408" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="385" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597662829178" />
-    <state width="1899" height="516" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1597408526790" />
-    <state width="1256" height="385" key="GridCell.Tab.0.right" timestamp="1597662829178">
+    <state width="1256" height="253" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598768928020" />
+    <state width="1256" height="253" key="GridCell.Tab.0.right" timestamp="1598768928021">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1899" height="273" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597578170889" />
-    <state width="1256" height="19" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1595476852924" />
-    <state width="1256" height="408" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1595653664918" />
-    <state width="1256" height="385" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597662829178" />
-    <state width="1899" height="516" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1597408526790" />
-    <state width="1256" height="489" key="GridCell.Tab.1.bottom" timestamp="1597644177055">
+    <state width="1256" height="253" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598768928021" />
+    <state x="781" y="344" key="SettingsEditor" timestamp="1598765678839">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1899" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1596274983348" />
-    <state width="1256" height="347" key="GridCell.Tab.1.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1595308892780" />
-    <state width="1256" height="489" key="GridCell.Tab.1.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597644177055" />
-    <state width="1256" height="489" key="GridCell.Tab.1.center" timestamp="1597644177054">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1899" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1596274983347" />
-    <state width="1256" height="347" key="GridCell.Tab.1.center/0.0.2560.1040@0.0.2560.1040" timestamp="1595308892779" />
-    <state width="1256" height="489" key="GridCell.Tab.1.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597644177054" />
-    <state width="1256" height="489" key="GridCell.Tab.1.left" timestamp="1597644177054">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1899" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1596274983347" />
-    <state width="1256" height="347" key="GridCell.Tab.1.left/0.0.2560.1040@0.0.2560.1040" timestamp="1595308892779" />
-    <state width="1256" height="489" key="GridCell.Tab.1.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597644177054" />
-    <state width="1256" height="489" key="GridCell.Tab.1.right" timestamp="1597644177054">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state width="1899" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1596274983348" />
-    <state width="1256" height="347" key="GridCell.Tab.1.right/0.0.2560.1040@0.0.2560.1040" timestamp="1595308892780" />
-    <state width="1256" height="489" key="GridCell.Tab.1.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597644177054" />
-    <state x="365" y="124" key="MergeDialog" timestamp="1595861848146">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="365" y="124" key="MergeDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595861848146" />
-    <state x="1558" y="464" key="MultipleFileMergeDialog" timestamp="1595861855680">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1558" y="464" key="MultipleFileMergeDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595861855680" />
-    <state x="1712" y="420" key="RollbackChangesDialog" timestamp="1595681881385">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1712" y="420" key="RollbackChangesDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595681881385" />
-    <state x="394" y="160" key="SettingsEditor" timestamp="1596276920561">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="394" y="160" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1596276920561" />
-    <state x="1421" y="344" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1595652754574" />
-    <state x="1512" y="341" key="Vcs.Push.Dialog.v2" timestamp="1597557947485">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1512" y="253" key="Vcs.Push.Dialog.v2/0.0.2560.1040@0.0.2560.1040" timestamp="1595400548646" />
-    <state x="1512" y="341" key="Vcs.Push.Dialog.v2/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1597557947485" />
-    <state x="1373" y="100" width="1094" height="1200" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1595678893630">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1373" y="100" width="1094" height="1200" key="com.intellij.history.integration.ui.views.FileHistoryDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595678893630" />
-    <state x="1725" y="587" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1596950417440">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1725" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1595321590554" />
-    <state x="1725" y="587" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596950417440" />
-    <state x="1610" y="413" key="git4idea.merge.GitPullDialog" timestamp="1596466891311">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1610" y="307" key="git4idea.merge.GitPullDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1595473756316" />
-    <state x="1610" y="413" key="git4idea.merge.GitPullDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1596466891311" />
-    <state x="1583" y="319" width="672" height="678" key="search.everywhere.popup" timestamp="1595679920383">
-      <screen x="0" y="0" width="2560" height="1400" />
-    </state>
-    <state x="1583" y="319" width="672" height="678" key="search.everywhere.popup/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1595679920383" />
+    <state x="781" y="344" key="SettingsEditor/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598765678839" />
   </component>
 </project>

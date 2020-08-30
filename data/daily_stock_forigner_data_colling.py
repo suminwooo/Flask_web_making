@@ -1,40 +1,21 @@
 from etc.date import date_num
 import FinanceDataReader as fdr
-import urllib
-import time
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import pandas as pd
-import pymysql
+from data.code_data import code_rename
 
-import warnings
-warnings.filterwarnings('ignore')
-data = pd.read_csv('C:/Users/wsm26/Desktop/Flask_web_making/data/raw_data/kospi_code.csv')
-
-code_list = []
-for i in data['code']:
-    code = str(i)
-    if len(code) == 2:
-        code = '0000' + code
-        code_list.append(code)
-    elif len(code) == 3:
-        code = '000' + code
-        code_list.append(code)
-    elif len(code) == 4:
-        code = '00' + code
-        code_list.append(code)
-    elif len(code) == 5:
-        code = '0' + code
-        code_list.append(code)
-    else:
-        code_list.append(code)
+code_list = code_rename().code_name()
 
 class kr_stock_daily:
+
+    def __init__(self, code_list):
+        self.code_list = code_list
 
     def daily_data(self): # 기본 가격
         dataframe_test = pd.DataFrame()
 
-        for code in code_list:
+        for code in self.code_list:
             df = fdr.DataReader(code, date_num())
             df = df.reset_index()
             df.columns = ['date', 'open', 'high', 'low', 'close', 'volume', 'close_diff']
@@ -54,10 +35,11 @@ class kr_stock_daily:
         return final_data
 
     def daily_data2(self): # 기관,외국인 투자자자
-        final_df = pd.DataFrame(index=range(len(code_list)),
+        final_df = pd.DataFrame(index=range(len(self.code_list)),
                                 columns=['kr_stock_code', 'date', 'institution', 'foreigner', 'foreigner_owned',
                                          'foreigner_percent'])
-        for num, code in enumerate(code_list):
+        for num, code in enumerate(self.code_list):
+            print(num , code)
             url = 'http://finance.naver.com/item/frgn.nhn?code=' + code + '&page=1'
             html = urlopen(url)
             source = BeautifulSoup(html.read(), "html.parser")
@@ -72,5 +54,6 @@ class kr_stock_daily:
 
             value = [int(code), date, institution, foreigner, foreigner_owned, foreigner_percent]
             final_df.loc[num] = value
+
         return final_df
 

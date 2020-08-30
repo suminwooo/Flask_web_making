@@ -40,7 +40,7 @@ api.add_resource(api_data, '/test')
 
 ###################################################################
 
-date = '2020-08-07'
+date = '2020-08-28'
 
 ###################################################################
 
@@ -52,31 +52,29 @@ from data.kr_page_data import kr_page_data
 @app.route('/search_detail', methods=['POST'])
 def search_stock():
     search = request.form['input']
-    try:
-        search_word = web_engine().search('{}'.format(search))
-        search_word_code = search_word[0] # db관리 개판으로 해서 숫자 길이 안맞음 아래는 0 채우면 됨
-        STOCK = stock_list_api().api()[search_word_code]
-        price_diff_info = kr_page_data().change_rate_calculate()[int(search_word_code)]
-
-        search_word_code = search_word[0].zfill(6)
-
-        news_data = naver_news().news_information(search_word_code)
-        nonprice_info = korea_detail_information().kr_detail_data(search_word_code)
-        price_info = korea_detail_information().kr_price_data(search_word_code)
-        financial_data = korea_detail_information().kr_financial_data(search_word_code)
-        institution_foriegner = korea_detail_information().kr_institution_foriegner_data(search_word_code)
-        return render_template('kr_search_detail.html',
-                               main_page_value = main_page_data(date),
-                               STOCK = STOCK,
-                               nonprice_data = nonprice_info,
-                               price_data = price_info,
-                               news_data = news_data,
-                               price_diff = price_diff_info,
-                               financial_data = financial_data,
-                               institution_foriegner = institution_foriegner,
-                               current_time = time())
-    except:
-        return render_template('error_search_detail.html')
+    # try:
+    search_word = web_engine().search('{}'.format(search)) # 검색 엔진
+    search_word_code = search_word[0] # db관리 개판으로 해서 숫자 길이 안맞음 아래는 0 채우면 됨
+    STOCK = stock_list_api().api()[search_word_code] # 주식 이름, 코드 띄어줌
+    # price_diff_info = kr_page_data().change_rate_calculate()[int(search_word_code)] # 가격차이
+    search_word_code = search_word[0].zfill(6)
+    news_data = naver_news().news_information(search_word_code)
+    # nonprice_info = korea_detail_information().kr_detail_data(search_word_code)
+    price_info = korea_detail_information().kr_price_data(search_word_code)
+    financial_data = korea_detail_information().kr_financial_data(search_word_code)
+    institution_foriegner = korea_detail_information().kr_institution_foriegner_data(search_word_code)
+    return render_template('kr_search_detail.html',
+                           main_page_value = main_page_data(date),
+                           STOCK = STOCK,
+                           # nonprice_data = nonprice_info,
+                           price_data = price_info,
+                           news_data = news_data,
+                           # price_diff = price_diff_info,
+                           financial_data = financial_data,
+                           institution_foriegner = institution_foriegner,
+                           current_time = time())
+    # except:
+    #     return render_template('error_search_detail.html')
 
 ###################################################################
 import re
@@ -117,18 +115,6 @@ def korea_stock():
                            foreigener_institution_data = foreigener_institution_data,
                            korea_code_list = korea_code_data())
 
-@app.route('/us_stock')
-def us_stock():
-    return render_template('us_stock.html',current_time = time(),
-                           main_page_value = main_page_data(date))
-
-# @app.route('/coin')
-# def coin():
-#     return render_template('coin.html')
-
-# @app.route('/coin/<coin_name>')
-# def get_coin(coin_name):
-#     return 'profile : ' + coin_name
 
 @app.route('/sales_log')
 def sales_log():

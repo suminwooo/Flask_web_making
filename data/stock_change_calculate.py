@@ -1,7 +1,5 @@
 import pymysql
 import pandas as pd
-import numpy as np
-import re
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -86,64 +84,59 @@ class kr_page_data:
 
     def change_rate_calculate(self):
         connection = None
-        try:
-            connection = pymysql.connect(host='localhost',
-                                         user='root',
-                                         password='0000',
-                                         db='web_db',
-                                         port=3306,
-                                         charset='utf8',
-                                         cursorclass=pymysql.cursors.DictCursor)
-            if connection:
-                # print('DB 오픈')
+        # try:
+        connection = pymysql.connect(host='localhost',
+                                     user='root',
+                                     password='0000',
+                                     db='web_db',
+                                     port=3306,
+                                     charset='utf8',
+                                     cursorclass=pymysql.cursors.DictCursor)
+        if connection:
 
-                with connection.cursor() as cursor:
+            with connection.cursor() as cursor:
 
-                    recently_data_sql = "SELECT kr_stock_code, DATE, kr_stock_close, kr_stock_open, kr_stock_high, " \
-                                        "kr_stock_low, kr_stock_volume " \
-                                        "FROM kr_stock_daily " \
-                                        "WHERE DATE = '{}';".format(kr_page_data().date()[0])
-                    cursor.execute(recently_data_sql)
-                    recently_data = cursor.fetchall()
-                    recently_data = [j.values() for j in recently_data]
+                recently_data_sql = "SELECT kr_stock_code, DATE, kr_stock_close, kr_stock_open, kr_stock_high, " \
+                                    "kr_stock_low, kr_stock_volume " \
+                                    "FROM kr_stock_daily " \
+                                    "WHERE DATE = '{}';".format(kr_page_data().date()[0])
+                cursor.execute(recently_data_sql)
+                recently_data = cursor.fetchall()
+                recently_data = [j.values() for j in recently_data]
 
 
-                    nonrecently_data_sql = "SELECT kr_stock_code, DATE, kr_stock_close, kr_stock_open, kr_stock_high, " \
-                                           "kr_stock_low, kr_stock_volume " \
-                                        "FROM kr_stock_daily " \
-                                        "WHERE DATE = '{}';".format(kr_page_data().date()[1])
-                    cursor.execute(nonrecently_data_sql)
-                    nonrecently_data = cursor.fetchall()
-                    nonrecently_data = [j.values() for j in nonrecently_data]
-                    code_list = [list(i)[0] for i in nonrecently_data]
-
-                    price_diff = []
-                    for i in range(len(recently_data)):
-                        recent = list(recently_data[i])[2:]
-                        non_recent = list(nonrecently_data[i])[2:]
-                        value_list = []
-                        for j in range(len(recent)):
-                            if recent[j]-non_recent[j] == 0:
-                                value_list.append('0')
-                                value_list.append('0'+'%')
-                            else:
+                nonrecently_data_sql = "SELECT kr_stock_code, DATE, kr_stock_close, kr_stock_open, kr_stock_high, " \
+                                       "kr_stock_low, kr_stock_volume " \
+                                    "FROM kr_stock_daily " \
+                                    "WHERE DATE = '{}';".format(kr_page_data().date()[1])
+                cursor.execute(nonrecently_data_sql)
+                nonrecently_data = cursor.fetchall()
+                nonrecently_data = [j.values() for j in nonrecently_data]
+                code_list = [list(i)[0] for i in nonrecently_data]
+                price_diff = []
+                for i in range(len(recently_data)):
+                    recent = list(recently_data[i])[2:]
+                    non_recent = list(nonrecently_data[i])[2:]
+                    value_list = []
+                    for j in range(len(recent)):
+                        if recent[j]-non_recent[j] == 0:
+                            value_list.append('0')
+                            value_list.append('0'+'%')
+                        else:
+                            try:
                                 value_diff = recent[j] - non_recent[j]
                                 value_percentage = round(((recent[j] - non_recent[j]) / recent[j]) * 100, 2)
                                 value_list.append(value_diff)
                                 value_list.append(str(value_percentage)+'%')
-                        price_diff.append(value_list)
+                            except:
+                                value_list.append('error')
+                                value_list.append('error')
+                    price_diff.append(value_list)
 
-                    final_dic={}
-                    for i in range(len(code_list)):
-                        final_dic[code_list[i]] = price_diff[i]
+                final_dic={}
+                for i in range(len(code_list)):
+                    final_dic[code_list[i]] = price_diff[i]
 
-        except Exception as e:
-            print('->', e)
-
-        finally:
-            if connection:
-                connection.close()
-                # print(value)
         return final_dic
 
     def rank(self):
