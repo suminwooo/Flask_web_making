@@ -1,7 +1,6 @@
 from data.code_data.code_data_update_add import code_add_update
 import pymysql
 from data.main_data_daily_crolling import main_page_data_crolling
-from data.daily_stock_forigner_data_colling import foreigner_instituion_crolling
 
 def daily_update():
 

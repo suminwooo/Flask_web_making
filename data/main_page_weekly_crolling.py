@@ -1,7 +1,7 @@
 # 메인 페이지 데이터 내용
 # 일주일에 한번 크롤링 하는 데이터
 
-from etc.date import date_num
+from etc.date import date_method
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
@@ -106,13 +106,13 @@ class kr_stock_weekly:
                 except:
                     today_close_percent = close_change
 
-                final_value = [code, date_num(), today_close, today_close_diff, today_close_percent, today_open, today_high,
+                final_value = [code, date_method().date_num(), today_close, today_close_diff, today_close_percent, today_open, today_high,
                                today_low, today_vol, market_value,
                                kospi_rank, comment, goal_price, high_52week, low_52week, PER, EPS, est_PER, est_EPS, PBR,
                                BPS, DIV, same_ind_per,
                                same_ind_per_percentage]
             except:
-                final_value = [code, date_num(), 'NAN']
+                final_value = [code, date_method().date_num(), 'NAN']
 
             final_set.append(final_value)
         data = pd.DataFrame(columns=['code', 'date', 'close', 'close_diff', 'close_percent', 'open', 'high', 'low', 'vol',
