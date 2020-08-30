@@ -1,3 +1,5 @@
+# 주가 변화율 계산
+
 import pymysql
 import pandas as pd
 import warnings

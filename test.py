@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from data.main_page_data import main_page_data
 from etc.date import time
-from db.db_test import main_page_data, korea_code_data
+from data.db_test import main_page_data, korea_code_data
 from flask_restful import Resource, Api
 
 ##################################################################
@@ -46,7 +46,7 @@ date = '2020-08-28'
 
 from web_engine.web_engine import web_engine
 from data.naver_news import naver_news
-from db.db_test import korea_detail_information
+from data.db_test import korea_detail_information
 from data.kr_page_data import kr_page_data
 
 @app.route('/search_detail', methods=['POST'])

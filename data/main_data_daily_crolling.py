@@ -1,11 +1,13 @@
-## 완료
+# 메인페이지에 들어가는 대부분 데이터 크롤링
+# 주요 인덱스 및 시장 지표 데이터
 
+import json
+from etc.date import date_method
 import requests
 from bs4 import BeautifulSoup
-import json
-from etc.date import date_num
+import pymysql
 
-class main_page_data:
+class main_page_data_crolling:
 
     def main_page_value(self):
         URL = "https://finance.naver.com/"
@@ -107,6 +109,7 @@ class main_page_data:
 
         return main_values_final
 
+
     def world_page_value(self):
         URL = "https://finance.naver.com/world/"
 
@@ -144,6 +147,16 @@ class main_page_data:
             main_value[3], main_value[4], main_value[5],
             main_value[9], main_value[10], main_value[11]]
 
-        today_date = date_num()
+        today_date = date_method.date_num()
         data = [today_date] + final_list
+
         return data
+
+    def input_main_page_data(self):
+        connection = pymysql.connect(host='localhost', user='root', password='0000', charset='utf8', db='web_db')
+        cur = connection.cursor()
+        sql = "INSERT INTO main_page_data (date,kospi_close,kospi_close_diff,kospi_close_rate,kosdaq_close,kosdaq_close_diff,kosdaq_close_rate,nasdaq_close,nasdaq_close_diff,nasdaq_close_rate,nasdaq100_close,nasdaq100_close_diff,nasdaq100_close_rate,dow_close,dow_close_diff,dow_close_rate,snp500_close,snp500_close_diff,snp500_close_rate,usd_close,usd_close_diff,usd_close_rate,eur_close,eur_close_diff,eur_close_rate,jpy_close,jpy_close_diff,jpy_close_rate,dollorindex_close,dollorindex_close_diff,dollorindex_close_rate,gold_close,gold_close_diff,gold_close_rate,wti_close,wti_close_diff,wti_close_rate,kospi_individual,kospi_foreigner,kospi_Institutional,kosdaq_individual,kosdaq_foreigner,kosdaq_Institutional) VALUES {};".format(
+            "(" + str(main_page_data_crolling().final_value())[1:-1] + ")")
+        cur.execute(sql)
+        connection.commit()
+        connection.close()

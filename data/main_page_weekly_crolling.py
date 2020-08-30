@@ -5,33 +5,19 @@ from etc.date import date_num
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
+from data.code_data import code_list
 
-data = pd.read_csv('/data/code_data/kospi_code.csv')
-
-code_list = []
-for i in data['code']:
-    code = str(i)
-    if len(code) == 2:
-        code = '0000' + code
-        code_list.append(code)
-    elif len(code) == 3:
-        code = '000' + code
-        code_list.append(code)
-    elif len(code) == 4:
-        code = '00' + code
-        code_list.append(code)
-    elif len(code) == 5:
-        code = '0' + code
-        code_list.append(code)
-    else:
-        code_list.append(code)
-
+code_list = code_list().code_name()
 
 class kr_stock_weekly:
+
+    def __init__(self, code_list):
+        self.code_list = code_list
+
     def weekly_data(self):
 
         final_set = []
-        for code in code_list:
+        for code in self.code_list:
             print(code)
             # 시가총액, 코스피 랭킹
             try:

@@ -1,3 +1,6 @@
+# 개별 주식을 검색하였을때 보여지는 네이버 뉴스 부분 크롤링
+# 추후 더보기로 네이버 뉴스와 연결 시키기
+
 import requests
 from bs4 import BeautifulSoup
 
