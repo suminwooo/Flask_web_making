@@ -14,12 +14,7 @@ class web_engine:
               "SELECT kr_stock_code, kr_stock_name " \
               "FROM kr_stock_list " \
               "WHERE kr_stock_code ='{}' " \
-              "OR kr_stock_name ='{}' ) " \
-              "UNION ALL ( " \
-              "SELECT us_stock_code, us_stock_name " \
-              "FROM us_stock_list " \
-              "WHERE us_stock_code ='{}'" \
-              "OR us_stock_name ='{}' );".format(word, word, word, word)
+              "OR kr_stock_name ='{}');".format(word, word)
 
         cur.execute(sql)
         db_data = cur.fetchall()

@@ -25,7 +25,7 @@
             <td>코스닥</td>
             <td>{{main_page_value['kosdaq_individual']}}</td>
             <td>{{main_page_value['kosdaq_foreigner']}}</td>
-            <td>{{main_page_value['kosdaq_Institutional']}}</td>
+            <td>{{main_page_value['kospi_Institutional']}}</td>
             <th>{{kospi_kosdaq_sum[1]}}</th>
           </tr>
         </tbody>
@@ -188,13 +188,8 @@
             <th>종목 코드</th>
             <th>종명 명</th>
           </tr>
-          {% for num,value in low_value_data.items() %}
           <tr>
-            <td>{{ num+1 }}</td>
-            <td>{{ value['kr_stock_code'] }}</td>
-            <td>{{ value['kr_stock_name'] }}</td>
           </tr>
-          {% endfor %}
         </table>
       </div>
 

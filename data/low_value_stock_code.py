@@ -82,7 +82,6 @@ class low_value_stock():
     def three(self):
 
         connection = None
-        row = None
         try:
             connection = pymysql.connect(host='localhost',
                                          user='root',
@@ -133,16 +132,13 @@ class low_value_stock():
         # 1. PER 구분 10이하, PBS 1 이하
 
         data_PER = data
-
         per = data_PER[['kr_stock_code', 'date', 'kind', 'PER']].fillna('999')
-        per['PER'] = [float(i.replace(',', '')) for i in per['PER']]
-
         data_same_ind_per = data2[['kr_stock_code', 'kr_stock_same_ind_per']]
         data_same_ind_per['kr_stock_code'] = [int(i) for i in data_same_ind_per['kr_stock_code']]
         data_same_ind_per['kr_stock_same_ind_per'] = [re.sub('[^0-9.]', '', i) for i in
                                                       data_same_ind_per['kr_stock_same_ind_per']]
         ##1. 연간 PER 저평가
-        per_10_1 = per[per['PER'] <= 10][per[per['PER'] <= 10]['kind'] == 1]
+        per_10_1 = per[per['PER'] <= 10][per[per['PER'] <= 10]['kind'] == 2]
         per_10_1 = per_10_1.reset_index()[['kr_stock_code', 'kind', 'PER']]
 
         PER_1 = pd.merge(per_10_1, data_same_ind_per, on='kr_stock_code').drop_duplicates('kr_stock_code')
@@ -151,7 +147,7 @@ class low_value_stock():
         PER_1 = PER_1[['kr_stock_code', 'PER', 'kr_stock_same_ind_per']]
 
         ##2. 분기 PER 저평가
-        per_10_2 = per[per['PER'] <= 10][per[per['PER'] <= 10]['kind'] == 2]
+        per_10_2 = per[per['PER'] <= 10][per[per['PER'] <= 10]['kind'] == 1]
         per_10_2 = per_10_2[per_10_2['date'] == '2020.03']
         per_10_2 = per_10_2.reset_index()[['kr_stock_code', 'kind', 'PER']]
 
@@ -238,69 +234,69 @@ class low_value_stock():
 
     def final_data_to_df(self):
         connection = None
-        row = None
-        try:
-            connection = pymysql.connect(host='localhost',
-                                         user='root',
-                                         password='0000',
-                                         db='web_db',
-                                         port=3306,
-                                         charset='utf8',
-                                         cursorclass=pymysql.cursors.DictCursor)
-            if connection:
-                # print('DB 오픈')
+        # try:
+        connection = pymysql.connect(host='localhost',
+                                     user='root',
+                                     password='0000',
+                                     db='web_db',
+                                     port=3306,
+                                     charset='utf8',
+                                     cursorclass=pymysql.cursors.DictCursor)
 
-                with connection.cursor() as cursor:
-                    sql = "SELECT * FROM kr_stock_list;"
-                    cursor.execute(sql)
-                    data = cursor.fetchall()
-                    data = pd.read_sql_query(sql, connection)[['kr_stock_code',
-                                                               'kr_stock_name']].set_index('kr_stock_code')
-                    col = low_value_stock().value()
-                    data = data.loc[col].reset_index()
-                    data = data.reset_index()
-                    data.columns = ['1num','2kr_stock_code','3kr_stock_name']
-                    data["1num"] = [i+1 for i in data['1num']]
-                    data_dic = data.to_dict('index')
+        with connection.cursor() as cursor:
+            sql = "SELECT * FROM kr_stock_list;"
+            cursor.execute(sql)
+            data = cursor.fetchall()
+            data = pd.read_sql_query(sql, connection)[['kr_stock_code','kr_stock_name']]
+            data = data.set_index('kr_stock_code')
+            col = low_value_stock().value()
+            df = pd.DataFrame(columns = ['2kr_stock_code','2kr_stock_code'])
+            for i in col:
+                i = int(i)
+                each_df = pd.DataFrame()
+                each_data = data.loc[i]
+                print(i,each_data.values())
+                df = pd.concat([df,each_df], axis=0)
+            # print(df)
+            # data = data.loc[col].reset_index()
+            #
+            # data = data.reset_index()
+            # data.columns = ['1num','2kr_stock_code','3kr_stock_name']
+            # data["1num"] = [i+1 for i in data['1num']]
+            # data_dic = data.to_dict('index')
+            # print(data_dic)
 
-        except Exception as e:
-            print('->', e)
-
-        finally:
-            if connection:
-                connection.close()
-                # print(value)
-        return data_dic
+        # return data_dic
 
     # 일부만 표시 , 메인페이지 내용
     def final_data_to_df_sample(self):
         connection = None
-        try:
-            connection = pymysql.connect(host='localhost',
-                                         user='root',
-                                         password='0000',
-                                         db='web_db',
-                                         port=3306,
-                                         charset='utf8',
-                                         cursorclass=pymysql.cursors.DictCursor)
-            if connection:
-                # print('DB 오픈')
+        # try:
+        connection = pymysql.connect(host='localhost',
+                                     user='root',
+                                     password='0000',
+                                     db='web_db',
+                                     port=3306,
+                                     charset='utf8',
+                                     cursorclass=pymysql.cursors.DictCursor)
+        if connection:
+            # print('DB 오픈')
 
-                with connection.cursor() as cursor:
-                    sql = "SELECT * FROM kr_stock_list;"
-                    cursor.execute(sql)
-                    data = cursor.fetchall()
-                    data = pd.read_sql_query(sql, connection)[['kr_stock_code',
-                                                               'kr_stock_name']].set_index('kr_stock_code')
-                    col = low_value_stock().value()
-                    data = data.loc[col].reset_index()
-                    data_dic = data[:10].to_dict('index')
+            with connection.cursor() as cursor:
+                sql = "SELECT * FROM kr_stock_list;"
+                cursor.execute(sql)
+                data = cursor.fetchall()
+                data = pd.read_sql_query(sql, connection)[['kr_stock_code',
+                                                           'kr_stock_name']].set_index('kr_stock_code')
+                print(data)
+                # col = data().value()
+                # print(col)
+        # except Exception as e:
+        #     print('->', e)
 
-        except Exception as e:
-            print('->', e)
+        # finally:
+        #     if connection:
+        #         connection.close()
+        # return data_dic
 
-        finally:
-            if connection:
-                connection.close()
-        return data_dic
-
+print(low_value_stock().final_data_to_df())

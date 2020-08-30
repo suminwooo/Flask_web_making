@@ -147,7 +147,7 @@ class main_page_data_crolling:
             main_value[3], main_value[4], main_value[5],
             main_value[9], main_value[10], main_value[11]]
 
-        today_date = date_method.date_num()
+        today_date = date_method().date_num()
         data = [today_date] + final_list
 
         return data

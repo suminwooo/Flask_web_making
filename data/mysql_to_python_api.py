@@ -1,35 +1,73 @@
+# API 로 뿌려주는 데이터
+
 import pymysql
+import pandas as pd
 
-# 메인 페이지 데이터 전송
-def main_page_data():
-    connection = None
-    row = None
-    try:
-        connection = pymysql.connect(host = 'localhost',
-                                 user = 'root',
-                                 password = '0000',
-                                 db = 'web_db',
-                                 port = 3306,
-                                 charset = 'utf8',
-                                 cursorclass = pymysql.cursors.DictCursor)
+# 메인 페이지 데이터
+class total_stock_list:
+    def stock_information(self):
+        connection = None
+        row = None
+        try:
+            connection = pymysql.connect(host='localhost',
+                                         user='root',
+                                         password='0000',
+                                         db='web_db',
+                                         port=3306,
+                                         charset='utf8',
+                                         cursorclass=pymysql.cursors.DictCursor)
 
-        with connection.cursor() as cursor:
-            sql = "SELECT * " \
-                  "FROM main_page_data " \
-                  "ORDER BY DATE DESC LIMIT 1;;"
-            cursor.execute(sql)
-            row = cursor.fetchall()
+            with connection.cursor() as cursor:
+                sql = "SELECT kr_stock_code, kr_stock_name " \
+                      "FROM kr_stock_list;"
+                cursor.execute(sql)
+                row = cursor.fetchall()
 
-    except Exception as e:
-        print('->', e)
+        except Exception as e:
+            print('->', e)
 
-    finally:
-        if connection:
-            connection.close()
-    return row[0]
+        finally:
+            if connection:
+                connection.close()
+        return row
 
-####################### 한국 종목 상세 검색 부분 #######################
+# 개별 주식 정보 뿌려주기
+class stock_all_info:
+    def price(self):
+        connection = None
+        try:
+            connection = pymysql.connect(host='localhost',
+                                         user='root',
+                                         password='0000',
+                                         db='web_db',
+                                         port=3306,
+                                         charset='utf8',
+                                         cursorclass=pymysql.cursors.DictCursor)
+            if connection:
 
+                with connection.cursor() as cursor:
+                    sql = "SELECT kr_stock_code, DATE, kr_stock_open, kr_stock_high, kr_stock_low, kr_stock_close " \
+                               "FROM kr_stock_daily " \
+                               "WHERE kr_stock_code ='5930' " \
+                               "ORDER BY DATE DESC " \
+                               "LIMIT 100;"
+                    cursor.execute(sql)
+                    data = cursor.fetchall()
+                    data = pd.read_sql_query(sql, connection)
+                    data = data[['DATE','kr_stock_open','kr_stock_high','kr_stock_low','kr_stock_close']]
+                    data['DATE'] = [str(i) for i in data['DATE']]
+                    data_dic = data.to_dict('index')
+
+        except Exception as e:
+            print('->', e)
+
+        finally:
+            if connection:
+                connection.close()
+
+        return data_dic
+
+# 한국 종목 상세 검색 부분
 class korea_detail_information:
 
     def kr_price_data(self, code):
@@ -169,4 +207,3 @@ class korea_detail_information:
                 connection.close()
                 # print(value)
         return final_data
-
