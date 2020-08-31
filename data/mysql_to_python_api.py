@@ -5,6 +5,7 @@ import pandas as pd
 
 # 메인 페이지 데이터
 class total_stock_list:
+
     def stock_information(self):
         connection = None
         row = None

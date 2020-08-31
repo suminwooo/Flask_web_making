@@ -12,10 +12,9 @@ import re
 
 from data.naver_news_crolling import naver_news
 from data.stock_change_calculate import kr_page_data
-from data.mysql_to_python_straight import main_page_information
 from data.mysql_to_python_api import total_stock_list, stock_all_info, korea_detail_information
-# from data.low_value_stock_code import low_value_stock
 from data.mysql_to_python_straight import main_page_information
+from data.forigner_institution import foreinger_institurion
 ##################################################################
 
 
@@ -27,13 +26,11 @@ class api_data(Resource):
     def get(self):
         test_data = total_stock_list().stock_information()
         rank_data = kr_page_data().rank()
-        # low_value_data = low_value_stock().final_data_to_df()
         all_price_data = stock_all_info().price()
 
         message = {
             'kr_stock_list': test_data,
             'rank_data' : rank_data,
-            # 'low_value_data' : low_value_data,
             'all_price_data' : all_price_data
 
         }
@@ -73,43 +70,34 @@ def search_stock():
                            current_time = date_method())
 
 ###################################################################
-
+# 개별 페이지
 
 @app.route('/')
 def main_page():
     main_page_value = main_page_information().main_page_data()
-    kospi_sum = int(re.sub('[^0-9]', '',main_page_information().main_page_data()['kospi_individual']))\
-                +int(re.sub('[^0-9]', '',main_page_information().main_page_data()['kospi_foreigner']))\
-                +int(re.sub('[^0-9]', '',main_page_information().main_page_data()['kospi_Institutional']))
-    kosdaq_sum = int(re.sub('[^0-9]', '',main_page_information().main_page_data()['kosdaq_individual']))\
-                 +int(re.sub('[^0-9]', '',main_page_information().main_page_data()['kosdaq_foreigner']))\
-                 +int(re.sub('[^0-9]', '',main_page_information().main_page_data()['kosdaq_Institutional']))
-    kospi_kosdaq_sum = [kospi_sum,kosdaq_sum]
-
+    kospi_kosdaq_sum = main_page_information().main_page_calculate()
     change_data = kr_page_data().volatilty()
-    # low_value_data_sample = low_value_stock().final_data_to_df_sample()
 
     return render_template('main_page.html',
                            main_page_value = main_page_value,
                            kospi_kosdaq_sum = kospi_kosdaq_sum,
                            change_data=change_data,
-                           # low_value_data = low_value_data_sample,
                            current_time = date_method().time())
 
-# from data.kr_page_data2 import low_value_stock,foreigener_institution_info
 
 @app.route('/korea_stock')
 def korea_stock():
     main_page_value = main_page_information().main_page_data()
-    # foreigener_institution_data = foreigener_institution_info().foreigener_institution_data()
+    foreinger_institurion_data = foreinger_institurion().show_seach_page_foreigner_instition()
     change_data = kr_page_data().volatilty()
     volume_data = kr_page_data().volume()
+
     return render_template('korea_stock.html',
                            main_page_value = main_page_value,
                            current_time = date_method(),
+                           foreinger_institurion_data=foreinger_institurion_data,
                            change_data = change_data,
                            volume_data = volume_data,
-                           # foreigener_institution_data = foreigener_institution_data,
                            korea_code_list = total_stock_list())
 
 

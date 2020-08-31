@@ -20,16 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54409ac8-a49b-458a-ad13-0e87083a4d36" name="Default Changelist" comment="test">
-      <change afterPath="$PROJECT_DIR$/data/statements_crolling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/low_value_stock_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/low_value_stock_code.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/main_data_daily_crolling.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/main_data_daily_crolling.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mysql_to_python.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/stock_price_100day_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/stock_price_100day_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/korea_stock.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/korea_stock.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/forigner_institution.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/forigner_institution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mysql_to_python_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/mysql_to_python_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mysql_to_python_straight.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/mysql_to_python_straight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/업데이트 코드.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/업데이트 코드.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_engine/web_engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/web_engine/web_engine.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +62,8 @@
       <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data\raw_data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
-    <configuration name="daily_stock_forigner_data_colling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.forigner_institution">
+    <configuration name="업데이트 코드" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -79,7 +75,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/daily_stock_forigner_data_colling.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/업데이트 코드.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -88,7 +84,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="low_value_stock_code" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="forigner_institution" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -100,7 +96,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/low_value_stock_code.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/forigner_institution.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -130,7 +126,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="mysql_to_python" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="mysql_to_python_straight" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -142,7 +138,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/mysql_to_python.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/mysql_to_python_straight.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -174,11 +170,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.forigner_institution" />
+        <item itemvalue="Python.mysql_to_python_straight" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.업데이트 코드" />
         <item itemvalue="Python.main_data_daily_crolling" />
-        <item itemvalue="Python.low_value_stock_code" />
-        <item itemvalue="Python.mysql_to_python" />
-        <item itemvalue="Python.daily_stock_forigner_data_colling" />
       </list>
     </recent_temporary>
   </component>
@@ -221,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598779505055</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="test">
+      <created>1598792089037</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1598792089037</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,6 +237,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
@@ -244,22 +248,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598779286400" />
-    <state width="1256" height="599" key="GridCell.Tab.0.bottom" timestamp="1598791690768">
+    <state width="1256" height="332" key="GridCell.Tab.0.bottom" timestamp="1598883645846">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1256" height="599" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598791690768" />
-    <state width="1256" height="599" key="GridCell.Tab.0.center" timestamp="1598791690768">
+    <state width="1256" height="332" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598883645846" />
+    <state width="1256" height="332" key="GridCell.Tab.0.center" timestamp="1598883645845">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1256" height="599" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598791690768" />
-    <state width="1256" height="599" key="GridCell.Tab.0.left" timestamp="1598791690768">
+    <state width="1256" height="332" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598883645845" />
+    <state width="1256" height="332" key="GridCell.Tab.0.left" timestamp="1598883645845">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1256" height="599" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598791690768" />
-    <state width="1256" height="599" key="GridCell.Tab.0.right" timestamp="1598791690768">
+    <state width="1256" height="332" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598883645845" />
+    <state width="1256" height="332" key="GridCell.Tab.0.right" timestamp="1598883645846">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1256" height="599" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598791690768" />
+    <state width="1256" height="332" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598883645846" />
     <state x="781" y="344" key="SettingsEditor" timestamp="1598765678839">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
