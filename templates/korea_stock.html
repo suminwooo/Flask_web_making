@@ -178,10 +178,16 @@
             <th>순위</th>
             <th>코드</th>
             <th>종목명</th>
-            <th>거래량</th>
+            <th>변화량</th>
           </tr>
+          {% for num,detail in foreinger_institurion_data[0].items() %}
           <tr>
+            <td>{{ num+1}}</td>
+            <td>{{ detail[0]}}</td>
+            <td>{{ detail[1]}}</td>
+            <td>{{ detail[2]}}</td>
           </tr>
+          {% endfor %}
         </table>
       </div>
 
@@ -191,10 +197,16 @@
             <th>순위</th>
             <th>코드</th>
             <th>종목명</th>
-            <th>거래량</th>
+            <th>변화량</th>
           </tr>
+          {% for num,detail in foreinger_institurion_data[1].items() %}
           <tr>
+            <td>{{ num+1}}</td>
+            <td>{{ detail[0]}}</td>
+            <td>{{ detail[1]}}</td>
+            <td>{{ detail[2]}}</td>
           </tr>
+          {% endfor %}
         </table>
       </div>
 
@@ -204,10 +216,16 @@
             <th>순위</th>
             <th>코드</th>
             <th>종목명</th>
-            <th>거래량</th>
+            <th>변화량</th>
           </tr>
+          {% for num,detail in foreinger_institurion_data[2].items() %}
           <tr>
+            <td>{{ num+1}}</td>
+            <td>{{ detail[0]}}</td>
+            <td>{{ detail[1]}}</td>
+            <td>{{ detail[2]}}</td>
           </tr>
+          {% endfor %}
         </table>
       </div>
 
@@ -217,10 +235,16 @@
             <th>순위</th>
             <th>코드</th>
             <th>종목명</th>
-            <th>거래량</th>
+            <th>변화량</th>
           </tr>
+          {% for num,detail in foreinger_institurion_data[3].items() %}
           <tr>
+            <td>{{ num+1}}</td>
+            <td>{{ detail[0]}}</td>
+            <td>{{ detail[1]}}</td>
+            <td>{{ detail[2]}}</td>
           </tr>
+          {% endfor %}
         </table>
       </div>
     </div>
@@ -236,10 +260,15 @@
             <th>종목명</th>
             <th>시가총액</th>
           </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
+          {% for num,detail in kospi_value_rank.items() %}
+          <tr>
+            <td>{{ detail[0] }}</td>
+            <td>{{ detail[1] }}</td>
+            <td>{{ detail[2] }}</td>
+            <td>{{ detail[3] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
       <div class="pagenumbers"></div>
     </div>
 

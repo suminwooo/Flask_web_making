@@ -13,8 +13,9 @@ import re
 from data.naver_news_crolling import naver_news
 from data.stock_change_calculate import kr_page_data
 from data.mysql_to_python_api import total_stock_list, stock_all_info, korea_detail_information
-from data.mysql_to_python_straight import main_page_information
+from data.mysql_to_python_straight import main_page_information, kr_stock_page_imformation
 from data.forigner_institution import foreinger_institurion
+
 ##################################################################
 
 
@@ -78,6 +79,7 @@ def main_page():
     kospi_kosdaq_sum = main_page_information().main_page_calculate()
     change_data = kr_page_data().volatilty()
 
+
     return render_template('main_page.html',
                            main_page_value = main_page_value,
                            kospi_kosdaq_sum = kospi_kosdaq_sum,
@@ -88,17 +90,20 @@ def main_page():
 @app.route('/korea_stock')
 def korea_stock():
     main_page_value = main_page_information().main_page_data()
-    foreinger_institurion_data = foreinger_institurion().show_seach_page_foreigner_instition()
+    foreinger_institurion_data = foreinger_institurion().daily_data_db_to_python()
     change_data = kr_page_data().volatilty()
     volume_data = kr_page_data().volume()
+    kospi_value_rank = kr_stock_page_imformation().kospi_rank()
+    print(kospi_value_rank)
 
     return render_template('korea_stock.html',
                            main_page_value = main_page_value,
                            current_time = date_method(),
                            foreinger_institurion_data=foreinger_institurion_data,
                            change_data = change_data,
-                           volume_data = volume_data,
-                           korea_code_list = total_stock_list())
+                           kospi_value_rank=kospi_value_rank,
+                           volume_data = volume_data
+                           )
 
 
 @app.route('/sales_log')

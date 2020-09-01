@@ -2,6 +2,8 @@
 
 import pymysql
 import re
+import pandas as pd
+
 # 메인 페이지 데이터
 
 class total_stock_list:
@@ -75,9 +77,9 @@ class main_page_information:
         return kospi_kosdaq_sum
 
 
-class foreinger_institution_data:
+class kr_stock_page_imformation:
 
-    def foreinger_institution(self):
+    def kospi_rank(self):
         connection = None
         row = None
         try:
@@ -90,15 +92,38 @@ class foreinger_institution_data:
                                          cursorclass=pymysql.cursors.DictCursor)
 
             with connection.cursor() as cursor:
-                sql = "SELECT kr_stock_code, kr_stock_name " \
-                      "FROM kr_stock_list;"
+                sql = "SELECT a.kr_stock_code, a.kr_stock_name, b.kr_stock_code, b.kr_stock_kospi_rank ,b.kr_stock_market_value " \
+                      "FROM kr_stock_list AS a " \
+                      "JOIN (SELECT * " \
+                      "FROM kr_stock_weekly " \
+                      "WHERE DATE IN (SELECT MAX(DATE)" \
+                      " FROM kr_stock_weekly)) AS b " \
+                      "ON a.kr_stock_code = b.kr_stock_code;"
                 cursor.execute(sql)
-                row = cursor.fetchall()
-
+                row = pd.DataFrame(cursor.fetchall())
+                df = row[row.columns[1:]]
+                edit_df = pd.DataFrame()
+                for i in range(len(df)):
+                    if len(df.loc[i]['kr_stock_kospi_rank']) < 5:
+                        continue
+                    else:
+                        edit_df = pd.concat([edit_df,pd.DataFrame(list(df.loc[i]))], axis=1)
+                edit_df = edit_df.T
+                edit_df.columns = ['code', 'name', 'rank','value']
+                edit_df['rank'] = [int(i[i.find(' ')+1:i.find('위')]) for i in list(edit_df['rank'])]
+                edit_df = edit_df.sort_values(by='rank')
+                edit_df = edit_df.reset_index()
+                edit_df = edit_df[:10]
+                edit_df = edit_df[['rank','code','name','value']]
+                fianl_dic = {}
+                for i in range(len(edit_df)):
+                    fianl_dic[i] = list(edit_df.loc[i])
         except Exception as e:
             print('->', e)
 
         finally:
             if connection:
                 connection.close()
-        return row
+        return fianl_dic
+
+# print(kr_stock_page_imformation().kospi_rank())

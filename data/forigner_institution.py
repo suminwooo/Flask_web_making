@@ -5,7 +5,8 @@ import pandas as pd
 from sqlalchemy import create_engine
 import urllib
 import time
-
+import pymysql
+from etc.date import date_method
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
 
@@ -65,7 +66,7 @@ class foreinger_institurion():
                 total_df.loc[i]['change'] = -1 * int(total_df.loc[i]['변동율'].replace(',', ''))
             else:
                 total_df.loc[i]['change'] = 0
-        total_df['date'] = '2020-08-31'
+        total_df['date'] = date_method().date_num()
         total_df['close'] = [int(i.replace(",","")) for i in total_df['close']]
         total_df = total_df[['kr_stock_name','date', 'close', 'change']]
 
@@ -76,9 +77,68 @@ class foreinger_institurion():
         data = self.daily_foreinger_institurion_crolling()
         engine = create_engine("mysql+pymysql://root:" + "0000" + "@127.0.0.1/web_db?charset=utf8",
                                encoding='utf-8')
-        conn = engine.connect()
         data.to_sql(name='kr_stock_foringer_instition', con=engine, if_exists='append', index=False)
         return data
+
+    def daily_data_db_to_python(self):
+        connection = None
+        try:
+            connection = pymysql.connect(host='localhost',
+                                         user='root',
+                                         password='0000',
+                                         db='web_db',
+                                         port=3306,
+                                         charset='utf8',
+                                         cursorclass=pymysql.cursors.DictCursor)
+
+            with connection.cursor() as cursor:
+                sql = "SELECT * FROM " \
+                      "kr_stock_foringer_instition " \
+                      "ORDER BY DATE DESC " \
+                      "LIMIT 24;"
+                cursor.execute(sql)
+                row = cursor.fetchall()
+
+            data_set1 = {}
+            for num,i in enumerate(row[:6]):
+                each_data_set = []
+                each_data_set.append(i['kr_stock_name'])
+                each_data_set.append(i['close'])
+                each_data_set.append(i['change'])
+                data_set1[num] = each_data_set
+
+            data_set2 = {}
+            for num,i in enumerate(row[6:12]):
+                each_data_set = []
+                each_data_set.append(i['kr_stock_name'])
+                each_data_set.append(i['close'])
+                each_data_set.append(i['change'])
+                data_set2[num] = each_data_set
+
+            data_set3 = {}
+            for num, i in enumerate(row[12:18]):
+                each_data_set = []
+                each_data_set.append(i['kr_stock_name'])
+                each_data_set.append(i['close'])
+                each_data_set.append(i['change'])
+                data_set3[num] = each_data_set
+
+            data_set4 = {}
+            for num, i in enumerate(row[18:]):
+                each_data_set = []
+                each_data_set.append(i['kr_stock_name'])
+                each_data_set.append(i['close'])
+                each_data_set.append(i['change'])
+                data_set4[num] = each_data_set
+
+        except Exception as e:
+            print('->', e)
+
+        finally:
+            if connection:
+                connection.close()
+        return [data_set1, data_set2, data_set3, data_set4]
+
 
     def show_seach_page_foreigner_instition(self,code):
 
@@ -115,4 +175,5 @@ class foreinger_institurion():
 
         return final_df
 
-print(foreinger_institurion().show_seach_page_foreigner_instition('005930'))
+
+print(foreinger_institurion().daily_data_db_to_python())

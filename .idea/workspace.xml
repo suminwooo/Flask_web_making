@@ -22,9 +22,8 @@
     <list default="true" id="54409ac8-a49b-458a-ad13-0e87083a4d36" name="Default Changelist" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/forigner_institution.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/forigner_institution.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/mysql_to_python_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/mysql_to_python_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/mysql_to_python_straight.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/mysql_to_python_straight.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/업데이트 코드.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/업데이트 코드.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/korea_stock.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/korea_stock.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +61,7 @@
       <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data\raw_data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.forigner_institution">
+  <component name="RunManager" selected="Python.test">
     <configuration name="업데이트 코드" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -170,9 +169,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.forigner_institution" />
-        <item itemvalue="Python.mysql_to_python_straight" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.mysql_to_python_straight" />
+        <item itemvalue="Python.forigner_institution" />
         <item itemvalue="Python.업데이트 코드" />
         <item itemvalue="Python.main_data_daily_crolling" />
       </list>
@@ -224,7 +223,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598792089037</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="test">
+      <created>1598883829412</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1598883829412</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,22 +254,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598779286400" />
-    <state width="1256" height="332" key="GridCell.Tab.0.bottom" timestamp="1598883645846">
+    <state width="1256" height="330" key="GridCell.Tab.0.bottom" timestamp="1598968269199">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1256" height="332" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598883645846" />
-    <state width="1256" height="332" key="GridCell.Tab.0.center" timestamp="1598883645845">
+    <state width="1256" height="330" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598968269199" />
+    <state width="1256" height="330" key="GridCell.Tab.0.center" timestamp="1598968269199">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1256" height="332" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598883645845" />
-    <state width="1256" height="332" key="GridCell.Tab.0.left" timestamp="1598883645845">
+    <state width="1256" height="330" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598968269199" />
+    <state width="1256" height="330" key="GridCell.Tab.0.left" timestamp="1598968269198">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1256" height="332" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598883645845" />
-    <state width="1256" height="332" key="GridCell.Tab.0.right" timestamp="1598883645846">
+    <state width="1256" height="330" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598968269198" />
+    <state width="1256" height="330" key="GridCell.Tab.0.right" timestamp="1598968269199">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1256" height="332" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598883645846" />
+    <state width="1256" height="330" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598968269199" />
     <state x="781" y="344" key="SettingsEditor" timestamp="1598765678839">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
