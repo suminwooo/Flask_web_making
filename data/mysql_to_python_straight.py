@@ -126,4 +126,35 @@ class kr_stock_page_imformation:
                 connection.close()
         return fianl_dic
 
-# print(kr_stock_page_imformation().kospi_rank())
+
+
+class detail_serach_page_imformation:
+
+    def main_information(self, code):
+        connection = None
+        try:
+            connection = pymysql.connect(host='localhost',
+                                         user='root',
+                                         password='0000',
+                                         db='web_db',
+                                         port=3306,
+                                         charset='utf8',
+                                         cursorclass=pymysql.cursors.DictCursor)
+
+            with connection.cursor() as cursor:
+                sql = "SELECT * " \
+                      "FROM kr_stock_list " \
+                      "WHERE kr_stock_code = {} " \
+                      "OR kr_stock_name ={};".format(code, code)
+                cursor.execute(sql)
+                data = cursor.fetchall()
+                data = data[0]
+                if len(str(data['kr_stock_code'])) != 6:
+                    data['kr_stock_code'] = str(data['kr_stock_code']).zfill(6)
+        except Exception as e:
+            print('->', e)
+
+        finally:
+            if connection:
+                connection.close()
+        return data

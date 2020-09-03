@@ -33,6 +33,7 @@ class low_value_stock():
             if connection:
                 connection.close()
                 # print(value)
+
         return data
 
     def two(self):
@@ -51,23 +52,12 @@ class low_value_stock():
                 # print('DB 오픈')
 
                 with connection.cursor() as cursor:
-                    date_sql = "select DATE " \
-                               "FROM kr_stock_weekly " \
-                               "group BY DATE " \
-                               "order by date DESC " \
-                               "LIMIT 1;"
-                    cursor.execute(date_sql)
-                    date_data = str(cursor.fetchall())
-                    first_index = date_data.find('(') + 1  # 형태가 이상해서 (,)위치 활용해 날짜 추출
-                    second_index = date_data.find(')')
-                    date_data = [i.strip() for i in date_data[first_index:second_index].split(',')]
-                    if len(date_data[1]) == 1:
-                        date_data[1] = '0' + date_data[1]
-                    if len(date_data[2]) == 1:
-                        date_data[2] = '0' + date_data[2]
-                    recently_date = date_data[0] + '-' + date_data[1] + '-' + date_data[2]
-
-                    sql = "SELECT * FROM kr_stock_weekly WHERE DATE = '{}';".format(recently_date)
+                    sql = "SELECT * FROM kr_stock_weekly " \
+                          "WHERE DATE = (select DATE " \
+                          "FROM kr_stock_weekly " \
+                          "group BY DATE " \
+                          "order by date DESC " \
+                          "LIMIT 1);"
                     cursor.execute(sql)
                     data = pd.read_sql_query(sql, connection)
         except Exception as e:
@@ -94,24 +84,14 @@ class low_value_stock():
                 # print('DB 오픈')
 
                 with connection.cursor() as cursor:
-                    date_sql = "select DATE " \
-                               "FROM kr_stock_weekly " \
-                               "group BY DATE " \
-                               "order by date DESC " \
-                               "LIMIT 1;"
-                    cursor.execute(date_sql)
-                    date_data = str(cursor.fetchall())
-                    first_index = date_data.find('(') + 1  # 형태가 이상해서 (,)위치 활용해 날짜 추출
-                    second_index = date_data.find(')')
-                    date_data = [i.strip() for i in date_data[first_index:second_index].split(',')]
-                    if len(date_data[1]) == 1:
-                        date_data[1] = '0' + date_data[1]
-                    if len(date_data[2]) == 1:
-                        date_data[2] = '0' + date_data[2]
-                    recently_date = date_data[0] + '-' + date_data[1] + '-' + date_data[2]
 
-                    sql = "SELECT kr_stock_code, kr_stock_high_52week, kr_stock_low_52week, kr_stock_close FROM kr_stock_weekly WHERE DATE = '{}';".format(
-                        recently_date)
+                    sql = "SELECT kr_stock_code, kr_stock_high_52week, kr_stock_low_52week, kr_stock_close " \
+                          "FROM kr_stock_weekly " \
+                          "WHERE DATE = (select DATE " \
+                          "FROM kr_stock_weekly " \
+                          "group BY DATE " \
+                          "order by date DESC " \
+                          "LIMIT 1);"
                     cursor.execute(sql)
                     data = pd.read_sql_query(sql, connection)
         except Exception as e:
@@ -133,10 +113,25 @@ class low_value_stock():
 
         data_PER = data
         per = data_PER[['kr_stock_code', 'date', 'kind', 'PER']].fillna('999')
+        edit_per=[]
+        for i in per['PER']:
+            if len(i)<3:
+                edit_per.append(-999)
+            else:
+                edit_per.append(i.replace(',',''))
+        per['PER'] = [float(i) for i in edit_per]
         data_same_ind_per = data2[['kr_stock_code', 'kr_stock_same_ind_per']]
         data_same_ind_per['kr_stock_code'] = [int(i) for i in data_same_ind_per['kr_stock_code']]
         data_same_ind_per['kr_stock_same_ind_per'] = [re.sub('[^0-9.]', '', i) for i in
                                                       data_same_ind_per['kr_stock_same_ind_per']]
+        kr_stock_same_ind_per = []
+        for i in data_same_ind_per['kr_stock_same_ind_per']:
+            if len(i)<3:
+                kr_stock_same_ind_per.append(-999)
+            else:
+                kr_stock_same_ind_per.append(float(i))
+        data_same_ind_per['kr_stock_same_ind_per'] = kr_stock_same_ind_per
+
         ##1. 연간 PER 저평가
         per_10_1 = per[per['PER'] <= 10][per[per['PER'] <= 10]['kind'] == 2]
         per_10_1 = per_10_1.reset_index()[['kr_stock_code', 'kind', 'PER']]
@@ -159,10 +154,17 @@ class low_value_stock():
         ##3. 연간 PBR 저평가
         data_PBR = data
 
+        edit_pbr = []
+        for i in  list(data_PBR['PBR']):
+            if len(i)<3:
+                edit_pbr.append(-999)
+            else:
+                edit_pbr.append(float(i))
+        data_PBR['PBR'] = edit_pbr
+
         data_PBR_1 = data_PBR[data_PBR['kind'] == 1]
         data_PBR_1 = data_PBR_1[data_PBR_1['date'] == '2019.12']
         PBR_1 = data_PBR_1[['kr_stock_code', 'kind', 'PBR']].fillna('999.0')
-        PBR_1['PBR'] = [float(i.replace('-', '0')) for i in PBR_1['PBR']]
         PBR_1 = PBR_1.drop_duplicates('kr_stock_code')
         PBR_1 = PBR_1[PBR_1['PBR'] < 1]
 
@@ -170,7 +172,7 @@ class low_value_stock():
         data_PBR_2 = data_PBR[data_PBR['kind'] == 2]
         data_PBR_2 = data_PBR_2[data_PBR_2['date'] == '2020.03']
         PBR_2 = data_PBR_2[['kr_stock_code', 'kind', 'PBR']].fillna('999.0')
-        PBR_2['PBR'] = [float(i.replace('-', '0')) for i in PBR_2['PBR']]
+        # PBR_2['PBR'] = [float(i.replace('-', '0')) for i in PBR_2['PBR']]
         PBR_2 = PBR_2.drop_duplicates('kr_stock_code')
         PBR_2 = PBR_2[PBR_2['PBR'] < 1]
 
@@ -184,12 +186,19 @@ class low_value_stock():
 
         #2. ROE활용
         data_ROE = data
-
+        edit_pbr = []
+        for i in  list(data_ROE['ROE']):
+            if len(i)<3:
+                edit_pbr.append(-999)
+            else:
+                edit_pbr.append(float(i))
+        data_ROE['ROE'] = edit_pbr
         ROE = data_ROE[['kr_stock_code', 'date', 'kind', 'ROE']].fillna('999')
-        ROE['ROE'] = [float(i.replace(',', '')) for i in ROE['ROE']]
+        # ROE['ROE'] = [float(i.replace(',', '')) for i in ROE['ROE']]
 
         ##1. 연간 ROE
         ROE_1 = ROE[ROE['kind'] == 1]
+
         ROE_1 = ROE_1[(ROE_1['ROE'] > 10) & (ROE_1['ROE'] < 998)].drop_duplicates('kr_stock_code')
 
         ##2. 분기 ROE
@@ -217,7 +226,13 @@ class low_value_stock():
         three_ratio = data[['kr_stock_code', 'date', 'kind', 'debt_ratio', 'quick_ratio', 'resesrvation_ratio']].fillna(
             '-999')
         three_ratio['debt_ratio'] = [float(i.replace(',', '')) for i in three_ratio['debt_ratio']]
-        three_ratio['quick_ratio'] = [float(i.replace(',', '')) for i in three_ratio['quick_ratio']]
+        edit_quick_ratio_list = []
+        for i in three_ratio['quick_ratio']:
+            if len(i)<3:
+                edit_quick_ratio_list.append(-999)
+            else:
+                edit_quick_ratio_list.append(float(i.replace(',','')))
+        three_ratio['quick_ratio'] = edit_quick_ratio_list
         three_ratio['resesrvation_ratio'] = [float(i.replace(',', '')) for i in three_ratio['resesrvation_ratio']]
         three_ratio = three_ratio[(three_ratio['debt_ratio'] < 100) & (three_ratio['quick_ratio'] > 100) & (
                     three_ratio['resesrvation_ratio'] > 700)]
@@ -250,53 +265,24 @@ class low_value_stock():
             data = pd.read_sql_query(sql, connection)[['kr_stock_code','kr_stock_name']]
             data = data.set_index('kr_stock_code')
             col = low_value_stock().value()
-            df = pd.DataFrame(columns = ['2kr_stock_code','2kr_stock_code'])
+            data_list = []
             for i in col:
                 i = int(i)
-                each_df = pd.DataFrame()
-                each_data = data.loc[i]
-                print(i,each_data.values())
-                df = pd.concat([df,each_df], axis=0)
-            # print(df)
-            # data = data.loc[col].reset_index()
-            #
-            # data = data.reset_index()
-            # data.columns = ['1num','2kr_stock_code','3kr_stock_name']
-            # data["1num"] = [i+1 for i in data['1num']]
-            # data_dic = data.to_dict('index')
-            # print(data_dic)
+                data_list.append([i, data.loc[i]])
+            df = pd.DataFrame(data_list)
+            df.columns = ['2kr_stock_code', '2kr_stock_code']
+            data = df.reset_index()
+            data.columns = ['1num','2kr_stock_code','3kr_stock_name']
+            data["1num"] = [i+1 for i in data['1num']]
+            data['3kr_stock_name'] = [i[0] for i in data['3kr_stock_name']]
+            data_dic_sample = data[:10].to_dict('index')
+            data_dic = data.to_dict('index')
 
-        # return data_dic
+        return data_dic, data_dic_sample
 
     # 일부만 표시 , 메인페이지 내용
     def final_data_to_df_sample(self):
-        connection = None
-        # try:
-        connection = pymysql.connect(host='localhost',
-                                     user='root',
-                                     password='0000',
-                                     db='web_db',
-                                     port=3306,
-                                     charset='utf8',
-                                     cursorclass=pymysql.cursors.DictCursor)
-        if connection:
-            # print('DB 오픈')
-
-            with connection.cursor() as cursor:
-                sql = "SELECT * FROM kr_stock_list;"
-                cursor.execute(sql)
-                data = cursor.fetchall()
-                data = pd.read_sql_query(sql, connection)[['kr_stock_code',
-                                                           'kr_stock_name']].set_index('kr_stock_code')
-                print(data)
-                # col = data().value()
-                # print(col)
-        # except Exception as e:
-        #     print('->', e)
-
-        # finally:
-        #     if connection:
-        #         connection.close()
-        # return data_dic
+        data = low_value_stock().final_data_to_df()[1]
+        return data
 
 print(low_value_stock().final_data_to_df())

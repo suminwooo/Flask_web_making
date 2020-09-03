@@ -490,7 +490,7 @@ width: 80px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 	grid-gap: 10px;
-    grid-template-rows: 150pt 200pt 200pt 600pt;
+    grid-template-rows: 280pt 230pt 200pt 600pt;
     padding:10px;
     margin : 10px;
     margin-bottom : 30px;
@@ -499,12 +499,13 @@ width: 80px;
 .search_container1{
 	grid-row: 1;
 	grid-column-start: 1;
-	grid-column-end: 3;
+	grid-column-end: 2;
 }
 
 .search_container2{
-	grid-column: 3;
+	grid-column: 2/4;
 	grid-row: 1;
+	float: right;
 }
 
 .search_container3{

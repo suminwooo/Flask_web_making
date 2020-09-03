@@ -31,21 +31,21 @@
       <table>
         <thead>
           <tr>
-          <th>코드</th><th>현재가</th>
+          <th>코드</th><th>종가</th><th>변화율</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>코스피</td><td>{{main_page_value['kospi_close']}}</td>
+            <td>코스피</td><td>{{main_page_value['kospi_close']}}</td><td>{{main_page_value['kospi_close_rate']}}</td>
           </tr>
           <tr>
-            <td>코스닥</td><td>{{main_page_value['kosdaq_close']}}</td>
+            <td>코스닥</td><td>{{main_page_value['kosdaq_close']}}</td><td>{{main_page_value['kosdaq_close_rate']}}</td>
           </tr>
           <tr>
-            <td>나스닥100</td><td>{{main_page_value['nasdaq100_close']}}</td>
+            <td>나스닥100</td><td>{{main_page_value['nasdaq100_close']}}</td><td>{{main_page_value['nasdaq100_close_rate']}}</td>
           </tr>
           <tr>
-            <td>나스닥</td><td>{{main_page_value['nasdaq_close']}}</td>
+            <td>나스닥</td><td>{{main_page_value['nasdaq_close']}}</td><td>{{main_page_value['nasdaq_close_rate']}}</td>
           </tr>
         </tbody>
       </table>
@@ -275,7 +275,7 @@
     <div class="korea_us_container6">
     <h3>저평가 목록</h3>
       <p>재무재표로 판단 / 순서 X </p>
-      <table id="lowValueList">
+      <table id="low_value_data">
         <thead>
           <tr>
             <th>No.</th>
@@ -317,21 +317,11 @@
         $('.tab1 a:first').trigger('click');
         $('.tab2 a:first').trigger('click');
 
-        //시가총액
-        const el1 = document.querySelector('.korea_us_container5');
-        const tableEl1 = el1.querySelector('table > tbody');
-        const paginationEl1 = el1.querySelector('.pagenumbers');
         //저평가주식
         const el2 = document.querySelector('.korea_us_container6');
         const tableEl2 = el2.querySelector('table > tbody');
         const paginationEl2 = el2.querySelector('.pagenumbers');
-        let state1 = {
-            'querySet': null,
-            'page': 1,
-            'rows': 10,
-            'window': 5,
-            'pages': 0
-        }
+
         let state2 = {
             'querySet': null,
             'page': 1,
@@ -340,21 +330,16 @@
             'pages': 0
         }
         request({
-                url: "/test"
+                url: "/api_data"
             })
             .then(result => {
                 console.log(result);
-                state1.querySet = result.rank_data
                 state2.querySet = result.low_value_data
-                console.log('result',state1.querySet)
                 console.log('result',state2.querySet)
 
-                buildTable(state1, tableEl1)
-                setPaginationButton(paginationEl1, state1, tableEl1)
                 buildTable(state2, tableEl2)
                 setPaginationButton(paginationEl2, state2, tableEl2)
             })
-            .catch(err => console.log('then error : ', err))
 
     </script>
 

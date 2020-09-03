@@ -188,8 +188,13 @@
             <th>종목 코드</th>
             <th>종명 명</th>
           </tr>
+          {% for num,value in low_value_data.items() %}
           <tr>
+            <td>{{ num+1 }}</td>
+            <td>{{ value['2kr_stock_code'] }}</td>
+            <td>{{ value['3kr_stock_name'] }}</td>
           </tr>
+          {% endfor %}
         </table>
       </div>
 

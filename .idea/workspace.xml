@@ -22,8 +22,13 @@
     <list default="true" id="54409ac8-a49b-458a-ad13-0e87083a4d36" name="Default Changelist" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/forigner_institution.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/forigner_institution.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/low_value_stock_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/low_value_stock_code.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mysql_to_python_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/mysql_to_python_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/mysql_to_python_straight.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/mysql_to_python_straight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/korea_stock.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/korea_stock.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/kr_search_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/kr_search_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +53,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -104,7 +110,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main_data_daily_crolling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="low_value_stock_code" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -116,7 +122,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/main_data_daily_crolling.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/low_value_stock_code.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -170,10 +176,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.low_value_stock_code" />
         <item itemvalue="Python.mysql_to_python_straight" />
         <item itemvalue="Python.forigner_institution" />
         <item itemvalue="Python.업데이트 코드" />
-        <item itemvalue="Python.main_data_daily_crolling" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598883829412</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test">
+      <created>1598968557431</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1598968557431</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -254,26 +267,46 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598779286400" />
-    <state width="1256" height="330" key="GridCell.Tab.0.bottom" timestamp="1598968269199">
+    <state width="2539" height="485" key="GridCell.Tab.0.bottom" timestamp="1599138895704">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1256" height="330" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598968269199" />
-    <state width="1256" height="330" key="GridCell.Tab.0.center" timestamp="1598968269199">
+    <state width="2539" height="485" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599138895704" />
+    <state width="2539" height="485" key="GridCell.Tab.0.center" timestamp="1599138895704">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1256" height="330" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598968269199" />
-    <state width="1256" height="330" key="GridCell.Tab.0.left" timestamp="1598968269198">
+    <state width="2539" height="485" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599138895704" />
+    <state width="2539" height="485" key="GridCell.Tab.0.left" timestamp="1599138895704">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1256" height="330" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598968269198" />
-    <state width="1256" height="330" key="GridCell.Tab.0.right" timestamp="1598968269199">
+    <state width="2539" height="485" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599138895704" />
+    <state width="2539" height="485" key="GridCell.Tab.0.right" timestamp="1599138895704">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1256" height="330" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598968269199" />
+    <state width="2539" height="485" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599138895704" />
+    <state width="1256" height="488" key="GridCell.Tab.1.bottom" timestamp="1599131475239">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1256" height="488" key="GridCell.Tab.1.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599131475239" />
+    <state width="1256" height="488" key="GridCell.Tab.1.center" timestamp="1599131475239">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1256" height="488" key="GridCell.Tab.1.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599131475239" />
+    <state width="1256" height="488" key="GridCell.Tab.1.left" timestamp="1599131475238">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1256" height="488" key="GridCell.Tab.1.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599131475238" />
+    <state width="1256" height="488" key="GridCell.Tab.1.right" timestamp="1599131475239">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1256" height="488" key="GridCell.Tab.1.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599131475239" />
     <state x="781" y="344" key="SettingsEditor" timestamp="1598765678839">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="781" y="344" key="SettingsEditor/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598765678839" />
+    <state x="1512" y="436" key="Vcs.Push.Dialog.v2" timestamp="1598968565868">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1512" y="436" key="Vcs.Push.Dialog.v2/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598968565868" />
     <state x="1483" y="432" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1598779882805">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

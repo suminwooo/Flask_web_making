@@ -49,7 +49,7 @@ class stock_all_info:
                 with connection.cursor() as cursor:
                     sql = "SELECT kr_stock_code, DATE, kr_stock_open, kr_stock_high, kr_stock_low, kr_stock_close " \
                                "FROM kr_stock_daily " \
-                               "WHERE kr_stock_code ='5930' " \
+                               "WHERE kr_stock_code ='{}' " \
                                "ORDER BY DATE DESC " \
                                "LIMIT 100;"
                     cursor.execute(sql)

@@ -26,7 +26,11 @@ class foreinger_institurion():
         foreigner_buy = []
         for i in table.find_all('table')[2].text.replace('\t', '').split('\n'):
             if len(i) > 0:
-                foreigner_buy.append(i)
+                if i == '0' :
+                    foreigner_buy.append('-')
+                    foreigner_buy.append(i)
+                else:
+                    foreigner_buy.append(i)
         foreigner_buy = foreigner_buy[1:]
         foreigner_buy_df = pd.DataFrame(np.array(foreigner_buy).reshape(-1, 4))
         total_df = pd.concat([total_df, foreigner_buy_df], axis=0)
@@ -34,7 +38,12 @@ class foreinger_institurion():
         foreigner_sell = []
         for i in table.find_all('table')[3].text.replace('\t', '').split('\n'):
             if len(i) > 0:
-                foreigner_sell.append(i)
+                if i == '0' :
+                    foreigner_sell.append('-')
+                    foreigner_sell.append(i)
+                else:
+                    foreigner_sell.append(i)
+
         foreigner_sell = foreigner_sell[1:]
         foreigner_sell_df = pd.DataFrame(np.array(foreigner_sell).reshape(-1, 4))
         total_df = pd.concat([total_df, foreigner_sell_df], axis=0)
@@ -42,7 +51,11 @@ class foreinger_institurion():
         institution_buy = []
         for i in table.find_all('table')[4].text.replace('\t', '').split('\n'):
             if len(i) > 0:
-                institution_buy.append(i)
+                if i == '0' :
+                    institution_buy.append('-')
+                    institution_buy.append(i)
+                else:
+                    institution_buy.append(i)
         institution_buy = institution_buy[1:]
         institution_buy_df = pd.DataFrame(np.array(institution_buy).reshape(-1, 4))
         total_df = pd.concat([total_df, institution_buy_df], axis=0)
@@ -50,15 +63,21 @@ class foreinger_institurion():
         institurion_sell = []
         for i in table.find_all('table')[5].text.replace('\t', '').split('\n'):
             if len(i) > 0:
-                institurion_sell.append(i)
+                if i == '0' :
+                    institurion_sell.append('-')
+                    institurion_sell.append(i)
+                else:
+                    institurion_sell.append(i)
         institurion_sell = institurion_sell[1:]
         institurion_sell_df = pd.DataFrame(np.array(institurion_sell).reshape(-1, 4))
         total_df = pd.concat([total_df, institurion_sell_df], axis=0)
+
         total_df.columns = ['kr_stock_name', 'close', '상승or하락', '변동율']
         total_df = total_df.reset_index()
         total_df = total_df[['kr_stock_name', 'close', '상승or하락', '변동율']]
 
         total_df['change'] = None
+
         for i in range(len(total_df)):
             if total_df.loc[i]['상승or하락'] == '상승':
                 total_df.loc[i]['change'] = int(total_df.loc[i]['변동율'].replace(',', ''))
@@ -69,7 +88,6 @@ class foreinger_institurion():
         total_df['date'] = date_method().date_num()
         total_df['close'] = [int(i.replace(",","")) for i in total_df['close']]
         total_df = total_df[['kr_stock_name','date', 'close', 'change']]
-
         return total_df
 
     # 매일 크롤링 부분 DB저장
@@ -173,7 +191,5 @@ class foreinger_institurion():
         final_df.columns = ['date', 'institutionPureDealing', 'foreignerPureDealing', 'ownedVolumeByForeigner',
                             'ownedRateByForeigner']
 
-        return final_df
-
-
-print(foreinger_institurion().daily_data_db_to_python())
+        final_data = final_df.values.tolist()
+        return final_data

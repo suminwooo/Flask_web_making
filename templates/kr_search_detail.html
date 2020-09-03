@@ -5,31 +5,35 @@
     <div class="search_container">
 
         <div class="search_container1">
-            <h2>{{STOCK['kr_stock_name']}} / {{STOCK['kr_stock_code']}} / {{STOCK['kr_ind_name']}}</h2>
-<!--            <h3>{{price_data['kr_stock_close']}}({{price_diff[6]}}/{{price_diff[7]}})</h3>-->
+            <h1>{{stock_information['kr_stock_code']}} :  {{stock_information['kr_stock_name']}}</h1>
+            <h2>시장 : {{stock_information['market']}}</h2>
+            <h4>섹터 : {{stock_information['sector']}}</h4>
+            <h4>산업 : {{stock_information['industry']}}</h4>
+            <h4>결산일 : {{stock_information['settledate']}}</h4>
+            <p>{{price_diff_info}}</p>
+            <p>{{nonprice_info}}</p>
+            <p>{{price_info}}</p>
         </div>
 
         <div class="search_container2">
-            <h3>외국인 투자 및 코스피, 코스닥 현황</h3>
+            <h3>외국인 투자 및 기관 투자</h3>
             <table>
                 <thead>
                   <tr>
-                    <th></th><th>개인</th><th>기관</th><th>외국인</th>
+                    <th>날짜</th><th>기관순거래</th><th>외국인순거래</th>
+                      <th>외국인순거래량</th><th>외국인보유지분</th>
                   </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <td>코스피</td>
-                        <td>{{main_page_value['kospi_individual']}}</td>
-                        <td>{{main_page_value['kospi_foreigner']}}</td>
-                        <td>{{main_page_value['kospi_Institutional']}}</td>
-                    </tr>
-                    <tr>
-                    <td>코스닥</td>
-                        <td>{{main_page_value['kosdaq_individual']}}</td>
-                        <td>{{main_page_value['kosdaq_foreigner']}}</td>
-                        <td>{{main_page_value['kosdaq_Institutional']}}</td>
-                    </tr>
+                  {% for detail in institution_foriegner %}
+                  <tr>
+                    <td>{{ detail[0]}}</td>
+                    <td>{{ detail[1]}}</td>
+                    <td>{{ detail[2]}}</td>
+                    <td>{{ detail[3]}}</td>
+                    <td>{{ detail[4]}}</td>
+                  </tr>
+                  {% endfor %}
                 </tbody>
             </table>
         </div>
@@ -62,22 +66,29 @@
         </div>
 
         <div class="search_container4">
+            <h3>코스피, 코스닥 현황</h3>
             <table>
                 <thead>
                   <tr>
-                    <th></th><th>전체</th><th>기관</th><th>외국인</th>
+                    <th></th><th>개인</th><th>기관</th><th>외국인</th>
                   </tr>
                 </thead>
                 <tbody>
                     <tr>
-                    <td>거래량</td>
-                        <td>{{price_data['kr_stock_volume']}}</td>
-                        <td>{{institution_foriegner['institution']}}</td>
-                        <td>{{institution_foriegner['foreigner']}}</td>
+                    <td>코스피</td>
+                        <td>{{main_page_value['kospi_individual']}}</td>
+                        <td>{{main_page_value['kospi_foreigner']}}</td>
+                        <td>{{main_page_value['kospi_Institutional']}}</td>
+                    </tr>
+                    <tr>
+                    <td>코스닥</td>
+                        <td>{{main_page_value['kosdaq_individual']}}</td>
+                        <td>{{main_page_value['kosdaq_foreigner']}}</td>
+                        <td>{{main_page_value['kosdaq_Institutional']}}</td>
                     </tr>
                 </tbody>
             </table>
-            <p>(외국인 비율 : {{institution_foriegner['foreigner_percent']}})</p>
+            <p></p>
 
             <h3>기본 정보(가격&거래량)</h3>
             <table>
@@ -273,12 +284,12 @@
         let state1 = {
             'querySet': null,
             'page': 1,
-            'rows': 10,
+            'rows': 15,
             'window': 5,
             'pages': 0
         }
         request({
-                url: "/test"
+                url: "/api_data"
             })
             .then(result => {
                 console.log(result);
