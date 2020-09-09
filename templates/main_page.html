@@ -140,12 +140,12 @@
     <div class="container_main5">
       <h3> 최근 TOP 변동률 </h3>
       <div class="tab tab1">
-        <a href="#kr_stock_1" class="tablinks">한국주식</a>
-        <a href="#us_stock_value_1" class="tablinks">미국(가치)</a>
-        <a href="#us_stock_div_1" class="tablinks">미국(배당)</a>
+        <a href="#kospi_change_rate" class="tablinks">코스피</a>
+        <a href="#kosdaq_change_rate" class="tablinks">코스닥</a>
+        <a href="#nasdaq_change_rate" class="tablinks">나스닥</a>
       </div>
 
-      <div id="kr_stock_1" class="tabcontent">
+      <div id="kospi_change_rate" class="tabcontent">
         <table>
           <tr>
             <th>순위</th>
@@ -153,7 +153,7 @@
             <th>종명 명</th>
             <th>변동률</th>
           </tr>
-            {% for num,detail in change_data[2].items() %}
+            {% for num,detail in kospi_change_data[2].items() %}
           <tr>
             <td>{{num+1}}</td>
             <td>{{detail['code']}}</td>
@@ -164,11 +164,26 @@
         </table>
       </div>
 
-      <div id="us_stock_value_1" class="tabcontent">
-        <p>준비중</p>
+      <div id="kosdaq_change_rate" class="tabcontent">
+        <table>
+          <tr>
+            <th>순위</th>
+            <th>종목 코드</th>
+            <th>종명 명</th>
+            <th>변동률</th>
+          </tr>
+            {% for num,detail in kosdaq_change_data[2].items() %}
+          <tr>
+            <td>{{num+1}}</td>
+            <td>{{detail['code']}}</td>
+            <td>{{detail['name']}}</td>
+            <td>{{detail['rate']}}%</td>
+          </tr>
+          {% endfor %}
+        </table>
       </div>
 
-      <div id="us_stock_div_1" class="tabcontent">
+      <div id="nasdaq_change_rate" class="tabcontent">
         <p>준비중</p>
       </div>
     </div>
@@ -176,19 +191,19 @@
     <div class="container_main6">
       <h3>저평가 주식</h3>
       <div class="tab tab2">
-        <a href="#kr_stock_2" class="tablinks">한국주식</a>
-        <a href="#us_stock_value_2" class="tablinks">미국(가치)</a>
-        <a href="#us_stock_div_2" class="tablinks">미국(배당)</a>
+        <a href="#kospi_low_value" class="tablinks">코스피</a>
+        <a href="#kosdaq_low_value" class="tablinks">코스닥</a>
+        <a href="#nasdaq_low_value" class="tablinks">나스닥</a>
       </div>
 
-      <div id="kr_stock_2" class="tabcontent">
+      <div id="kospi_low_value" class="tabcontent">
         <table>
           <tr>
             <th>NO.</th>
             <th>종목 코드</th>
             <th>종명 명</th>
           </tr>
-          {% for num,value in low_value_data.items() %}
+          {% for num,value in kospi_low_value_data.items() %}
           <tr>
             <td>{{ num+1 }}</td>
             <td>{{ value['2kr_stock_code'] }}</td>
@@ -198,35 +213,31 @@
         </table>
       </div>
 
-      <div id="us_stock_value_2" class="tabcontent">
-        <p>준비중</p>
+      <div id="kosdaq_low_value" class="tabcontent">
+        <table>
+          <tr>
+            <th>NO.</th>
+            <th>종목 코드</th>
+            <th>종명 명</th>
+          </tr>
+          {% for num,value in kosdaq_low_value_data.items() %}
+          <tr>
+            <td>{{ num+1 }}</td>
+            <td>{{ value['2kr_stock_code'] }}</td>
+            <td>{{ value['3kr_stock_name'] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
       </div>
 
-      <div id="us_stock_div_2" class="tabcontent">
+      <div id="nasdaq_low_value" class="tabcontent">
         <p>준비중</p>
       </div>
 
     </div>
 
     <div class="container_main7">
-      <h3>주가 예측</h3>
-      <div class="tab tab3">
-        <a href="#kr_stock_3" class="tablinks">한국주식</a>
-        <a href="#us_stock_value_3" class="tablinks">미국(가치)</a>
-        <a href="#us_stock_div_3" class="tablinks">미국(배당)</a>
-      </div>
-
-    <div id="kr_stock_3" class="tabcontent">
-      <p>준비중</p>
-    </div>
-
-    <div id="us_stock_value_3" class="tabcontent">
-      <p>준비중</p>
-    </div>
-
-    <div id="us_stock_div_3" class="tabcontent">
-      <p>중비중</p>
-    </div>
+      <h3>준비중</h3>
 
     </div>
 
@@ -242,11 +253,9 @@
 
         $('.tab1 a').on('click', tabContent);
         $('.tab2 a').on('click', tabContent);
-        $('.tab3 a').on('click', tabContent);
 
         $('.tab1 a:first').trigger('click');
         $('.tab2 a:first').trigger('click');
-        $('.tab3 a:first').trigger('click');
     </script>
 
   </div>

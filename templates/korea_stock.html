@@ -79,15 +79,15 @@
     </div>
 
     <div class="korea_us_container3">
-      <h3>당일 종가 및 거래량 변화</h3>
+      <h3>코스피 당일 종가 및 거래량 변화</h3>
       <div class="tab tab1">
-        <a href="#volatily_total" class="tablinks">변동성 순위</a>
-        <a href="#volatily_up" class="tablinks">상승 순위</a>
-        <a href="#volatily_down" class="tablinks">하락 순위</a>
-        <a href="#volume" class="tablinks">거래량 순위</a>
+        <a href="#kospi_volatily_total" class="tablinks">변동성 순위</a>
+        <a href="#kospi_volatily_up" class="tablinks">상승 순위</a>
+        <a href="#kospi_volatily_down" class="tablinks">하락 순위</a>
+        <a href="#kospi_volume" class="tablinks">거래량 순위</a>
       </div>
 
-      <div id="volatily_total" class="tabcontent">
+      <div id="kospi_volatily_total" class="tabcontent">
         <table>
           <tr>
             <th>순위</th>
@@ -95,7 +95,7 @@
             <th>종목명</th>
             <th>변동률</th>
           </tr>
-          {% for num,detail in change_data[2].items() %}
+          {% for num,detail in kospi_change_data[2].items() %}
           <tr>
             <td>{{ num+1}}</td>
             <td>{{ detail['code']}}</td>
@@ -106,7 +106,7 @@
         </table>
       </div>
 
-      <div id="volatily_up" class="tabcontent">
+      <div id="kospi_volatily_up" class="tabcontent">
         <table>
           <tr>
             <th>순위</th>
@@ -114,7 +114,7 @@
             <th>종목명</th>
             <th>상승률</th>
           </tr>
-          {% for num,detail in change_data[1].items() %}
+          {% for num,detail in kospi_change_data[1].items() %}
           <tr>
             <td>{{ num+1}}</td>
             <td>{{ detail['code'] }}</td>
@@ -125,7 +125,7 @@
         </table>
       </div>
 
-      <div id="volatily_down" class="tabcontent">
+      <div id="kospi_volatily_down" class="tabcontent">
         <table>
           <tr>
             <th>순위</th>
@@ -133,7 +133,7 @@
             <th>종목명</th>
             <th>하락률</th>
           </tr>
-          {% for num,detail in change_data[0].items() %}
+          {% for num,detail in kospi_change_data[0].items() %}
           <tr>
             <td>{{ num+1}}</td>
             <td>{{ detail['code']}}</td>
@@ -143,7 +143,7 @@
           {% endfor %}
         </table>      </div>
 
-      <div id="volume" class="tabcontent">
+      <div id="kospi_volume" class="tabcontent">
         <table>
           <tr>
             <th>순위</th>
@@ -151,7 +151,7 @@
             <th>종목명</th>
             <th>거래량</th>
           </tr>
-          {% for num,detail in volume_data.items() %}
+          {% for num,detail in kospi_volume_data.items() %}
           <tr>
             <td>{{ num+1}}</td>
             <td>{{ detail['code'] }}</td>
@@ -164,6 +164,92 @@
     </div>
 
     <div class="korea_us_container4">
+      <h3>코스닥 당일 종가 및 거래량 변화</h3>
+      <div class="tab tab5">
+        <a href="#kodaq_volatily_total" class="tablinks">변동성 순위</a>
+        <a href="#kodaq_volatily_up" class="tablinks">상승 순위</a>
+        <a href="#kodaq_volatily_down" class="tablinks">하락 순위</a>
+        <a href="#kodaq_volume" class="tablinks">거래량 순위</a>
+      </div>
+
+      <div id="kodaq_volatily_total" class="tabcontent">
+        <table>
+          <tr>
+            <th>순위</th>
+            <th>코드</th>
+            <th>종목명</th>
+            <th>변동률</th>
+          </tr>
+          {% for num,detail in kosdaq_change_data[2].items() %}
+          <tr>
+            <td>{{ num+1}}</td>
+            <td>{{ detail['code']}}</td>
+            <td>{{ detail['name']}}</td>
+            <td>{{ detail['rate']}}%</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div id="kodaq_volatily_up" class="tabcontent">
+        <table>
+          <tr>
+            <th>순위</th>
+            <th>코드</th>
+            <th>종목명</th>
+            <th>상승률</th>
+          </tr>
+          {% for num,detail in kosdaq_change_data[1].items() %}
+          <tr>
+            <td>{{ num+1}}</td>
+            <td>{{ detail['code'] }}</td>
+            <td>{{ detail['name'] }}</td>
+            <td>{{ detail['rate'] }}%</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div id="kodaq_volatily_down" class="tabcontent">
+        <table>
+          <tr>
+            <th>순위</th>
+            <th>코드</th>
+            <th>종목명</th>
+            <th>하락률</th>
+          </tr>
+          {% for num,detail in kosdaq_change_data[0].items() %}
+          <tr>
+            <td>{{ num+1}}</td>
+            <td>{{ detail['code']}}</td>
+            <td>{{ detail['name']}}</td>
+            <td>{{ detail['rate']}}%</td>
+          </tr>
+          {% endfor %}
+        </table>      </div>
+
+      <div id="kodaq_volume" class="tabcontent">
+        <table>
+          <tr>
+            <th>순위</th>
+            <th>코드</th>
+            <th>종목명</th>
+            <th>거래량</th>
+          </tr>
+          {% for num,detail in kosdaq_volume_data.items() %}
+          <tr>
+            <td>{{ num+1}}</td>
+            <td>{{ detail['code'] }}</td>
+            <td>{{ detail['name'] }}</td>
+            <td>{{ detail['volume'] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+    </div>
+
+    <div class="korea_us_container5">
       <h3>외국인, 기관 거래 현황</h3>
       <div class="tab tab2">
         <a href="#institution_buy" class="tablinks">기관 매수</a>
@@ -249,59 +335,91 @@
       </div>
     </div>
 
-    <div class="korea_us_container5">
-      <h3>시가 총액</h3>
-      <p>우선주는 표시 되지 않음</p>
-      <table id="koreanStockList">
-        <thead>
-          <tr>
-            <th>순위</th>
-            <th>코드</th>
-            <th>종목명</th>
-            <th>시가총액</th>
-          </tr>
-          {% for num,detail in kospi_value_rank.items() %}
-          <tr>
-            <td>{{ detail[0] }}</td>
-            <td>{{ detail[1] }}</td>
-            <td>{{ detail[2] }}</td>
-            <td>{{ detail[3] }}</td>
-          </tr>
-          {% endfor %}
+    <div class="korea_us_container6">
+      <h3>저평가 목록</h3>
+      <div class="tab tab4">
+        <a href="#kospi_low_value" class="tablinks" style="display">코스피</a>
+        <a href="#kosdaq_low_value" class="tablinks">코스닥</a>
+      </div>
+      <div id="kospi_low_value" class="tabcontent">
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>코드</th>
+              <th>종목명</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
         </table>
-      <div class="pagenumbers"></div>
+        <div class="pagenumbers"></div>
+      </div>
+
+      <div id="kosdaq_low_value" class="tabcontent">
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>코드</th>
+              <th>종목명</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+        <div class="pagenumbers"></div>
+      </div>
+
     </div>
 
-    <div class="korea_us_container6">
-    <h3>저평가 목록</h3>
-      <p>재무재표로 판단 / 순서 X </p>
-      <table id="low_value_data">
-        <thead>
-          <tr>
-            <th>No.</th>
-            <th>종목 코드</th>
-            <th>종명 명</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-      <div class="pagenumbers"></div>
-    </div>
 
     <div class="korea_us_container7">
-      <h3>주가 예측</h3>
-      <p>추후 추가 예정</p>
+      <h3>시가 총액(우선주는 표시 되지 않음)</h3>
+      <div class="tab tab3">
+        <a href="#kospi_rank" class="tablinks" style="display">코스피 순위</a>
+        <a href="#kosdaq_rank" class="tablinks">코스닥 순위</a>
+      </div>
+      <div id="kospi_rank" class="tabcontent">
+        <table>
+          <thead>
+            <tr>
+              <th>순위</th>
+              <th>코드</th>
+              <th>종목명</th>
+              <th>시가총액</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <div class="pagenumbers"></div>
+      </div>
+      <div id="kosdaq_rank" class="tabcontent">
+        <table>
+          <thead>
+            <tr>
+              <th>순위</th>
+              <th>코드</th>
+              <th>종목명</th>
+              <th>시가총액</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <div class="pagenumbers"></div>
+      </div>
     </div>
 
     <div class="korea_us_container8">
-      <h3>모델 설명</h3>
-      <p>저평가 => 재무제표 활용</p>
-      <p>주가예측 모델 => 머신러닝, 딥러닝 활용</p>
-    </div>
+      <h4>준비중</h4>
 
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script>
+
         function tabContent(event){
             event.preventDefault();
             $(this).parent().find('a').removeClass('active');
@@ -312,17 +430,58 @@
 
         $('.tab1 a').on('click', tabContent);
         $('.tab2 a').on('click', tabContent);
+        $('.tab3 a').on('click', tabContent);
+        $('.tab4 a').on('click', tabContent);
+        $('.tab5 a').on('click', tabContent);
 
 
         $('.tab1 a:first').trigger('click');
         $('.tab2 a:first').trigger('click');
+        $('.tab3 a:first').trigger('click');
+        $('.tab4 a:first').trigger('click');
+        $('.tab5 a:first').trigger('click');
 
-        //저평가주식
-        const el2 = document.querySelector('.korea_us_container6');
+        //코스피 시가총액
+        const el1 = document.querySelector('.korea_us_container7').querySelector("#kospi_rank");
+        const tableEl1 = el1.querySelector('table > tbody');
+        const paginationEl1 = el1.querySelector('.pagenumbers');
+        //코스닥 시가총액
+        const el3 = document.querySelector('.korea_us_container7').querySelector("#kosdaq_rank");
+        const tableEl3 = el3.querySelector('table > tbody');
+        const paginationEl3 = el3.querySelector('.pagenumbers');
+
+        //코스피 저평가주식
+        const el2 = document.querySelector('.korea_us_container6').querySelector('#kospi_low_value');
         const tableEl2 = el2.querySelector('table > tbody');
         const paginationEl2 = el2.querySelector('.pagenumbers');
 
+        //코스닥 저평가주식
+        const el4 = document.querySelector('.korea_us_container6').querySelector('#kosdaq_low_value');
+        const tableEl4 = el4.querySelector('table > tbody');
+        const paginationEl4 = el4.querySelector('.pagenumbers');
+
+        let state1 = {
+            'querySet': null,
+            'page': 1,
+            'rows': 10,
+            'window': 6,
+            'pages': 0
+        }
         let state2 = {
+            'querySet': null,
+            'page': 1,
+            'rows': 10,
+            'window': 6,
+            'pages': 0
+        }
+        let state3 = {
+            'querySet': null,
+            'page': 1,
+            'rows': 10,
+            'window': 6,
+            'pages': 0
+        }
+        let state4 = {
             'querySet': null,
             'page': 1,
             'rows': 10,
@@ -334,11 +493,24 @@
             })
             .then(result => {
                 console.log(result);
-                state2.querySet = result.low_value_data
-                console.log('result',state2.querySet)
+                state1.querySet = result.kospi_rank_data
+                state2.querySet = result.kospi_low_value_data
+                state3.querySet = result.kosdaq_rank_data
+                state4.querySet = result.kosdaq_low_value_data
 
+                console.log('result',state1.querySet)
+                console.log('result',state2.querySet)
+                console.log('result',state3.querySet)
+                console.log('result',state4.querySet)
+
+                buildTable(state1, tableEl1)
+                setPaginationButton(paginationEl1, state1, tableEl1)
                 buildTable(state2, tableEl2)
                 setPaginationButton(paginationEl2, state2, tableEl2)
+                buildTable(state3, tableEl3)
+                setPaginationButton(paginationEl3, state3, tableEl3)
+                buildTable(state4, tableEl4)
+                setPaginationButton(paginationEl4, state4, tableEl4)
             })
 
     </script>

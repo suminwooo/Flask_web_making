@@ -5,20 +5,55 @@ from etc.date import date_method
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-from data.code_data import code_list
+from sqlalchemy import create_engine
+import pymysql
 
-code_list = code_list().code_name()
+
+# 메인 페이지 데이터 내용
+# 일주일에 한번 크롤링 하는 데이터
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+from sqlalchemy import create_engine
+import pymysql
+
 
 class kr_stock_weekly:
 
-    def __init__(self, code_list):
-        self.code_list = code_list
+    def kr_stock_code_list(self):
+        connection = None
+        try:
+            connection = pymysql.connect(host='localhost',
+                                         user='root',
+                                         password='0000',
+                                         db='web_db',
+                                         port=3306,
+                                         charset='utf8')
+
+            with connection.cursor() as cursor:
+                sql = "SELECT kr_stock_code FROM kr_stock_list;"
+                cursor.execute(sql)
+                kr_stock_list = cursor.fetchall()
+
+            self.kr_stock_list = [i[0] for i in kr_stock_list]
+
+        except Exception as e:
+            print('->', e)
+
+        finally:
+            if connection:
+                connection.close()
+
+        return kr_stock_list
 
     def weekly_data(self):
 
+        code_list = [str(i[0]).zfill(6) for i in kr_stock_weekly().kr_stock_code_list()]
         final_set = []
-        for code in self.code_list:
-            print(code)
+        for num,code in enumerate(code_list):
+            if num in list(range(0,10000,100)):
+                print(round(num/len(code_list),2),'% 완료')
             # 시가총액, 코스피 랭킹
             try:
                 URL = "https://finance.naver.com/item/main.nhn?code={}"
@@ -106,13 +141,13 @@ class kr_stock_weekly:
                 except:
                     today_close_percent = close_change
 
-                final_value = [code, date_method().date_num(), today_close, today_close_diff, today_close_percent, today_open, today_high,
+                final_value = [code, '2020-09-04', today_close, today_close_diff, today_close_percent, today_open, today_high,
                                today_low, today_vol, market_value,
                                kospi_rank, comment, goal_price, high_52week, low_52week, PER, EPS, est_PER, est_EPS, PBR,
                                BPS, DIV, same_ind_per,
                                same_ind_per_percentage]
             except:
-                final_value = [code, date_method().date_num(), 'NAN']
+                final_value = [code,'2020-09-04', 'NAN']
 
             final_set.append(final_value)
         data = pd.DataFrame(columns=['code', 'date', 'close', 'close_diff', 'close_percent', 'open', 'high', 'low', 'vol',
@@ -127,5 +162,47 @@ class kr_stock_weekly:
                 data.loc[i] = final_set[i] + ['NAN', 'NAN', 'NAN', 'NAN', 'NAN', 'NAN', 'NAN', 'NAN', 'NAN', 'NAN', 'NAN',
                                               'NAN', 'NAN', 'NAN', 'NAN', 'NAN',
                                               'NAN', 'NAN', 'NAN', 'NAN', 'NAN']
+        data.columns = ['kr_stock_code', 'date','kr_stock_close','kr_stock_close_diff', 'kr_stock_close_percent',
+             'kr_stock_open', 'kr_stock_high', 'kr_stock_low', 'kr_stock_vol', 'kr_stock_market_value', 'kr_stock_kospi_rank',
+             'kr_stock_comment', 'kr_stock_goal_price', 'kr_stock_high_52week', 'kr_stock_low_52week','kr_stock_PER','kr_stock_EPS',
+             'kr_stock_est_PER', 'kr_stock_est_EPS', 'kr_stock_PBR', 'kr_stock_BPS', 'kr_stock_DIV', 'kr_stock_same_ind_per',
+             'kr_stock_same_ind_per_percentage']
+        return data
+
+    def weekly_data_to_db(self):
+        data = kr_stock_weekly().weekly_data()
+        # DB 엔진
+        engine = create_engine("mysql+pymysql://root:" + "0000" + "@127.0.0.1/web_db?charset=utf8",
+                               encoding='utf-8')
+        conn = engine.connect()
+        data.to_sql(name='kr_stock_weekly', con=engine, if_exists='append', index=False)
+
+    def weekly_data_to_python(self):
+        connection = None
+        try:
+            connection = pymysql.connect(host='localhost',
+                                         user='root',
+                                         password='0000',
+                                         db='web_db',
+                                         port=3306,
+                                         charset='utf8')
+
+            with connection.cursor() as cursor:
+                sql = "SELECT * " \
+                      "FROM kr_stock_weekly " \
+                      "WHERE DATE = (select DATE " \
+                      "FROM kr_stock_weekly " \
+                      "group BY DATE " \
+                      "order by date DESC " \
+                      "LIMIT 1);"
+                cursor.execute(sql)
+                data = cursor.fetchall()
+
+        except Exception as e:
+            print('->', e)
+
+        finally:
+            if connection:
+                connection.close()
 
         return data

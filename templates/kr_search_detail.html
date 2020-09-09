@@ -277,6 +277,8 @@
 
     </div>
     <script>
+        var kr_stock = {{search_word_code}}
+
         //과거 정보
         const el1 = document.querySelector('.search_container7');
         const tableEl1 = el1.querySelector('table > tbody');
@@ -293,7 +295,8 @@
             })
             .then(result => {
                 console.log(result);
-                state1.querySet = result.all_price_data
+                // 수정해주기
+                state1.querySet = result.total_stock_price.kr_stock
                 console.log('result',state1.querySet)
 
                 buildTable(state1, tableEl1)
