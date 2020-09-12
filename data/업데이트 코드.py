@@ -28,4 +28,4 @@ class data_update:
 
         return '업데이트 완료'
 
-data_update().daily_update()
+data_update().weekly_update()

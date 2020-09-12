@@ -102,45 +102,55 @@ class kr_page_data:
 
             with connection.cursor() as cursor:
 
-                recently_data_sql = "SELECT kr_stock_code, DATE, kr_stock_close, kr_stock_open, kr_stock_high, " \
-                                    "kr_stock_low, kr_stock_volume " \
+                recently_data_sql = "SELECT kr_stock_code, DATE, kr_stock_close ,kr_stock_open, " \
+                                    "kr_stock_high, kr_stock_low, kr_stock_volume "\
                                     "FROM kr_stock_daily " \
                                     "WHERE DATE = '{}';".format(kr_page_data().date()[0])
                 cursor.execute(recently_data_sql)
-                recently_data = cursor.fetchall()
-                recently_data = [j.values() for j in recently_data]
+                recently_data = pd.DataFrame(cursor.fetchall())
 
-                nonrecently_data_sql = "SELECT kr_stock_code, DATE, kr_stock_close, kr_stock_open, kr_stock_high, " \
-                                       "kr_stock_low, kr_stock_volume " \
+                nonrecently_data_sql = "SELECT kr_stock_code, DATE, kr_stock_close,kr_stock_open, " \
+                                       "kr_stock_high, kr_stock_low, kr_stock_volume "\
                                        "FROM kr_stock_daily " \
                                        "WHERE DATE = '{}';".format(kr_page_data().date()[1])
                 cursor.execute(nonrecently_data_sql)
-                nonrecently_data = cursor.fetchall()
-                nonrecently_data = [j.values() for j in nonrecently_data]
-                code_list = [list(i)[0] for i in nonrecently_data]
-                price_diff = []
-                for i in range(len(recently_data)):
-                    recent = list(recently_data[i])[2:]
-                    non_recent = list(nonrecently_data[i])[2:]
-                    value_list = []
-                    for j in range(len(recent)):
-                        if recent[j] - non_recent[j] == 0:
-                            value_list.append('0')
-                            value_list.append('0' + '%')
-                        else:
-                            try:
-                                value_diff = recent[j] - non_recent[j]
-                                value_percentage = round(((recent[j] - non_recent[j]) / recent[j]) * 100, 2)
-                                value_list.append(value_diff)
-                                value_list.append(str(value_percentage) + '%')
-                            except:
-                                value_list.append('error')
-                                value_list.append('error')
-                    price_diff.append(value_list)
+                nonrecently_data = pd.DataFrame(cursor.fetchall())
+
+                merge_df = pd.merge(nonrecently_data, recently_data, on='kr_stock_code')
+
+                code_list = [i for i in merge_df['kr_stock_code']]
+
+                total_price_diff = []
+                for i in range(len(merge_df)):
+                    price_diff = []
+                    each_df = merge_df.loc[i]
+                    price_diff.append(
+                        round(((each_df['kr_stock_close_y'] - each_df['kr_stock_close_x']) / each_df['kr_stock_close_y'])*100,
+                              2))
+                    price_diff.append(
+                        round(((each_df['kr_stock_open_y'] - each_df['kr_stock_open_x']) / each_df['kr_stock_open_y'])*100,
+                              2))
+                    price_diff.append(
+                        round(((each_df['kr_stock_high_y'] - each_df['kr_stock_high_x']) / each_df['kr_stock_high_y'])*100,
+                              2))
+                    price_diff.append(
+                        round(((each_df['kr_stock_low_y'] - each_df['kr_stock_low_x']) / each_df['kr_stock_low_y'])*100,
+                              2))
+                    price_diff.append(round(
+                        ((each_df['kr_stock_volume_y'] - each_df['kr_stock_volume_x']) / each_df['kr_stock_volume_y'])*100,
+                        2))
+
+                    price_diff.append(each_df['kr_stock_close_y'] - each_df['kr_stock_close_x'])
+                    price_diff.append(each_df['kr_stock_open_y'] - each_df['kr_stock_open_x'])
+                    price_diff.append(each_df['kr_stock_high_y'] - each_df['kr_stock_high_x'])
+                    price_diff.append(each_df['kr_stock_low_y'] - each_df['kr_stock_low_x'])
+                    price_diff.append(each_df['kr_stock_volume_y'] - each_df['kr_stock_volume_x'])
+
+                    total_price_diff.append(price_diff)
 
                 final_dic = {}
                 for i in range(len(code_list)):
-                    final_dic[code_list[i]] = price_diff[i]
+                    final_dic[code_list[i]] = total_price_diff[i]
 
         return final_dic
 
@@ -278,22 +288,25 @@ class kr_page_data:
             kosdaq_list = cursor.fetchall()
             kosdaq_list = list(pd.DataFrame(kosdaq_list)['kr_stock_code'])
 
-            code_list = [i['kr_stock_code'] for i in nonrecently_data]
-            change_rate_list = []
-            for recently, nonrecently in zip([j['kr_stock_close'] for j in recently_data],
-                                             [j['kr_stock_close'] for j in nonrecently_data]):
-                try:
-                    change_rate = round((recently - nonrecently) / nonrecently * 100, 2)
-                    change_rate_list.append(change_rate)
-                except:
-                    change_rate_list.append(0)
+            recently_df = pd.DataFrame(recently_data)
+            nonrecently_df = pd.DataFrame(nonrecently_data)
+            rate_df = pd.merge(recently_df, nonrecently_df, on='kr_stock_code')
+
+            total_price_diff = []
+            for i in range(len(rate_df)):
+                price_diff = []
+                each_df = rate_df.loc[i]
+                total_price_diff.append(
+                    round(((each_df['kr_stock_close_y'] - each_df['kr_stock_close_x']) / each_df[
+                        'kr_stock_close_y']) * 100,
+                          2))
+            rate_df['rate'] = [i*(-1) for i in total_price_diff]
+            rate_df = rate_df[['kr_stock_code', 'rate']]
+            rate_df.columns = ['code', 'rate']
+            rate_df = rate_df[(rate_df['rate']<=30)&(rate_df['rate']>=-30)]
+            rate_df = rate_df.set_index('code')
 
             code_name_dic = kr_page_data().code_name()
-
-            rate_df = pd.DataFrame([code_list, change_rate_list]).T
-            rate_df.columns = ['code', 'rate']
-            rate_df['code'] = [int(i) for i in rate_df['code']]
-            rate_df = rate_df.set_index('code')
 
             if market_type == 'kospi':
 

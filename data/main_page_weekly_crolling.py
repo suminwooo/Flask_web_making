@@ -52,8 +52,8 @@ class kr_stock_weekly:
         code_list = [str(i[0]).zfill(6) for i in kr_stock_weekly().kr_stock_code_list()]
         final_set = []
         for num,code in enumerate(code_list):
-            if num in list(range(0,10000,100)):
-                print(round(num/len(code_list),2),'% 완료')
+            if num in list(range(100,10000,100)):
+                print(round(num/len(code_list),2)*100,'% 완료')
             # 시가총액, 코스피 랭킹
             try:
                 URL = "https://finance.naver.com/item/main.nhn?code={}"
@@ -140,8 +140,8 @@ class kr_stock_weekly:
                         today_close_percent = j[1]
                 except:
                     today_close_percent = close_change
-
-                final_value = [code, '2020-09-04', today_close, today_close_diff, today_close_percent, today_open, today_high,
+                date = [date_method().date_num()] * len(code)
+                final_value = [code, date, today_close, today_close_diff, today_close_percent, today_open, today_high,
                                today_low, today_vol, market_value,
                                kospi_rank, comment, goal_price, high_52week, low_52week, PER, EPS, est_PER, est_EPS, PBR,
                                BPS, DIV, same_ind_per,
@@ -206,3 +206,4 @@ class kr_stock_weekly:
                 connection.close()
 
         return data
+

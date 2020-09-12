@@ -39,30 +39,6 @@
         </div>
 
         <div class="search_container3">
-            <!-- TradingView Widget BEGIN -->
-            <div class="tradingview-widget-container">
-            <div id="tradingview_9d8b8"></div>
-            <div class="tradingview-widget-copyright">TradingView 제공 <a href="https://kr.tradingview.com/symbols/KRX-005930/" rel="noopener" target="_blank"><span class="blue-text">005930 차트</span></a></div>
-            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-            <script type="text/javascript">
-                new TradingView.widget(
-                {
-                "autosize": true,
-                "symbol": "KRX:005930",
-                "interval": "D",
-                "timezone": "Asia/Seoul",
-                "theme": "light",
-                "style": "1",
-                "locale": "kr",
-                "toolbar_bg": "#f1f3f6",
-                "enable_publishing": false,
-                "allow_symbol_change": true,
-                "container_id": "tradingview_9d8b8"
-                }
-                );
-            </script>
-            </div>
-            <!-- TradingView Widget END -->
         </div>
 
         <div class="search_container4">
@@ -101,32 +77,32 @@
                     <tr>
                         <td>종가</td>
                         <td>{{price_data['kr_stock_close']}}</td>
-                        <td>{{price_diff[6]}}</td>
-                        <td>{{price_diff[7]}}</td>
+                        <td>{{price_diff[5]}}</td>
+                        <td>{{price_diff[0]}}%</td>
                     </tr>
                     <tr>
                         <td>시가</td>
                         <td>{{price_data['kr_stock_open']}}</td>
-                        <td>{{price_diff[0]}}</td>
-                        <td>{{price_diff[1]}}</td>
+                        <td>{{price_diff[6]}}</td>
+                        <td>{{price_diff[1]}}%</td>
                     </tr>
                     <tr>
                         <td>고가</td>
                         <td>{{price_data['kr_stock_high']}}</td>
-                        <td>{{price_diff[2]}}</td>
-                        <td>{{price_diff[3]}}</td>
+                        <td>{{price_diff[7]}}</td>
+                        <td>{{price_diff[2]}}%</td>
                     </tr>
                     <tr>
                         <td>저가</td>
                         <td>{{price_data['kr_stock_low']}}</td>
-                        <td>{{price_diff[4]}}</td>
-                        <td>{{price_diff[5]}}</td>
+                        <td>{{price_diff[8]}}</td>
+                        <td>{{price_diff[3]}}%</td>
                     </tr>
                     <tr>
                         <td>거래량</td>
                         <td>{{price_data['kr_stock_volume']}}</td>
-                        <td>{{price_diff[8]}}</td>
                         <td>{{price_diff[9]}}</td>
+                        <td>{{price_diff[4]}}%</td>
                     </tr>
                     <tr>
                         <td>52주최고가</td>

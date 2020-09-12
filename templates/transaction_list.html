@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+    {% block main %}
+    <h3> 매매 일지 </h3>
+    {% if g.user %}
+    {% if request.endpoint == 'transaction_list' %}
+        <div class="sales_log_container">
+
+            <form class="sales_log_box1"  method=post>
+                <fieldset>
+                    <h2><legend>종목 검색</legend></h2>
+                    <ul>
+                        <h4>검색 조건을 입력해 주세요.</h4>
+                        <li>
+                            <legend> 종목 : </legend>
+                            <input type="text" value="종목이나 코드를 입력" onclick="this.value=''" id = "search_stock_name">
+                        </li>
+                        <li>
+                            <legend> 종류 : </legend>
+                                <label><input type="checkbox" name="search_stock_kind" value="total_stock" >전체</label>
+                                <label><input type="checkbox" name="search_stock_kind" value="kospi">코스피</label>
+                                <label><input type="checkbox" name="search_stock_kind" value="kosdaq">코스닥</label>
+                                <label><input type="checkbox" name="search_stock_kind" value="nasdaq">나스닥</label>
+                            </li>
+                            <li>
+                                <legend>거래유형 : </legend>
+                                <label><input type="checkbox" name="search_stock_type" value="total_kind">전체</label>
+                                <label><input type="checkbox" name="search_stock_type" value="buy">매수</label>
+                                <label><input type="checkbox" name="search_stock_type" value="sell">매도</label>
+                                <label><input type="checkbox" name="search_stock_type" value="look">관심</label>
+                        </li>
+                    </ul>
+                    <button type="button" id="search_btn" class ="search_btn">검색</button>
+                </fieldset>
+                <div id="test_list"></div>
+            </form>
+
+            <form class="sales_log_box2" action="{{ url_for('add_search_stock')}}" method=post>
+                <fieldset >
+                    <h2>종목 추가 하기</h2>
+                    <ul>
+                        <li>
+                            <label><input type="radio" name="add_stock_type" value="register_buy">매수</label>
+                            <label><input type="radio" name="add_stock_type" value="register_sell">매도</label>
+                            <label><input type="radio" name="add_stock_type" value="register_look">관심</label>
+                        </li>
+                        <li>
+                            코드나 종목 입력 : <input type="text" name = "register_stock_name_code">
+                        </li>
+                        <li>
+                            가격 입력 : <input type="text" name = "register_stock_price">
+                        </li>
+                        <li>
+                            매도 및 매수 이유 입력 : <input type="text" name = "register_stock_reason">
+                        </li>
+                        <button type=sumit>등록</button>
+                    </ul>
+                </fieldset>
+            </form>
+{% endif %}
+            <ul class=messages>
+                {% for message in messages %}
+                        <li>{{ message.add_stock_type}}{{ message.register_stock_name_code}}
+                            {{ message.register_stock_price}}{{ message.register_stock_reason}}
+                        <small>&mdash; {{ message.pub_date|datetimeformat }}</small>
+                    {% else %}
+                        <li><em>There's no message so far.</em>
+                {% endfor %}
+            </ul>
+
+        </div>
+
+    {% endif %}
+{% endblock %}

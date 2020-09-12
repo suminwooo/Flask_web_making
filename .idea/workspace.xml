@@ -20,23 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54409ac8-a49b-458a-ad13-0e87083a4d36" name="Default Changelist" comment="test">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/transaction_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/low_value_stock_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/low_value_stock_code.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/forigner_institution.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/forigner_institution.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/main_page_weekly_crolling.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/main_page_weekly_crolling.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/mysql_to_python_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/mysql_to_python_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/stock_change_calculate.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/stock_change_calculate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/stock_price_100day_data.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/data/업데이트 코드.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/업데이트 코드.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/etc/date.py" beforeDir="false" afterPath="$PROJECT_DIR$/etc/date.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add_check.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/etc.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/korea_stock.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/korea_stock.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/kr_search_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/kr_search_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sales_log.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sales_log.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/register_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/sales_log.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/twit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/twit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +48,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -60,22 +62,26 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\templates" />
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making" />
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\test" />
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\static" />
+      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\wsm26\Desktop\Flask_web_making" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\static" />
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data" />
-      <recent name="C:\Users\wsm26\Desktop\Flask_web_making\data\raw_data" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.app (1)">
     <configuration name="업데이트 코드" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,70 +103,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="low_value_stock_code" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Flask_web_making" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/low_value_stock_code.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Flask_web_making" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data/code_data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/code_data/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Flask_web_making" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask_web_making" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -172,7 +115,112 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Flask_web_making" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Flask_web_making" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\wsm26\Desktop\Flask_web_making\app.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="forigner_institution" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Flask_web_making" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/forigner_institution.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main_page_weekly_crolling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Flask_web_making" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/main_page_weekly_crolling.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="stock_change_calculate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Flask_web_making" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/stock_change_calculate.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -183,11 +231,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python.app (1)" />
+        <item itemvalue="Python.main_page_weekly_crolling" />
+        <item itemvalue="Python.stock_change_calculate" />
         <item itemvalue="Python.업데이트 코드" />
-        <item itemvalue="Python.low_value_stock_code" />
-        <item itemvalue="Python.test (2)" />
-        <item itemvalue="Python.test (1)" />
+        <item itemvalue="Python.forigner_institution" />
       </list>
     </recent_temporary>
   </component>
@@ -258,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599138934150</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="test">
+      <created>1599655784865</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1599655784865</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,42 +333,54 @@
     <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598779286400">
+    <state x="1313" y="756" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1599657857639">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598779286400" />
-    <state width="2539" height="402" key="GridCell.Tab.0.bottom" timestamp="1599655679199">
+    <state x="1313" y="756" key="#com.intellij.fileTypes.FileTypeChooser/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599657857639" />
+    <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1599746851221">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="402" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599655679199" />
-    <state width="2539" height="402" key="GridCell.Tab.0.center" timestamp="1599655679198">
+    <state x="1650" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599746851221" />
+    <state x="1699" y="441" key="FileChooserDialogImpl" timestamp="1599823803520">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="402" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599655679198" />
-    <state width="2539" height="402" key="GridCell.Tab.0.left" timestamp="1599655679198">
+    <state x="1699" y="441" key="FileChooserDialogImpl/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599823803520" />
+    <state width="1256" height="348" key="GridCell.Tab.0.bottom" timestamp="1599920717285">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="402" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599655679198" />
-    <state width="2539" height="402" key="GridCell.Tab.0.right" timestamp="1599655679198">
+    <state width="1256" height="348" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599920717285" />
+    <state width="1899" height="250" key="GridCell.Tab.0.bottom/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1599740713850" />
+    <state width="1256" height="348" key="GridCell.Tab.0.center" timestamp="1599920717285">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="402" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599655679198" />
-    <state width="2539" height="491" key="GridCell.Tab.1.bottom" timestamp="1599399370210">
+    <state width="1256" height="348" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599920717285" />
+    <state width="1899" height="250" key="GridCell.Tab.0.center/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1599740713850" />
+    <state width="1256" height="348" key="GridCell.Tab.0.left" timestamp="1599920717285">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="491" key="GridCell.Tab.1.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599399370210" />
-    <state width="2539" height="491" key="GridCell.Tab.1.center" timestamp="1599399370209">
+    <state width="1256" height="348" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599920717285" />
+    <state width="1899" height="250" key="GridCell.Tab.0.left/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1599740713848" />
+    <state width="1256" height="348" key="GridCell.Tab.0.right" timestamp="1599920717285">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="491" key="GridCell.Tab.1.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599399370209" />
-    <state width="2539" height="491" key="GridCell.Tab.1.left" timestamp="1599399370209">
+    <state width="1256" height="348" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599920717285" />
+    <state width="1899" height="250" key="GridCell.Tab.0.right/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1599740713850" />
+    <state width="2539" height="490" key="GridCell.Tab.1.bottom" timestamp="1599916874865">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="491" key="GridCell.Tab.1.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599399370209" />
-    <state width="2539" height="491" key="GridCell.Tab.1.right" timestamp="1599399370209">
+    <state width="2539" height="490" key="GridCell.Tab.1.bottom/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599916874865" />
+    <state width="2539" height="490" key="GridCell.Tab.1.center" timestamp="1599916874864">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2539" height="491" key="GridCell.Tab.1.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599399370209" />
+    <state width="2539" height="490" key="GridCell.Tab.1.center/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599916874864" />
+    <state width="2539" height="490" key="GridCell.Tab.1.left" timestamp="1599916874862">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2539" height="490" key="GridCell.Tab.1.left/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599916874862" />
+    <state width="2539" height="490" key="GridCell.Tab.1.right" timestamp="1599916874864">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2539" height="490" key="GridCell.Tab.1.right/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599916874864" />
     <state x="781" y="344" key="SettingsEditor" timestamp="1598765678839">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -330,5 +397,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1483" y="432" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1598779882805" />
+    <state x="831" y="303" width="896" height="913" key="search.everywhere.popup" timestamp="1599749811402">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="831" y="303" width="896" height="913" key="search.everywhere.popup/2560.303.1920.1040/0.0.2560.1400@0.0.2560.1400" timestamp="1599749811402" />
+    <state x="3183" y="528" width="672" height="678" key="search.everywhere.popup/2560.303.1920.1040/0.0.2560.1400@2560.303.1920.1040" timestamp="1599740698578" />
   </component>
 </project>

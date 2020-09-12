@@ -2,6 +2,7 @@
 <head>
   <meta charset="utf-8">
   <title>웹 개발 테스트용</title>
+  <link rel="shortcut icon" href="">
   <link rel=stylesheet type=text/css href="../static/index.css">
   <script src="../static/common.js"></script>
 </head>
@@ -24,28 +25,45 @@
         </form>
       </fieldset>
 
-  <div class="login">
-    <h3> Member Login </h3>
+  {% if g.user %}
+  <div class="login_on">
+    <h3> 로그인 되었습니다. </h3>
     <form class="login-form">
-      <input type="text" placeholder="ID"/>
-      <input type="password" placeholder="PASSWORD"/>
-      <div class="check_register">
-        <button>로그인</button>
-        <p class="register"><a href="#">계정 관련</a></p>
-      </div>
+      <button><a href="{{ url_for('logout') }}"> 로그아웃 [{{ g.user.username }}] </a></button>
     </form>
   </div>
-
+      </div>
   <nav>
     <div class="nav_items">
       <ul>
         <li><a href="{{ url_for('korea_stock') }}"> 한국 주식</a></li>
-        <li><a href="{{ url_for('sales_log') }}"> 매매 일지</a></li>
-        <li><a href="{{ url_for('twit') }}"> 게시판</a></li>
+        <li><a href="{{ url_for('transaction_list') }}"> 매매기록 </a></li>
+        <li><a href="{{ url_for('twit') }}"> 게시판 </a></li>
       </ul>
     </div>
   </nav>
   </header>
+  {% else %}
+  <div class="login_off">
+    <h3> 로그인을 해주세요. </h3>
+    <form class="login-form">
+      <button><a href="{{ url_for('login') }}"> 로그인 </a></button>
+      <button> <a href="{{ url_for('register') }}"> 회원 가입</a> </button>
+    </form>
+  </div>
+      </div>
+  <nav>
+    <div class="nav_items">
+      <ul>
+        <li><a href="{{ url_for('korea_stock') }}"> 한국 주식 </a></li>
+        <li><a href="{{ url_for('transaction_list') }}"> 매매기록 </a></li>
+        <li><a href="{{ url_for('twit') }}"> 게시판 </a></li>
+      </ul>
+    </div>
+  </nav>
+  </header>
+  {% endif %}
+
 
   <main>
     {% block main %}

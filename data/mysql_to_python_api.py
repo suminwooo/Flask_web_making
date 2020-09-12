@@ -19,9 +19,7 @@ class total_stock_list:
                                          cursorclass=pymysql.cursors.DictCursor)
 
             with connection.cursor() as cursor:
-                sql = "SELECT kr_stock_code, kr_stock_name " \
-                      "FROM kr_stock_list" \
-                      "limit 100;"
+                sql = " ;"
                 cursor.execute(sql)
                 row = cursor.fetchall()
 

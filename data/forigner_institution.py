@@ -95,6 +95,8 @@ class foreinger_institurion():
         data = self.daily_foreinger_institurion_crolling()
         engine = create_engine("mysql+pymysql://root:" + "0000" + "@127.0.0.1/web_db?charset=utf8",
                                encoding='utf-8')
+        data = data.reset_index()
+        data.columns = ['order','kr_stock_name','date','close','change']
         data.to_sql(name='kr_stock_foringer_instition', con=engine, if_exists='append', index=False)
         return data
 
@@ -110,10 +112,13 @@ class foreinger_institurion():
                                          cursorclass=pymysql.cursors.DictCursor)
 
             with connection.cursor() as cursor:
-                sql = "SELECT * FROM " \
-                      "kr_stock_foringer_instition " \
-                      "ORDER BY DATE DESC " \
-                      "LIMIT 24;"
+                sql = "SELECT * " \
+                      "FROM kr_stock_foringer_instition " \
+                      "WHERE DATE = (select DATE " \
+                      "FROM kr_stock_foringer_instition " \
+                      "group BY DATE  " \
+                      "order by date DESC " \
+                      "LIMIT 1);"
                 cursor.execute(sql)
                 row = cursor.fetchall()
 
