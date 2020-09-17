@@ -2,6 +2,8 @@
 # code_data_update_add 와 연결
 
 import FinanceDataReader as fdr
+import pymysql
+import pandas as pd
 
 class code_information():
 
@@ -16,3 +18,28 @@ class code_information():
 
         return kospi_kosdaq
 
+    def code_total_list(self):
+        connection = None
+        row = None
+        try:
+            connection = pymysql.connect(host='localhost',
+                                         user='root',
+                                         password='0000',
+                                         db='web_db',
+                                         port=3306,
+                                         charset='utf8',
+                                         cursorclass=pymysql.cursors.DictCursor)
+
+            with connection.cursor() as cursor:
+                sql = "select *" \
+                      "from kr_stock_list;"
+                cursor.execute(sql)
+                row = pd.DataFrame(cursor.fetchall())
+                row = row.set_index('kr_stock_code')[['kr_stock_name', 'market']]
+        except Exception as e:
+            print('->', e)
+
+        finally:
+            if connection:
+                connection.close()
+        return row

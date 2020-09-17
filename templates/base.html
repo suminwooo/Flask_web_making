@@ -1,4 +1,4 @@
-<html>
+<!DOCTYPE html>
 <head>
   <meta charset="utf-8">
   <title>웹 개발 테스트용</title>
@@ -11,8 +11,7 @@
     <div class = "links">
       <a href="https://github.com/suminwooo" >개발자의 깃허브로 가기</a>
     </div>
-    <a href="{{url_for('main_page')}}"><img src="{{url_for('static', filename='image/test.png')}}" width="200"
-    height = "100" ></a>
+
 
 
       <fieldset>
@@ -36,6 +35,7 @@
   <nav>
     <div class="nav_items">
       <ul>
+        <li><a href="{{url_for('main_page')}}"> 메인 </a></li>
         <li><a href="{{ url_for('korea_stock') }}"> 한국 주식</a></li>
         <li><a href="{{ url_for('transaction_list') }}"> 매매기록 </a></li>
         <li><a href="{{ url_for('twit') }}"> 게시판 </a></li>
@@ -55,15 +55,15 @@
   <nav>
     <div class="nav_items">
       <ul>
+        <li><a href="{{url_for('main_page')}}"> 메인 </a></li>
         <li><a href="{{ url_for('korea_stock') }}"> 한국 주식 </a></li>
-        <li><a href="{{ url_for('transaction_list') }}"> 매매기록 </a></li>
+        <li><a href="{{ url_for('sample_transaction_list') }}"> 매매기록 </a></li>
         <li><a href="{{ url_for('twit') }}"> 게시판 </a></li>
       </ul>
     </div>
   </nav>
   </header>
   {% endif %}
-
 
   <main>
     {% block main %}

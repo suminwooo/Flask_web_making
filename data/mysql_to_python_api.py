@@ -172,3 +172,81 @@ class korea_detail_information:
                 connection.close()
                 # print(value)
         return final_data
+
+import time
+# 인덱스 추출
+class index_detail_information:
+
+    def kr_price_data(self):
+        connection = None
+        try:
+            connection = pymysql.connect(host = 'localhost',
+                                     user = 'root',
+                                     password = '0000',
+                                     db = 'web_db',
+                                     port = 3306,
+                                     charset = 'utf8',
+                                     cursorclass = pymysql.cursors.DictCursor)
+            if connection:
+                # print('DB 오픈')
+
+                with connection.cursor() as cursor:
+                    # 최신 date 출력
+                    date_sql = "select date,high,low,open,close,volume " \
+                               "FROM kr_index_data_daily; "
+                    cursor.execute(date_sql)
+                    data = cursor.fetchall()
+                    for i in data:
+                        i['date'] = int(time.mktime(i['date'].timetuple()))
+        except Exception as e:
+            print('->', e)
+
+        finally:
+            if connection:
+                connection.close()
+                # print(value)
+        return data
+
+class total_stock_price_information:
+
+    def kr_price_1000d_data(self): # 추후 code 추가
+        connection = None
+        try:
+            connection = pymysql.connect(host='localhost',
+                                         user='root',
+                                         password='0000',
+                                         db='web_db',
+                                         port=3306,
+                                         charset='utf8',
+                                         cursorclass=pymysql.cursors.DictCursor)
+            if connection:
+                # print('DB 오픈')
+
+                with connection.cursor() as cursor:
+                    # 최신 date 출력
+                    date_sql = "SELECT date,kr_stock_open,kr_stock_high," \
+                               "kr_stock_low,kr_stock_close,kr_stock_volume " \
+                               "FROM kr_stock_daily " \
+                               "where kr_stock_code = 5930 " \
+                               "order by date DESC;".format(5930)
+                    cursor.execute(date_sql)
+                    data = cursor.fetchall()
+                    for i in data:
+                        i['kr_stock_open'] = float(i['kr_stock_open'])
+                        i['kr_stock_high'] = float(i['kr_stock_high'])
+                        i['kr_stock_low'] = float(i['kr_stock_low'])
+                        i['kr_stock_close'] = float(i['kr_stock_close'])
+                        i['kr_stock_volume'] = float(i['kr_stock_volume'])
+                        i['date1'] = int(time.mktime(i['date'].timetuple()))
+                        i['date'] = i['date'].isoformat()
+                    # print(data)
+        except Exception as e:
+            print('->', e)
+
+        finally:
+            if connection:
+                connection.close()
+                # print(value)
+        return data
+
+print(total_stock_price_information().kr_price_1000d_data())

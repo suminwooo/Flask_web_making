@@ -39,6 +39,50 @@
         </div>
 
         <div class="search_container3">
+          <head>
+            <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+            <script src="https://code.highcharts.com/stock/highstock.js"></script>
+            <script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+          </head>
+          <body>
+            <div id="container" style="height: 400px; min-width: 310px"></div>
+            <script>
+              function draw3(){
+                var chartdata = [];
+                $.getJSON('http://127.0.0.1:5000/test', function (data) {
+                  $.each(data.total_price_data, function(i, item){
+                        chartdata.push([item.date1*1000, item.kr_stock_open,item.kr_stock_high,
+                        item.kr_stock_low,item.kr_stock_close]);
+                      });
+                }).done(function(){
+                  Highcharts.stockChart('container',{
+                      rangeSelector: {
+                      buttons: [
+                      {type: 'day',count: 1,text: '1d'},
+                      {type: 'all',count: 1,text: 'All'}
+                      ],
+                    selected: 1,
+                    inputEnabled: true
+                  },
+                        plotOptions: {
+                          candlestick: {
+                            downColor: 'blue',
+                            upColor: 'red'
+                          }
+                        },
+                        series: [{
+                        type: 'candlestick',
+                        data: chartdata,
+                        tooltip: {
+                          valueDecimals: 8
+                        }
+                      }]
+                    });
+                  });
+                }
+                draw3();
+            </script>
+          </body>
         </div>
 
         <div class="search_container4">
@@ -243,6 +287,7 @@
                 <th>고가</th>
                 <th>저가</th>
                 <th>종가</th>
+                <th>거래량</th>
               </tr>
             </thead>
             <tbody>
@@ -267,12 +312,12 @@
             'pages': 0
         }
         request({
-                url: "/api_data"
+                url: "/test"
             })
             .then(result => {
                 console.log(result);
                 // 수정해주기
-                state1.querySet = result.total_stock_price.kr_stock
+                state1.querySet = result.total_price_data
                 console.log('result',state1.querySet)
 
                 buildTable(state1, tableEl1)

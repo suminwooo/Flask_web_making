@@ -3,6 +3,8 @@ import FinanceDataReader as fdr
 from data.code_data.code_list import code_information
 from etc.date import date_method
 from sqlalchemy import create_engine
+import pandas_datareader as wb
+import datetime
 
 class code_add_update():
 
@@ -78,7 +80,7 @@ class code_add_update():
             # 존재하는 데이터 업데이트
             for i in code_list:
                 code = str(i).zfill(6)
-                df = fdr.DataReader(code, date_method().date_num())
+                df = fdr.DataReader(code, '2020-09-14')
                 df = df.reset_index()
                 df['code'] = code
                 df.columns = ['date', 'kr_stock_open', 'kr_stock_high', 'kr_stock_low', 'kr_stock_close',
@@ -109,3 +111,15 @@ class code_add_update():
                 df.to_sql(name='kr_stock_daily', con=engine, if_exists='append', index=False)
 
             conn.close()
+
+class kospi_update:
+    def daily_kospi_data_update(self):
+        engine = create_engine("mysql+pymysql://root:" + "0000" + "@127.0.0.1/web_db?charset=utf8",
+                               encoding='utf-8')
+        conn = engine.connect()
+        today_data = wb.DataReader("^KS11","yahoo",datetime.date.today())
+        today_data.columns = ['high','low','open','close','volume','adj_close']
+        today_data['type'] = 'kospi'
+        today_data['date'] = date_method().date_num()
+        today_data.to_sql(name='kr_index_data_daily', con=engine, if_exists='append', index=False)
+        conn.close()

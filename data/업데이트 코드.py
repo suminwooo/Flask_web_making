@@ -1,4 +1,4 @@
-from data.code_data.code_data_update_add import code_add_update
+from data.code_data.code_data_update_add import code_add_update, kospi_update
 from data.main_data_daily_crolling import main_page_data_crolling
 from data.forigner_institution import foreinger_institurion
 from data.main_page_weekly_crolling import kr_stock_weekly
@@ -9,9 +9,10 @@ class data_update:
 
         print('코드 체크 및 데일리 업데이트 시작')
         code_add_update().code_list_update()
+        kospi_update().daily_kospi_data_update()
         print('완료')
         print('데일리 메인 데이터 업데이트 시작')
-        main_page_data_crolling().input_main_page_data()
+        main_page_data_crolling().input_main_page_data() 
         print('완료')
         print('데일리 외국인 & 기관 부분 업데이트 시작')
         foreinger_institurion().daily_data_to_mysql()
@@ -28,4 +29,4 @@ class data_update:
 
         return '업데이트 완료'
 
-data_update().weekly_update()
+print(data_update().daily_update())
